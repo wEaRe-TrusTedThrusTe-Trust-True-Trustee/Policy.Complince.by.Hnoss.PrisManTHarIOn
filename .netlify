@@ -1,0 +1,7 @@
+# Netlify Build Context
+# This file is ignored by git but useful for local Netlify CLI testing
+
+# To test locally:
+# npm install -g netlify-cli
+# netlify dev
+# netlify deploy --prod

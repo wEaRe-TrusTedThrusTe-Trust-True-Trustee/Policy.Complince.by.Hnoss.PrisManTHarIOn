@@ -1,0 +1,8 @@
+# Netlify Redirects File
+# https://docs.netlify.com/routing/redirects/
+
+# Root redirect to main page
+/   /TrustedTrustThrust.html   200
+
+# Handle missing pages - redirect to main page
+/*  /TrustedTrustThrust.html   404
