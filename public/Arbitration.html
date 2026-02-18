@@ -473,6 +473,29 @@
             </div>
         </div>
 
+        <!-- GLOBALE INSTITUTIONEN-DATENBANK -->
+        <div class="glass-card">
+            <h2>🌍 Globale Institutionen-Datenbank</h2>
+            <p style="text-align: center; color: var(--gold-light); margin-bottom: 30px;">
+                <strong>35+ Arbitration Institutions weltweit</strong> – Nach Land, Region oder Spezialisierung filtern
+            </p>
+
+            <!-- Dropdown Navigation -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <select id="institutionFilter" style="padding: 12px 20px; font-size: 1rem; background: rgba(255,255,255,0.1); border: 2px solid var(--gold); color: var(--gold-light); border-radius: 5px; cursor: pointer; min-width: 300px;">
+                    <option value="all">🌍 Alle Institutionen anzeigen</option>
+                    <option value="country">📍 Nach Land filtern</option>
+                    <option value="region">🗺️ Nach Region filtern</option>
+                    <option value="specialization">⚙️ Nach Spezialisierung filtern</option>
+                </select>
+            </div>
+
+            <!-- Container für gefilterte Inhalte -->
+            <div id="institutionContent">
+                <!-- Wird dynamisch befüllt -->
+            </div>
+        </div>
+
         <!-- VOLLSTRECKUNGS-CHECK -->
         <div class="glass-card">
             <h2>🛡️ Vollstreckungs-Check</h2>
@@ -634,8 +657,157 @@
             requestAnimationFrame(draw);
         }
 
-        window.addEventListener('load', () => { init(); draw(); });
+        window.addEventListener('load', () => { init(); draw(); initInstitutionFilter(); });
         window.addEventListener('resize', init);
+
+        // Institutionen-Filter Logik
+        function initInstitutionFilter() {
+            const filter = document.getElementById('institutionFilter');
+            const content = document.getElementById('institutionContent');
+            
+            if (!filter || !content) return;
+
+            // Initial: Alle Institutionen anzeigen
+            showAllInstitutions();
+
+            filter.addEventListener('change', function() {
+                const value = this.value;
+                if (value === 'all') showAllInstitutions();
+                else if (value === 'country') showByCountry();
+                else if (value === 'region') showByRegion();
+                else if (value === 'specialization') showBySpecialization();
+            });
+        }
+
+        function showAllInstitutions() {
+            const content = document.getElementById('institutionContent');
+            content.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    ${generateInstitutionCards()}
+                </div>
+            `;
+        }
+
+        function generateInstitutionCards() {
+            const institutions = [
+                {name: 'ICC Paris', country: '🇫🇷', region: 'Europa', spec: 'Global, Handel', url: 'institutions/icc-paris.html'},
+                {name: 'DIAC Dublin', country: '🇮🇪', region: 'Europa', spec: 'Tech, Finance', url: 'institutions/diac-dublin.html'},
+                {name: 'CIAM Madrid', country: '🇪🇸', region: 'Europa', spec: 'Ibero-Amerika', url: 'institutions/ciam-madrid.html'},
+                {name: 'DIS Berlin', country: '🇩🇪', region: 'Europa', spec: 'Ingenieurwesen', url: 'institutions/dis-berlin.html'},
+                {name: 'SCC Stockholm', country: '🇸🇪', region: 'Europa', spec: 'Energie, Neutralität', url: 'institutions/scc-stockholm.html'},
+                {name: 'VIAC Wien', country: '🇦🇹', region: 'Europa', spec: 'Osteuropa, CEE', url: 'institutions/viac-vienna.html'},
+                {name: 'LCIA London', country: '🇬🇧', region: 'Europa', spec: 'Commonwealth', url: 'institutions/lcia-london.html'},
+                {name: 'CEPANI Brüssel', country: '🇧🇪', region: 'Europa', spec: 'EU-Recht', url: 'institutions/cepani-brussels.html'},
+                {name: 'CAM Milano', country: '🇮🇹', region: 'Europa', spec: 'Mediterran', url: 'institutions/cam-milano.html'},
+                {name: 'CAC Lissabon', country: '🇵🇹', region: 'Europa', spec: 'Lusophonie', url: 'institutions/cac-lisbon.html'},
+                {name: 'PCA Den Haag', country: '🇳🇱', region: 'Global', spec: 'Völkerrecht, Staaten', url: 'institutions/pca-hague.html'},
+                {name: 'SIAC Singapore', country: '🇸🇬', region: 'Asien-Pazifik', spec: 'Asia-Pacific', url: 'institutions/siac-singapore.html'},
+                {name: 'ACICA Sydney', country: '🇦🇺', region: 'Asien-Pazifik', spec: 'Commodities', url: 'institutions/acica-sydney.html'},
+                {name: 'HKIAC Hong Kong', country: '🇭🇰', region: 'Asien-Pazifik', spec: 'Finance, Trade', url: 'institutions/hkiac-hongkong.html'},
+                {name: 'AAA/ICDR', country: '🇺🇸', region: 'Amerika', spec: 'USA, Kanada', url: 'institutions/aaa-icdr.html'},
+                {name: 'JAMS', country: '🇺🇸', region: 'Amerika', spec: 'High-Tech, Mediation', url: 'institutions/jams.html'},
+                {name: 'ICSID', country: '🌍', region: 'Global', spec: 'Investment Disputes', url: 'institutions/icsid.html'},
+                {name: 'WIPO', country: '🇨🇭', region: 'Global', spec: 'Intellectual Property', url: 'institutions/wipo.html'},
+                {name: 'P.R.I.M.E. Finance', country: '🇳🇱', region: 'Global', spec: 'Banking, Finance', url: 'institutions/prime-finance.html'}
+            ];
+
+            return institutions.map(inst => `
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid var(--gold); transition: all 0.3s;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">${inst.country}</div>
+                    <h3 style="color: var(--gold); margin-bottom: 10px;">${inst.name}</h3>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 5px;"><strong>Region:</strong> ${inst.region}</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-bottom: 15px;"><strong>Spezialisierung:</strong> ${inst.spec}</p>
+                    <a href="${inst.url}" class="btn-link" style="display: inline-block; padding: 8px 16px; background: var(--gold); color: #000; text-decoration: none; border-radius: 5px; font-weight: bold;">Vollständige Klausel →</a>
+                </div>
+            `).join('');
+        }
+
+        function showByCountry() {
+            const content = document.getElementById('institutionContent');
+            content.innerHTML = `
+                <h3 style="color: var(--gold); margin-bottom: 20px;">Nach Land sortiert</h3>
+                <p style="color: #aaa;">🇫🇷 Frankreich: ICC Paris, AFA, CMAP</p>
+                <p style="color: #aaa;">🇮🇪 Irland: DIAC Dublin, Arbitration Ireland, CIArb</p>
+                <p style="color: #aaa;">🇪🇸 Spanien: CIAM Madrid, CIMA, TAB Barcelona, CEA</p>
+                <p style="color: #aaa;">🇩🇪 Deutschland: DIS Berlin, GMAA, FIAC Frankfurt</p>
+                <p style="color: #aaa;">🇸🇪 Schweden: SCC Stockholm, SAA</p>
+                <p style="color: #aaa;">🇦🇹 Österreich: VIAC Wien, ArbAut</p>
+                <p style="color: #aaa;">🇵🇹 Portugal: CAC Lissabon, CONCORDIA</p>
+                <p style="color: #aaa;">🇮🇹 Italien: CAM Milano, AIA</p>
+                <p style="color: #aaa;">🇬🇧 UK: LCIA London</p>
+                <p style="color: #aaa;">🇧🇪 Belgien: CEPANI Brüssel</p>
+                <p style="color: #aaa;">🇱🇺 Luxemburg: Luxembourg Center</p>
+                <p style="color: #aaa;">🇳🇱 Niederlande: PCA Den Haag, P.R.I.M.E. Finance</p>
+                <p style="color: #aaa;">🇨🇭 Schweiz: WIPO Genf</p>
+                <p style="color: #aaa;">🇸🇬 Singapur: SIAC</p>
+                <p style="color: #aaa;">🇦🇺 Australien: ACICA Sydney, AMTAC</p>
+                <p style="color: #aaa;">🇭🇰 Hong Kong: HKIAC</p>
+                <p style="color: #aaa;">🇺🇸 USA: AAA/ICDR, JAMS</p>
+                <p style="color: #aaa;">🌍 Global: ICSID, UNCITRAL</p>
+            `;
+        }
+
+        function showByRegion() {
+            const content = document.getElementById('institutionContent');
+            content.innerHTML = `
+                <h3 style="color: var(--gold); margin-bottom: 20px;">Nach Region sortiert</h3>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🇪🇺 Europa (West)</h4>
+                    <p style="color: #aaa;">ICC Paris, DIAC Dublin, CIAM Madrid, DIS Berlin, SCC Stockholm, VIAC Wien, LCIA London, CEPANI Brüssel, CAM Milano, CAC Lissabon</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🌏 Asien-Pazifik</h4>
+                    <p style="color: #aaa;">SIAC Singapore, HKIAC Hong Kong, ACICA Sydney</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🌎 Amerika</h4>
+                    <p style="color: #aaa;">AAA/ICDR (USA), JAMS (USA)</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🌍 Global/International</h4>
+                    <p style="color: #aaa;">PCA Den Haag, ICSID (World Bank), WIPO Genf, P.R.I.M.E. Finance, UNCITRAL</p>
+                </div>
+            `;
+        }
+
+        function showBySpecialization() {
+            const content = document.getElementById('institutionContent');
+            content.innerHTML = `
+                <h3 style="color: var(--gold); margin-bottom: 20px;">Nach Spezialisierung sortiert</h3>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">⚖️ Völkerrecht & Staaten</h4>
+                    <p style="color: #aaa;">PCA Den Haag, ICC Paris, ICSID (World Bank)</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">💻 Tech, Finance & IT</h4>
+                    <p style="color: #aaa;">DIAC Dublin, SIAC Singapore, HKIAC Hong Kong, JAMS (USA)</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🏗️ Ingenieurwesen & Bau</h4>
+                    <p style="color: #aaa;">DIS Berlin, CIMA Madrid, CAM Milano</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">⚡ Energie & Rohstoffe</h4>
+                    <p style="color: #aaa;">SCC Stockholm, ACICA Sydney</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🧠 Intellectual Property</h4>
+                    <p style="color: #aaa;">WIPO Genf</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">💰 Banking & Finance</h4>
+                    <p style="color: #aaa;">P.R.I.M.E. Finance, HKIAC Hong Kong</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🌎 Lateinamerika-Brücke</h4>
+                    <p style="color: #aaa;">CIAM Madrid, CAC Lissabon</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="color: var(--gold-light);">🇪🇺 EU-Recht & Regulation</h4>
+                    <p style="color: #aaa;">CEPANI Brüssel, VIAC Wien</p>
+                </div>
+            `;
+        }
     </script>
 </body>
 </html>

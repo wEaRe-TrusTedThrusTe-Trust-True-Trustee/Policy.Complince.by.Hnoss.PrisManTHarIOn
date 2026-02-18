@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIAC Dublin - Tech & Finance Hub | EU Common Law</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #bf953f;
+            --gold-dark: #8b7029;
+            --gold-light: #fcf6ba;
+            --eu-blue: #001a4d;
+            --ireland-green: #169b62;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #001a4d 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .flag {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: var(--gold-light);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .clause-box {
+            background: rgba(0, 26, 77, 0.3);
+            padding: 30px;
+            border-left: 4px solid var(--ireland-green);
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .info-item {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(191, 149, 63, 0.2);
+        }
+
+        .info-label {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-link:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        li:before {
+            content: "✓ ";
+            color: var(--ireland-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="flag">🇮🇪</div>
+            <h1>DIAC Dublin</h1>
+            <p class="subtitle">Dublin International Arbitration Centre - Common Law Hub der EU</p>
+            <a href="../Arbitration.html" class="back-link">← Zurück zur Übersicht</a>
+        </div>
+
+        <!-- INSTITUTION INFO -->
+        <div class="glass-card">
+            <h2>📋 Institution Overview</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Land</div>
+                    <div>🇮🇪 Irland (Dublin)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Gegründet</div>
+                    <div>2019 (neuere Institution)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Spezialisierung</div>
+                    <div>Tech, Finance, Pharma, Software</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Rechtssystem</div>
+                    <div>Common Law + EU-Mitglied (einzigartige Kombination)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Durchschnittliche Dauer</div>
+                    <div>8-12 Monate (beschleunigte Verfahren)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Kostenrahmen</div>
+                    <div>€€ (Mittelklasse, kosteneffizienter als ICC)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FULL ARBITRATION CLAUSE -->
+        <div class="glass-card">
+            <h2>⚖️ Standard DIAC Arbitration Clause (Englisch)</h2>
+            <div class="clause-box">
+"Any dispute, controversy or claim arising out of or relating to this contract shall be referred to and finally resolved by arbitration in accordance with the Arbitration Rules of the Dublin International Arbitration Centre (DIAC).
+
+The seat of arbitration shall be Dublin, Ireland.
+
+The number of arbitrators shall be one (1), unless the parties agree otherwise or the dispute value exceeds EUR 1,000,000, in which case three (3) arbitrators shall be appointed.
+
+The language of the proceedings shall be English.
+
+The arbitration shall be conducted in accordance with the DIAC Arbitration Rules (current edition)."
+            </div>
+
+            <h3>⚡ Expedited Procedure Clause (für Streitwerte <€500K)</h3>
+            <div class="clause-box">
+"Any dispute arising out of or relating to this contract with a value not exceeding EUR 500,000 shall be resolved by expedited arbitration administered by the Dublin International Arbitration Centre (DIAC). The seat shall be Dublin, Ireland. The number of arbitrators shall be one (1). The language shall be English. The procedure shall follow the DIAC Expedited Arbitration Rules, with a final award to be rendered within 6 months of constitution of the arbitral tribunal."
+            </div>
+
+            <h3>💻 Tech-Specific Clause (mit Fachexperten)</h3>
+            <div class="clause-box">
+"Any dispute arising out of or relating to this contract shall be resolved by arbitration administered by the Dublin International Arbitration Centre (DIAC). The seat shall be Dublin, Ireland. The number of arbitrators shall be one (with specific technical expertise in [software development/cybersecurity/data privacy/AI/blockchain]). The language shall be English. The parties agree that the arbitrator shall have demonstrable expertise in the relevant technology sector."
+            </div>
+        </div>
+
+        <!-- ADVANTAGES -->
+        <div class="glass-card">
+            <h2>✅ Vorteile & Stärken</h2>
+            <ul>
+                <li><strong>Common Law + EU:</strong> Einziger englischsprachiger Common Law Hub innerhalb der EU nach Brexit</li>
+                <li><strong>Tech-Hub-Status:</strong> Dublin ist Europasitz von Google, Facebook, Apple, Microsoft, LinkedIn</li>
+                <li><strong>Kosteneffizienz:</strong> 30-40% günstiger als ICC bei ähnlicher Qualität</li>
+                <li><strong>Expedited Procedures:</strong> Schnelle Verfahren für Streitwerte unter €500.000 (6 Monate)</li>
+                <li><strong>Fachexperten-Pool:</strong> Zugang zu Schiedsrichtern mit Tech-, Finance-, Pharma-Expertise</li>
+                <li><strong>English Language:</strong> Nahtlose Integration für internationale Tech-Unternehmen</li>
+                <li><strong>GDPR-Compliance:</strong> EU-Datenschutz + Common Law Flexibilität</li>
+                <li><strong>Single Arbitrator Default:</strong> Beschleunigt Verfahren und reduziert Kosten</li>
+            </ul>
+        </div>
+
+        <!-- USE CASES -->
+        <div class="glass-card">
+            <h2>🎯 Ideale Anwendungsfälle</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Software-Lizenzen</div>
+                    <div>SaaS, Lizenzstreitigkeiten, IP-Rechte</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Fintech</div>
+                    <div>Payment Services, Blockchain, Crypto, Digital Banking</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Pharma & Life Sciences</div>
+                    <div>Forschungskooperationen, klinische Studien, IP</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">E-Commerce</div>
+                    <div>Plattform-Streitigkeiten, Merchant Agreements</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Data Privacy</div>
+                    <div>GDPR-related disputes, Data Processing Agreements</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Startups & Scale-Ups</div>
+                    <div>Investorenstreitigkeiten, Founder Disputes (€100K-€1M)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TECH SECTOR ADVANTAGES -->
+        <div class="glass-card">
+            <h2>💻 Tech-Sektor Vorteile</h2>
+            <div style="background: rgba(22, 155, 98, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid var(--ireland-green);">
+                <h3 style="color: var(--ireland-green); margin-top: 0;">Warum Dublin für Tech-Disputes?</h3>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 15px;">
+                        <strong style="color: var(--gold);">🌍 European HQ für Big Tech:</strong><br>
+                        Google, Apple, Microsoft, Meta, LinkedIn, Twitter, Airbnb - alle haben Europasitze in Dublin
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <strong style="color: var(--gold);">⚖️ Common Law versteht Tech:</strong><br>
+                        Rechtsprinzipien aus UK/USA-Jurisprudenz sind kompatibel mit Tech-Verträgen
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <strong style="color: var(--gold);">🔐 GDPR-Expertise:</strong><br>
+                        Irland ist Lead Supervisory Authority für viele EU-Tech-Datenschutzfälle
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <strong style="color: var(--gold);">💰 12,5% Corporate Tax:</strong><br>
+                        Attraktiver Unternehmensstandort = viele Tech-Verträge = erfahrene Schiedsrichter
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="glass-card">
+            <h2>🔗 Offizielle Ressourcen</h2>
+            <p style="margin-bottom: 20px;">Direkte Links zu DIAC-Dokumenten und Tools:</p>
+            <a href="https://dublinarbitration.com/" target="_blank" class="btn-link">DIAC Homepage</a>
+            <a href="https://dublinarbitration.com/rules/" target="_blank" class="btn-link">DIAC Arbitration Rules</a>
+            <a href="https://dublinarbitration.com/expedited-procedure/" target="_blank" class="btn-link">Expedited Procedure</a>
+            <a href="https://dublinarbitration.com/model-clauses/" target="_blank" class="btn-link">Model Clauses</a>
+            <a href="https://dublinarbitration.com/panel/" target="_blank" class="btn-link">Arbitrator Panel</a>
+        </div>
+
+        <!-- COST STRUCTURE -->
+        <div class="glass-card">
+            <h2>💰 Kostenstruktur (Beispiele)</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">Basierend auf DIAC Fee Schedule:</p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">€100.000 Streitwert</div>
+                    <div>Registration Fee: ~€1.500<br>Arbitrator Fees: ~€8.000-12.000<br>Administrative: ~€2.000</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">€500.000 Streitwert</div>
+                    <div>Registration Fee: ~€3.000<br>Arbitrator Fees: ~€25.000-40.000<br>Administrative: ~€5.000</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">€1 Million Streitwert</div>
+                    <div>Registration Fee: ~€5.000<br>Arbitrator Fees: ~€40.000-60.000<br>Administrative: ~€8.000</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Expedited (<€500K)</div>
+                    <div>Reduced fees by 20-30%<br>6-month timeline guaranteed<br>Ideal für Startups</div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; color: var(--gold-light); font-style: italic;">
+                💡 Hinweis: DIAC ist deutlich kosteneffizienter als ICC, besonders für Tech-Streitwerte €100K-€1M.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="../Arbitration.html" class="back-link">← Zurück zur Institutionen-Übersicht</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px; opacity: 0.5; font-size: 0.9rem; letter-spacing: 3px;">
+            © 2024-2026 StarLightMovemenTz Foundation. All Rights Reserved.
+        </div>
+    </div>
+</body>
+</html>

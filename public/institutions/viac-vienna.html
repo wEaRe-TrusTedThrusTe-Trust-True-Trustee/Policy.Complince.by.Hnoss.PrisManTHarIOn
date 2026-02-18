@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIAC Wien - Vienna International Arbitral Centre | CEE Gateway</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #bf953f;
+            --gold-dark: #8b7029;
+            --gold-light: #fcf6ba;
+            --eu-blue: #001a4d;
+            --austria-red: #ed2939;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #001a4d 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .flag {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: var(--gold-light);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .clause-box {
+            background: rgba(0, 26, 77, 0.3);
+            padding: 30px;
+            border-left: 4px solid var(--austria-red);
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .info-item {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(191, 149, 63, 0.2);
+        }
+
+        .info-label {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-link:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        li:before {
+            content: "✓ ";
+            color: var(--austria-red);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(237, 41, 57, 0.1), rgba(191, 149, 63, 0.1));
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--austria-red);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="flag">🇦🇹</div>
+            <h1>VIAC Wien</h1>
+            <p class="subtitle">Vienna International Arbitral Centre - Das Osteuropa-Gateway</p>
+            <a href="../Arbitration.html" class="back-link">← Zurück zur Übersicht</a>
+        </div>
+
+        <!-- SPECIAL NOTE -->
+        <div class="highlight-box">
+            <h3 style="color: var(--gold); margin-top: 0;">🗺️ DIE BRÜCKE ZWISCHEN OST UND WEST</h3>
+            <p>VIAC ist <strong>DIE Institution für CEE (Central and Eastern Europe)</strong> - optimal positioniert zwischen EU-Westeuropa und den Balkan-, Ukraine-, Russland-Märkten (historisch). Wien als neutrale, kulturell vernetzte Stadt ist das perfekte Forum.</p>
+            <p style="margin-top: 15px; color: var(--gold-light);">✨ <em>"The Vienna Rules 2021"</em> - Modernste Schiedsordnung mit digitalen Verfahren und ESG-Integration.</p>
+        </div>
+
+        <!-- INSTITUTION INFO -->
+        <div class="glass-card">
+            <h2>📋 Institution Overview</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Land</div>
+                    <div>🇦🇹 Österreich (Wien)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Gegründet</div>
+                    <div>1975 (50 Jahre Erfahrung)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Spezialisierung</div>
+                    <div>CEE, Balkan, Ukraine, Infrastruktur, Energie</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Fälle pro Jahr</div>
+                    <div>~120-150 neue Verfahren</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Durchschnittliche Dauer</div>
+                    <div>12-15 Monate</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Kostenrahmen</div>
+                    <div>€€ (Moderat, günstiger als ICC/LCIA)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FULL ARBITRATION CLAUSE -->
+        <div class="glass-card">
+            <h2>⚖️ Standard VIAC Arbitration Clause (Englisch)</h2>
+            <div class="clause-box">
+"All disputes arising out of or in connection with this contract shall be finally settled under the Vienna Rules (Vienna International Arbitral Centre) by one or more arbitrators appointed in accordance with these Rules.
+
+The seat of arbitration shall be Vienna, Austria.
+
+The number of arbitrators shall be one (1), unless the parties agree otherwise or the total amount in dispute exceeds EUR 1,000,000, in which case three (3) arbitrators shall be appointed.
+
+The language of the arbitration shall be English.
+
+The arbitration shall be governed by the Vienna Rules (2021 edition) as amended from time to time."
+            </div>
+
+            <h3>🇩🇪 Deutsche Version</h3>
+            <div class="clause-box">
+"Alle Streitigkeiten, die sich aus diesem Vertrag ergeben oder mit ihm in Zusammenhang stehen, werden nach den Wiener Regeln (Vienna International Arbitral Centre) durch einen oder mehrere gemäß diesen Regeln ernannte Schiedsrichter endgültig entschieden.
+
+Der Schiedsort ist Wien, Österreich.
+
+Die Anzahl der Schiedsrichter beträgt einen (1), sofern die Parteien nichts anderes vereinbaren oder der Gesamtstreitwert EUR 1.000.000 übersteigt, in welchem Fall drei (3) Schiedsrichter ernannt werden.
+
+Die Verfahrenssprache ist Deutsch.
+
+Das Schiedsverfahren richtet sich nach den Wiener Regeln (Ausgabe 2021) in der jeweils geltenden Fassung."
+            </div>
+
+            <h3>🌍 Multi-Language Clause (Deutsch + Englisch gemischt)</h3>
+            <div class="clause-box">
+"All disputes arising out of or in connection with this contract shall be finally settled under the Vienna Rules (VIAC) by one or more arbitrators appointed in accordance with these Rules. The seat shall be Vienna, Austria. The number of arbitrators shall be three (3). The language of the arbitration shall be German and English (bilingual proceedings). The arbitration shall be governed by the Vienna Rules (2021 edition)."
+            </div>
+        </div>
+
+        <!-- ADVANTAGES -->
+        <div class="glass-card">
+            <h2>✅ Vorteile & Stärken</h2>
+            <ul>
+                <li><strong>CEE-Expertise:</strong> 50 Jahre Erfahrung mit Osteuropa, Balkan, Ukraine, Polen, Tschechien, Slowakei, Ungarn</li>
+                <li><strong>Neutrale Position:</strong> Wien als historisch neutrale Stadt zwischen Ost- und Westeuropa</li>
+                <li><strong>Modernste Rules (2021):</strong> Digital Hearings, ESG-Considerations, Emergency Arbitrator</li>
+                <li><strong>Mehrsprachigkeit:</strong> Verfahren auf Deutsch, Englisch, oder gemischt möglich</li>
+                <li><strong>Kosteneffizienz:</strong> 30-40% günstiger als ICC bei vergleichbarer Qualität</li>
+                <li><strong>Fast Track Option:</strong> Beschleunigte Verfahren für Streitwerte unter €100.000</li>
+                <li><strong>EU + Vienna Convention:</strong> Österreich ist EU-Mitglied + Unterzeichner aller relevanten Conventions</li>
+                <li><strong>Kulturelle Sensibilität:</strong> Verständnis für ost- und westeuropäische Geschäftspraktiken</li>
+            </ul>
+        </div>
+
+        <!-- USE CASES -->
+        <div class="glass-card">
+            <h2>🎯 Ideale Anwendungsfälle</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">CEE-Infrastruktur</div>
+                    <div>Bauprojekte in Polen, Tschechien, Slowakei, Ungarn, Rumänien, Bulgarien</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Energie-Projekte</div>
+                    <div>Gas-Pipelines, Elektrizität, Erneuerbare Energien in Osteuropa</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Balkan-Handel</div>
+                    <div>Serbien, Kroatien, Slowenien, Bosnien, Nordmazedonien</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Ukraine-Verträge</div>
+                    <div>Post-War Reconstruction, Wiederaufbau-Projekte (historisch bevorzugt)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">EU-CEE Joint Ventures</div>
+                    <div>West-Ost Kooperationen, M&A in CEE-Märkten</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Deutsch-Osteuropa</div>
+                    <div>Deutsche Unternehmen mit Ost-Operations (z.B. Automotive, Manufacturing)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CEE COVERAGE MAP -->
+        <div class="glass-card">
+            <h2>🗺️ CEE-Abdeckung (Central and Eastern Europe)</h2>
+            <div style="background: rgba(237, 41, 57, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid var(--austria-red);">
+                <h3 style="color: var(--austria-red); margin-top: 0;">VIAC ist DIE Institution für folgende Märkte:</h3>
+                <div class="info-grid" style="margin-top: 20px;">
+                    <div>
+                        <strong style="color: var(--gold);">🇵🇱 Polen:</strong> Warsaw, Krakau, Wrocław<br>
+                        <strong style="color: var(--gold);">🇨🇿 Tschechien:</strong> Prag, Brno<br>
+                        <strong style="color: var(--gold);">🇸🇰 Slowakei:</strong> Bratislava
+                    </div>
+                    <div>
+                        <strong style="color: var(--gold);">🇭🇺 Ungarn:</strong> Budapest<br>
+                        <strong style="color: var(--gold);">🇷🇴 Rumänien:</strong> Bukarest, Cluj<br>
+                        <strong style="color: var(--gold);">🇧🇬 Bulgarien:</strong> Sofia
+                    </div>
+                    <div>
+                        <strong style="color: var(--gold);">🇭🇷 Kroatien:</strong> Zagreb<br>
+                        <strong style="color: var(--gold);">🇸🇮 Slowenien:</strong> Ljubljana<br>
+                        <strong style="color: var(--gold);">🇷🇸 Serbien:</strong> Belgrad
+                    </div>
+                    <div>
+                        <strong style="color: var(--gold);">🇺🇦 Ukraine:</strong> Kyiv, Odessa (historisch)<br>
+                        <strong style="color: var(--gold);">🇧🇦 Bosnien:</strong> Sarajevo<br>
+                        <strong style="color: var(--gold);">🇲🇰 Nordmazedonien:</strong> Skopje
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIENNA RULES 2021 INNOVATIONS -->
+        <div class="glass-card">
+            <h2>🚀 Vienna Rules 2021 - Moderne Features</h2>
+            <ul>
+                <li><strong>Digital Hearings:</strong> Vollständig integrierte Video-Arbitration seit COVID-19</li>
+                <li><strong>Emergency Arbitrator:</strong> Verfügbar für dringende Eilmaßnahmen (binnen 2 Tagen)</li>
+                <li><strong>ESG-Awareness:</strong> Berücksichtigung von Nachhaltigkeits- und Governance-Aspekten</li>
+                <li><strong>Expedited Procedure:</strong> Für Streitwerte unter €100.000 (6 Monate)</li>
+                <li><strong>Third-Party Funding:</strong> Explizit reguliert und erlaubt</li>
+                <li><strong>Consolidation & Joinder:</strong> Mehrere Parteien und Verträge kombinierbar</li>
+                <li><strong>Transparency Guidelines:</strong> Optional erhöhte Transparenz für öffentliche Projekte</li>
+            </ul>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="glass-card">
+            <h2>🔗 Offizielle Ressourcen</h2>
+            <p style="margin-bottom: 20px;">Direkte Links zu VIAC-Dokumenten und Tools:</p>
+            <a href="https://www.viac.eu/" target="_blank" class="btn-link">VIAC Homepage</a>
+            <a href="https://www.viac.eu/en/arbitration/rules/vienna-rules-2021" target="_blank" class="btn-link">Vienna Rules 2021</a>
+            <a href="https://www.viac.eu/en/arbitration/costs-fees" target="_blank" class="btn-link">Cost Calculator</a>
+            <a href="https://www.viac.eu/en/arbitration/model-clauses" target="_blank" class="btn-link">Model Clauses</a>
+            <a href="https://www.viac.eu/en/arbitrators" target="_blank" class="btn-link">Arbitrator Database</a>
+        </div>
+
+        <!-- COST STRUCTURE -->
+        <div class="glass-card">
+            <h2>💰 Kostenstruktur (Beispiele)</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">Basierend auf VIAC Fee Schedule 2021:</p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">€100.000 Streitwert</div>
+                    <div>Registration Fee: ~€2.000<br>Arbitrator Fees: ~€9.000-13.000<br>Administrative: ~€2.500</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">€500.000 Streitwert</div>
+                    <div>Registration Fee: ~€4.000<br>Arbitrator Fees: ~€30.000-45.000<br>Administrative: ~€6.000</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">€1 Million Streitwert</div>
+                    <div>Registration Fee: ~€6.000<br>Arbitrator Fees: ~€45.000-70.000<br>Administrative: ~€10.000</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Expedited (<€100K)</div>
+                    <div>Reduced fees by 20%<br>6-month fast-track<br>Single arbitrator only</div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; color: var(--gold-light); font-style: italic;">
+                💡 Hinweis: VIAC ist besonders kosteneffizient für CEE-Projekte im Bereich €100K-€2M.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="../Arbitration.html" class="back-link">← Zurück zur Institutionen-Übersicht</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px; opacity: 0.5; font-size: 0.9rem; letter-spacing: 3px;">
+            © 2024-2026 StarLightMovemenTz Foundation. All Rights Reserved.
+        </div>
+    </div>
+</body>
+</html>
