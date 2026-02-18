@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy & Compliance | StarLightMovemenTz Foundation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;300;400;600;700&display=swap');
+
+        :root {
+            --eu-blue: #001a4d;
+            --eu-blue-dark: #000a1f;
+            --eu-gold: #bf953f;
+            --gold: #bf953f;
+            --gold-light: #fcf6ba;
+            --gold-mid: #b38728;
+            --gold-shine: linear-gradient(135deg, #bf953f 0%, #fcf6ba 50%, #b38728 100%);
+            --metallic-mix: linear-gradient(135deg, #d4af37 0%, #fcf6ba 50%, #b38728 100%);
+            --border-gold: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #000;
+            color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ========== CANVAS ANIMATIONS ========== */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        #starfield { z-index: 1; }
+        #lightning-canvas { z-index: 2; }
+        #rainfield { z-index: 3; }
+        #fx-canvas { z-index: 5; }
+        #confettifield { z-index: 6; }
+        #crystalCanvas { z-index: 8; opacity: 0.7; }
+
+        #lighthouse-beam {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 200vw;
+            height: 200vw;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg,
+                rgba(191, 149, 63, 0) 160deg,
+                rgba(252, 246, 186, 0.15) 180deg,
+                rgba(191, 149, 63, 0) 200deg,
+                transparent 360deg
+            );
+            z-index: 4;
+            transform: translate(-50%, -50%) rotate(0deg);
+            pointer-events: none;
+            opacity: 0.6;
+            transition: opacity 3s ease-in-out;
+        }
+
+        #rainbow-aura {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150vw;
+            height: 150vh;
+            background: radial-gradient(circle, transparent 15%,
+                rgba(255, 0, 0, 0.08) 25%,
+                rgba(255, 255, 0, 0.08) 35%,
+                rgba(0, 255, 0, 0.08) 45%,
+                rgba(0, 255, 255, 0.08) 55%,
+                rgba(0, 0, 255, 0.08) 65%,
+                rgba(255, 0, 255, 0.08) 75%,
+                transparent 95%);
+            z-index: 7;
+            opacity: 0.5;
+            pointer-events: none;
+            animation: auraRotate 25s linear infinite;
+            filter: blur(40px) contrast(1.2);
+        }
+
+        @keyframes auraRotate {
+            0% { filter: hue-rotate(0deg) blur(40px); }
+            100% { filter: hue-rotate(360deg) blur(40px); }
+        }
+
+        /* ========== CARD CRYSTAL CANVAS ========== */
+        .card-crystalCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+            border-radius: 16px;
+            pointer-events: none;
+        }
+
+        /* ========== EMAIL CARD TOP ========== */
+        .email-card-top {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            background: radial-gradient(ellipse at center, rgba(0, 26, 77, 0.3) 0%, transparent 70%);
+        }
+
+        .sig-card {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            background: linear-gradient(135deg, 
+                rgba(0, 26, 77, 0.75) 0%,
+                rgba(0, 26, 77, 0.85) 50%,
+                rgba(0, 10, 31, 0.9) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            border-radius: 16px;
+            padding: 60px 40px 40px 40px;
+            backdrop-filter: blur(45px) saturate(180%);
+            -webkit-backdrop-filter: blur(45px) saturate(180%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                        0 0 80px rgba(191, 149, 63, 0.25),
+                        inset 0 0 40px rgba(191, 149, 63, 0.08);
+        }
+
+        .sig-emblem-docked {
+            position: absolute;
+            top: -42px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 84px;
+            height: 84px;
+            background: radial-gradient(circle, var(--eu-blue-dark) 0%, var(--eu-blue) 70%, var(--gold-mid) 100%);
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6),
+                        0 0 40px rgba(191, 149, 63, 0.5),
+                        inset 0 0 20px rgba(191, 149, 63, 0.2);
+            z-index: 10;
+        }
+
+        .sig-emblem-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.3;
+            text-shadow: 0 0 10px rgba(191, 149, 63, 0.8);
+        }
+
+        .sig-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            background: var(--gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(191, 149, 63, 0.5);
+        }
+
+        .sig-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        /* ========== RAINBOW NETWORK GRID ========== */
+        @keyframes rainbow-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes network-pulse {
+            0% { box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+            50% { box-shadow: 0 0 25px rgba(255,255,255,0.3), 0 0 10px rgba(255, 0, 255, 0.5); }
+            100% { box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+        }
+
+        .rainbow-grid-wrapper {
+            background: linear-gradient(90deg, 
+                #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+            background-size: 400% 400%;
+            animation: rainbow-flow 8s linear infinite, network-pulse 3s ease-in-out infinite;
+            padding: 2px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(191, 149, 63, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2px;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .grid-cell {
+            background-color: rgba(0, 8, 20, 0.95);
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .grid-cell:hover {
+            background-color: rgba(20, 25, 40, 0.95);
+        }
+
+        .grid-cell:first-child { border-top-left-radius: 6px; }
+        .grid-cell:nth-child(2) { border-top-right-radius: 6px; }
+        .grid-cell:nth-last-child(2) { border-bottom-left-radius: 6px; }
+        .grid-cell:last-child { border-bottom-right-radius: 6px; }
+
+        .cell-label {
+            color: #FFCC00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .cell-value {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+
+        .sig-body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .sig-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .sig-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sig-label {
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .sig-value {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .sig-email-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .sig-email-item {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            opacity: 0.85;
+            transition: all 0.3s;
+        }
+
+        .sig-email-item:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        .sig-links {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sig-link {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.6rem;
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            padding: 6px 14px;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .sig-link:hover {
+            background: var(--gold-shine);
+            color: #000;
+            border-color: transparent;
+            transform: translateY(-1px);
+        }
+
+        .sig-footer {
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(191, 149, 63, 0.25);
+            text-align: center;
+        }
+
+        .hnoss-brand {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .hnoss-mini {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            background: var(--gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            letter-spacing: 6px;
+            line-height: 1;
+        }
+
+        .tm-notice {
+            color: rgba(255, 204, 0, 0.65);
+            font-size: 0.5rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .legal-block {
+            text-align: center;
+        }
+
+        .lei-tag {
+            font-size: 0.7rem;
+            color: #fcf6ba;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .rights-mini {
+            color: #ff4d4d;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-right: 2px solid #ff4d4d;
+            padding-right: 10px;
+            letter-spacing: 1.2px;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .content-overlay {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            padding: 80px 20px;
+        }
+
+        .main-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+            background: var(--border-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: 10px;
+            margin-bottom: 60px;
+            text-shadow: 0 0 40px rgba(191, 149, 63, 0.5);
+        }
+
+        .section-card {
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.75) 0%, rgba(0, 8, 20, 0.85) 100%);
+            border: 1px solid rgba(191, 149, 63, 0.6);
+            padding: 80px;
+            margin-top: 60px;
+            backdrop-filter: blur(60px) saturate(180%);
+            -webkit-backdrop-filter: blur(60px) saturate(180%);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                        0 0 100px rgba(191, 149, 63, 0.15),
+                        inset 0 0 30px rgba(191, 149, 63, 0.05);
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .section-card::after {
+            content: "";
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(
+                45deg,
+                transparent 45%,
+                rgba(252, 246, 186, 0.05) 48%,
+                rgba(252, 246, 186, 0.1) 50%,
+                rgba(252, 246, 186, 0.05) 52%,
+                transparent 55%
+            );
+            transform: rotate(-45deg);
+            pointer-events: none;
+            animation: holoSweep 8s infinite linear;
+        }
+
+        @keyframes holoSweep {
+            0% { transform: translate(-20%, -20%) rotate(-45deg); }
+            100% { transform: translate(20%, 20%) rotate(-45deg); }
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            border-bottom: 2px solid rgba(191, 149, 63, 0.3);
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            margin-top: 45px;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        p, li {
+            line-height: 2;
+            font-weight: 300;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+
+        strong {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--gold);
+            padding-left: 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--gold-light);
+            background: rgba(191, 149, 63, 0.05);
+            padding: 20px 20px 20px 30px;
+            border-radius: 4px;
+        }
+
+        /* ========== REPOSITORY GRID ========== */
+        .repo-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 60px 0 40px 0;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.15) 0%, rgba(191, 149, 63, 0.25) 100%);
+            border: 1px solid rgba(191, 149, 63, 0.4);
+            color: #fcf6ba;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.8) 0%, rgba(252, 246, 186, 0.8) 100%);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(191, 149, 63, 0.4);
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .repo-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-card {
+                padding: 40px 20px;
+            }
+            .sig-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .repo-card {
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.6) 0%, rgba(0, 8, 20, 0.75) 100%);
+            border: 1px solid rgba(191, 149, 63, 0.4);
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            backdrop-filter: blur(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .repo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(191, 149, 63, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .repo-card:hover::before {
+            left: 100%;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(191, 149, 63, 0.8);
+            box-shadow: 0 12px 40px rgba(191, 149, 63, 0.3),
+                        0 0 60px rgba(191, 149, 63, 0.15);
+        }
+
+        .repo-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(191, 149, 63, 0.3);
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .repo-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #fcf6ba;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .repo-preview {
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+
+        .repo-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(191, 149, 63, 0.2);
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* ========== EMAIL CARD BOTTOM ========== */
+        .email-card-bottom {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            margin-top: 100px;
+            background: radial-gradient(ellipse at center, rgba(0, 26, 77, 0.3) 0%, transparent 70%);
+        }
+
+        /* ========== REPOSITORY OVERLAY ========== */
+        .repo-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            z-index: 30000;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .repo-overlay.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .repo-detail {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.7);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8),
+                        0 0 100px rgba(191, 149, 63, 0.4);
+            margin: 40px 0;
+        }
+
+        .repo-detail-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #fcf6ba;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
+        }
+
+        .repo-detail-content {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 25px 0;
+            white-space: pre-wrap;
+        }
+
+        .repo-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            color: #fcf6ba;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .repo-close-btn:hover {
+            background: rgba(191, 149, 63, 0.9);
+            color: #000;
+            transform: rotate(90deg);
+        }
+
+        .repo-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .repo-keyword {
+            padding: 5px 12px;
+            background: rgba(191, 149, 63, 0.2);
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Canvas Layers -->
+    <canvas id="starfield"></canvas>
+    <canvas id="lightning-canvas"></canvas>
+    <canvas id="rainfield"></canvas>
+    <div id="lighthouse-beam"></div>
+    <canvas id="fx-canvas"></canvas>
+    <canvas id="confettifield"></canvas>
+    <div id="rainbow-aura"></div>
+    <canvas id="crystalCanvas"></canvas>
+
+    <!-- Email Card Top -->
+    <div class="email-card-top">
+        <div class="sig-card">
+            <canvas class="card-crystalCanvas" id="cardCrystalTop"></canvas>
+            <div class="sig-emblem-docked">
+                <div class="sig-emblem-text">
+                    TRUSTED<br>AUTHORITY
+                </div>
+            </div>
+
+            <div class="sig-header">
+                <h1>StarLightMovemenTz</h1>
+                <div class="sig-subtitle">Foundation | Expert Under Civil Law | EU-Union</div>
+            </div>
+
+            <div class="sig-body">
+                <div class="rainbow-grid-wrapper">
+                    <div class="data-grid">
+                        <div class="grid-cell">
+                            <span class="cell-label">Trustee & Legal Person</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">Daniel Pohl (HolyThreeKings)</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">Direct Channels</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">
+                                <a href="mailto:LikeWise@Paderborn.com" class="sig-email-item">LikeWise@Paderborn.com</a><br>
+                                <a href="mailto:StatesFlowWishes@outlook.it" class="sig-email-item">StatesFlowWishes@outlook.it</a>
+                            </span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">D-U-N-S® Global Database</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">315676980 / 317066336</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">VAT ID / EU Reference</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">DE441892129 | EX2025D1218310</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">UNGM & PIC Identifier</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">1172700 | 873042778</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">Swiss Identification (AHV)</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">756.6199.0539.28</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sig-links">
+                    <a href="https://corporationpartner.governmententerprise.org" class="sig-link" target="_blank">Gov-Portal</a>
+                    <a href="http://trustedorbitscodex.eu" class="sig-link" target="_blank">Codex-EU</a>
+                    <a href="https://github.com/wEaRe-TrusTedThrusTe-Trust-True-Trustee" class="sig-link" target="_blank">Registry</a>
+                </div>
+            </div>
+
+            <div class="sig-footer">
+                <div class="hnoss-brand">
+                    <span class="hnoss-mini">HNOSS&trade;</span>
+                    <span class="tm-notice">Registered Trade Mark | Foundation Entity</span>
+                </div>
+                <div class="legal-block">
+                    <span class="lei-tag">LEI ID: 894500GBJSIW8L6ET310</span>
+                    <span class="rights-mini">Keine Rechteabtretung erteilt. &copy;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-overlay">
+        <div class="main-wrapper">
+            <h1 class="page-title">POLICY & COMPLIANCE</h1>
+
+            <div class="section-card">
+                <h2>🔑 ZENTRALE KLAUSELN</h2>
+                
+                <h3>1. 🃏 DER JOKER: UNCITRAL AD-HOC KLAUSEL</h3>
+                <p><strong>Globaler Standard für höchste Neutralität & Souveränität</strong></p>
+                
+                <h3>§ DISPUTE RESOLUTION (UNCITRAL AD-HOC)</h3>
+                
+                <p><strong>1. BINDING ARBITRATION:</strong></p>
+                <blockquote>
+                    "All disputes, controversies, or claims arising out of or relating to this contract, or the breach, termination, or invalidity thereof, shall be settled by arbitration in accordance with the <strong>UNCITRAL Arbitration Rules</strong> as at present in force."
+                </blockquote>
+                
+                <p><strong>2. APPOINTING AUTHORITY (THE GUARDIAN):</strong></p>
+                <blockquote>
+                    "The appointing authority shall be the <strong>Secretary-General of the Permanent Court of Arbitration (PCA) at The Hague</strong>. This ensures a neutral, intergovernmental oversight of the arbitrator selection process."
+                </blockquote>
+                
+                <p><strong>3. PROCEDURAL DETAILS:</strong></p>
+                <ul>
+                    <li><strong>Number of Arbitrators:</strong> One (unless complexity requires three)</li>
+                    <li><strong>Place of Arbitration:</strong> The Hague, Netherlands (or Vienna, Austria)</li>
+                    <li><strong>Language:</strong> English and/or German</li>
+                </ul>
+                
+                <p><strong>4. FINALITY & ENFORCEMENT:</strong></p>
+                <blockquote>
+                    "The parties hereby waive their right to any form of recourse to a court of law on points of law or fact. The arbitral award shall be final, binding, and enforceable globally under the <strong>New York Convention of 1958</strong>."
+                </blockquote>
+                
+                <h3>Warum diese Klausel "gigantisch" ist:</h3>
+                <ul>
+                    <li><strong>Der PCA-Hebel:</strong> Blockiert Verzögerungstaktiken durch neutrale UN-Institution</li>
+                    <li><strong>Souveränitäts-Schutz:</strong> Goldstandard für Regierungszusammenarbeit</li>
+                    <li><strong>Keine Bürokratie:</strong> Keine hohen Institutionsgebühren</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>🧠💎 DIE HYBRID-KLAUSEL: COMPASSIONATE GOVERNANCE</h2>
+                <p><strong>The Ethical Human-Centric Development Framework</strong></p>
+                
+                <h3>Strategische Dispute Resolution Hubs</h3>
+                
+                <p><strong>Global Sovereignty:</strong></p>
+                <ul>
+                    <li><strong>PCA (The Hague)</strong> & <strong>ICC (Paris)</strong> – Für zwischenstaatliche und großangelegte staatliche Projekte</li>
+                </ul>
+                
+                <p><strong>Central European Hub:</strong></p>
+                <ul>
+                    <li><strong>VIAC (Vienna)</strong> – Nutzung des hochmodernen österreichischen Schiedsrechts für Projekte in der EU sowie Mittel- und Osteuropa (CEE/SEE)</li>
+                </ul>
+                
+                <p><strong>Technological & Pacific Hubs:</strong></p>
+                <ul>
+                    <li><strong>JAMS (USA)</strong> und <strong>SIAC (Singapore)</strong> – Für High-Tech-Entwicklungen und Operationen im pazifischen Raum</li>
+                </ul>
+                
+                <h3>Das Giganten-Cheat-Sheet: Wer ist wofür zuständig?</h3>
+                
+                <p><strong>1. Die "Völkerrechtlichen" (Staaten & Organisationen):</strong></p>
+                <ul>
+                    <li><strong>PCA (Den Haag):</strong> Absolute Nummer 1 für UN, WHO, EU-Kommission, Vatikan, Antarktis</li>
+                    <li><strong>ICSID (Weltbank):</strong> Nur für Investitionsstreitigkeiten (Staat gegen Investor)</li>
+                    <li><strong>ICC (Paris):</strong> Prestigeträchtiger Allrounder für hochrangige Staatsaufträge</li>
+                </ul>
+                
+                <p><strong>2. Die "Regionalen Champions":</strong></p>
+                <ul>
+                    <li><strong>VIAC (Wien):</strong> Österreich, Balkan, Ukraine, Osteuropa</li>
+                    <li><strong>SIAC (Singapur):</strong> Australien, Neuseeland, Südostasien</li>
+                    <li><strong>SCC (Stockholm):</strong> Skandinavien und Energieprojekte</li>
+                    <li><strong>AAA / ICDR / JAMS:</strong> USA und Kanada</li>
+                    <li><strong>LCIA (London):</strong> UK, Irland, Commonwealth-Staaten</li>
+                </ul>
+                
+                <p><strong>3. Die "Spezialisten" (Branchen):</strong></p>
+                <ul>
+                    <li><strong>WIPO (Genf):</strong> Software, Patente, IP, geistiges Eigentum</li>
+                    <li><strong>DIS (Bonn/Berlin):</strong> Deutscher Mittelstand und Ingenieurkunst</li>
+                    <li><strong>CIMA (Madrid):</strong> Großbauprojekte in Spanien und Lateinamerika</li>
+                    <li><strong>P.R.I.M.E. Finance:</strong> Banken- und Finanzderivate</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>📜 POLICY BRIEFS & REGELWERKE</h2>
+                
+                <h3>Policy Brief – EU | UN | NATO: "Shield of Dreams" & Portal-Gatekeeper-Prinzip</h3>
+                <p><strong>Ziel:</strong> Praktische Leitlinien zur Anerkennung und Sicherung der geistigen, schöpferischen und persönlichen Freiheit ALLER Bürger:innen als integraler Bestandteil demokratischer Sicherheit, Resilienz und Zukunftsfähigkeit.</p>
+                
+                <h3>1. UNANTASTBARKEIT DER INNEREN WELT (PRINZIP "DREAM SHIELD")</h3>
+                <ul>
+                    <li>Verankerung des Rechts auf unverletzliche Gedanken-, Traum- und Kreativitätsfreiheit</li>
+                    <li>Schutz vor Überwachung, Zensur und psychologischer Fremdbestimmung</li>
+                    <li>Gesetzeserweiterungen und Awareness-Programme</li>
+                </ul>
+                
+                <h3>2. KOLLEKTIVES "SHIELD OF PROTECTION" UND KOMMUNALE RESONANZ</h3>
+                <ul>
+                    <li>Commitments zur aktiven Förderung von Kreativität und seelischer Integrität</li>
+                    <li>Förderung von Schutzräumen in Bildung und öffentlicher Kommunikation</li>
+                </ul>
+                
+                <h3>3. PORTAL GATEKEEPER – SCHWELLEN-SCHUTZ</h3>
+                <ul>
+                    <li>Gatekeeper-Prinzip in Schulungen integrieren</li>
+                    <li>Standards für sensible seelische Räume</li>
+                    <li>Wahrung von Freiwilligkeit und Transparenz</li>
+                </ul>
+                
+                <h3>4. SHIFT/ERNEUERUNG – RESILIENZ DURCH FREIHEIT</h3>
+                <ul>
+                    <li>Gesellschaftliche Anerkennung geschützter "Dream/Imagination Spaces"</li>
+                    <li>EU/UN/NATO-Programme zur Förderung kreativer Traumkraft</li>
+                </ul>
+                
+                <h3>5. IMPLEMENTIERUNG & KONTROLLE</h3>
+                <ul>
+                    <li>Aufnahme in Grundrechtscharta und strategische Leitdokumente</li>
+                    <li>Unabhängige Monitoring-Kommissionen</li>
+                    <li>Jährlicher EU/UN-Report zu "Innerer Souveränität & Kreativitätsfreiheit"</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>🎯 PHILOSOPHISCHE GRUNDLAGEN</h2>
+                
+                <h3>CaZaR – Der Sternenhimmel</h3>
+                <p><strong>"Liminality Cosmic Orbits Nullius Continuum"</strong></p>
+                <p>CaZaR ist der <strong>Sternenhimmel selbst</strong> – das unendliche, funkelnde Zuhause des kosmischen Kollektivs. Ein Raum jenseits von Grenzen, Hierarchien und irdischen "Corps". Hier wird aus einem Wunsch eine kollektive Manifestation.</p>
+                <p><strong>MVIC – Most Value Innovation Construction:</strong> Der aktive, schöpferische Teil von CaZaR. Nicht nur wünschen, sondern <strong>bauen</strong>. Den höchsten Wert durch radikale Innovation erschaffen und bewusst konstruieren.</p>
+                
+                <h3>DACHXCFEES – Das Himmelszelt der Wünsche</h3>
+                <p><strong>"NEIN zu kalten Zahlen – JA zur puren, wilden Magie!"</strong></p>
+                <ul>
+                    <li><strong>BIBER:</strong> Die Baumeister (MVIC / IPA) – bauen die Strukturen im Fluss des Lebens</li>
+                    <li><strong>ELFE & FEE:</strong> Leichtigkeit, Wünsche, Inspiration</li>
+                    <li><strong>KOBOLD & ZWERG:</strong> Handwerker, die tief im System arbeiten</li>
+                    <li><strong>MYSTIC MAGIC LIFE:</strong> Der Treibstoff – nicht Geld, sondern Lebensenergie</li>
+                </ul>
+                <p><strong>Das Himmelszelt:</strong> Ein flexibles Zelt aus Sternen – schützt, lässt aber Luft zirkulieren. Wünsche sind Sternschnuppen, die das kosmische Kollektiv trägt.</p>
+                
+                <h3>INTERMEDIALGALAKTIC – Die Ethische Dimension</h3>
+                <p><strong>"EHTIC HUMAN ROLE AETER – STarLighTsMoveMenTs"</strong></p>
+                <p><strong>Kernfragen:</strong></p>
+                <ul>
+                    <li>Wem "gehört" die Welt? → Niemanden – wir sind "Mieter", keine Besitzer</li>
+                    <li>Wer definiert "Bildung"? → Gesellschaftlicher Konsens vs. individuelle Traumfreiheit</li>
+                    <li>Wie stehen Völkerrecht und nationale Souveränität im Verhältnis?</li>
+                </ul>
+                <p><strong>Regulatorium:</strong> Das System erkennt an, dass wir Reisende auf der Erde sind – erfordernd Demut, Schutz, nachhaltiges Wirtschaften und Respekt.</p>
+            </div>
+
+            <!-- Repository Grid -->
+            <div class="section-card">
+                <h2>🌐 INTERNATIONALE RESSOURCEN</h2>
+                <p style="text-align: center; margin-bottom: 40px;">Aus den Dokumenten wurden <strong>5,865 URLs</strong> extrahiert, die internationale Organisationen, Verträge und Rechtsressourcen abdecken.</p>
+                
+                <div class="repo-filter">
+                    <button class="filter-btn active" data-category="all">Alle</button>
+                    <button class="filter-btn" data-category="legal">Recht & Klauseln</button>
+                    <button class="filter-btn" data-category="philosophy">Philosophie</button>
+                    <button class="filter-btn" data category="policy">Policy Briefs</button>
+                    <button class="filter-btn" data-category="international">International</button>
+                    <button class="filter-btn" data-category="arbitration">Schiedsgerichte</button>
+                </div>
+
+                <div class="repo-grid" id="repoGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Card Bottom -->
+    <div class="email-card-bottom">
+        <div class="sig-card">
+            <canvas class="card-crystalCanvas" id="cardCrystalBottom"></canvas>
+            <div class="sig-emblem-docked">
+                <div class="sig-emblem-text">
+                    TRUSTED<br>AUTHORITY
+                </div>
+            </div>
+
+            <div class="sig-header">
+                <h1>StarLightMovemenTz</h1>
+                <div class="sig-subtitle">Foundation | Expert Under Civil Law | EU-Union</div>
+            </div>
+
+            <div class="sig-body">
+                <div class="rainbow-grid-wrapper">
+                    <div class="data-grid">
+                        <div class="grid-cell">
+                            <span class="cell-label">Trustee & Legal Person</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">Daniel Pohl (HolyThreeKings)</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">Direct Channels</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">
+                                <a href="mailto:LikeWise@Paderborn.com" class="sig-email-item">LikeWise@Paderborn.com</a><br>
+                                <a href="mailto:StatesFlowWishes@outlook.it" class="sig-email-item">StatesFlowWishes@outlook.it</a>
+                            </span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">D-U-N-S® Global Database</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">315676980 / 317066336</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">VAT ID / EU Reference</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">DE441892129 | EX2025D1218310</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">UNGM & PIC Identifier</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">1172700 | 873042778</span>
+                        </div>
+
+                        <div class="grid-cell">
+                            <span class="cell-label">Swiss Identification (AHV)</span>
+                        </div>
+                        <div class="grid-cell">
+                            <span class="cell-value">756.6199.0539.28</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sig-links">
+                    <a href="https://corporationpartner.governmententerprise.org" class="sig-link" target="_blank">Gov-Portal</a>
+                    <a href="http://trustedorbitscodex.eu" class="sig-link" target="_blank">Codex-EU</a>
+                    <a href="https://github.com/wEaRe-TrusTedThrusTe-Trust-True-Trustee" class="sig-link" target="_blank">Registry</a>
+                </div>
+            </div>
+
+            <div class="sig-footer">
+                <div class="hnoss-brand">
+                    <span class="hnoss-mini">HNOSS&trade;</span>
+                    <span class="tm-notice">Registered Trade Mark | Foundation Entity</span>
+                </div>
+                <div class="legal-block">
+                    <span class="lei-tag">LEI ID: 894500GBJSIW8L6ET310</span>
+                    <span class="rights-mini">Keine Rechteabtretung erteilt. &copy;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repository Overlay -->
+    <div class="repo-overlay" id="repoOverlay">
+        <div class="repo-detail" id="repoDetail">
+            <button class="repo-close-btn" onclick="closeRepoOverlay()">&times;</button>
+            <div class="repo-detail-header">
+                <h2 class="repo-detail-title" id="repoDetailTitle"></h2>
+                <div class="repo-category" id="repoDetailCategory"></div>
+            </div>
+            <div class="repo-detail-content" id="repoDetailContent"></div>
+            <div class="repo-keywords" id="repoDetailKeywords"></div>
+        </div>
+    </div>
+
+    <script>
+        // ========== CANVAS ANIMATIONS ==========
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        // Starfield
+        const starfield = document.getElementById('starfield');
+        const ctxStar = starfield.getContext('2d');
+        starfield.width = width;
+        starfield.height = height;
+
+        const stars = [];
+        for (let i = 0; i < 300; i++) {
+            stars.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: Math.random() * 2,
+                speed: Math.random() * 0.5 + 0.1
+            });
+        }
+
+        function animateStars() {
+            ctxStar.clearRect(0, 0, width, height);
+            ctxStar.fillStyle = '#fff';
+            stars.forEach(star => {
+                ctxStar.fillRect(star.x, star.y, star.size, star.size);
+                star.x -= star.speed;
+                if (star.x < 0) star.x = width;
+            });
+            requestAnimationFrame(animateStars);
+        }
+        animateStars();
+
+        // Lightning Canvas
+        const lightning = document.getElementById('lightning-canvas');
+        const ctxLightning = lightning.getContext('2d');
+        lightning.width = width;
+        lightning.height = height;
+
+        function drawLightning() {
+            if (Math.random() > 0.98) {
+                ctxLightning.clearRect(0, 0, width, height);
+                ctxLightning.strokeStyle = `rgba(191, 149, 63, ${Math.random() * 0.5 + 0.3})`;
+                ctxLightning.lineWidth = 2;
+                ctxLightning.beginPath();
+                let x = Math.random() * width;
+                let y = 0;
+                ctxLightning.moveTo(x, y);
+                for (let i = 0; i < 10; i++) {
+                    x += (Math.random() - 0.5) * 100;
+                    y += height / 10;
+                    ctxLightning.lineTo(x, y);
+                }
+                ctxLightning.stroke();
+                setTimeout(() => ctxLightning.clearRect(0, 0, width, height), 150);
+            }
+        }
+        setInterval(drawLightning, 100);
+
+        // Rain
+        const rainfield = document.getElementById('rainfield');
+        const ctxRain = rainfield.getContext('2d');
+        rainfield.width = width;
+        rainfield.height = height;
+
+        const raindrops = [];
+        for (let i = 0; i < 100; i++) {
+            raindrops.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                length: Math.random() * 20 + 10,
+                speed: Math.random() * 5 + 2
+            });
+        }
+
+        function animateRain() {
+            ctxRain.clearRect(0, 0, width, height);
+            ctxRain.strokeStyle = 'rgba(191, 149, 63, 0.3)';
+            ctxRain.lineWidth = 1;
+            raindrops.forEach(drop => {
+                ctxRain.beginPath();
+                ctxRain.moveTo(drop.x, drop.y);
+                ctxRain.lineTo(drop.x, drop.y + drop.length);
+                ctxRain.stroke();
+                drop.y += drop.speed;
+                if (drop.y > height) {
+                    drop.y = -drop.length;
+                    drop.x = Math.random() * width;
+                }
+            });
+            requestAnimationFrame(animateRain);
+        }
+        animateRain();
+
+        // Lighthouse Beam Rotation
+        const beam = document.getElementById('lighthouse-beam');
+        let beamRotation = 0;
+        function rotateBeam() {
+            beamRotation += 0.2;
+            beam.style.transform = `translate(-50%, -50%) rotate(${beamRotation}deg)`;
+            requestAnimationFrame(rotateBeam);
+        }
+        rotateBeam();
+
+        // ========== REPOSITORY SYSTEM ==========
+        const repos = [
+            {
+                name: "JOKER: UNCITRAL AD-HOC Klausel",
+                category: "legal",
+                preview: "Globaler Standard für höchste Neutralität & Souveränität. Die Joker-Klausel blockiert Verzögerungstaktiken durch PCA-Hebel.",
+                description: `§ DISPUTE RESOLUTION (UNCITRAL AD-HOC)
+
+1. BINDING ARBITRATION:
+"All disputes, controversies, or claims arising out of or relating to this contract, or the breach, termination, or invalidity thereof, shall be settled by arbitration in accordance with the UNCITRAL Arbitration Rules as at present in force."
+
+2. APPOINTING AUTHORITY (THE GUARDIAN):
+"The appointing authority shall be the Secretary-General of the Permanent Court of Arbitration (PCA) at The Hague. This ensures a neutral, intergovernmental oversight of the arbitrator selection process."
+
+3. PROCEDURAL DETAILS:
+- Number of Arbitrators: One (unless complexity requires three)
+- Place of Arbitration: The Hague, Netherlands (or Vienna, Austria)
+- Language: English and/or German
+
+4. FINALITY & ENFORCEMENT:
+"The parties hereby waive their right to any form of recourse to a court of law on points of law or fact. The arbitral award shall be final, binding, and enforceable globally under the New York Convention of 1958."
+
+Warum diese Klausel "gigantisch" ist:
+• Der PCA-Hebel: Blockiert Verzögerungstaktiken durch neutrale UN-Institution
+• Souveränitäts-Schutz: Goldstandard für Regierungszusammenarbeit
+• Keine Bürokratie: Keine hohen Institutionsgebühren`,
+                keywords: ["UNCITRAL", "PCA", "Arbitration", "Dispute Resolution", "New York Convention"]
+            },
+            {
+                name: "HYBRID: VIAC Compassionate Governance",
+                category: "legal",
+                preview: "The Ethical Human-Centric Development Framework mit strategischen Dispute Resolution Hubs in Wien, Paris, Singapur.",
+                description: `Strategische Dispute Resolution Hubs:
+
+GLOBAL SOVEREIGNTY:
+• PCA (The Hague) & ICC (Paris) – Für zwischenstaatliche und großangelegte staatliche Projekte
+
+CENTRAL EUROPEAN HUB:
+• VIAC (Vienna) – Nutzung des hochmodernen österreichischen Schiedsrechts für Projekte in der EU sowie Mittel- und Osteuropa (CEE/SEE)
+
+TECHNOLOGICAL & PACIFIC HUBS:
+• JAMS (USA) und SIAC (Singapore) – Für High-Tech-Entwicklungen und Operationen im pazifischen Raum
+
+Das Giganten-Cheat-Sheet:
+1. Die "Völkerrechtlichen": PCA, ICSID, ICC
+2. Die "Regionalen Champions": VIAC, SIAC, SCC, AAA, LCIA
+3. Die "Spezialisten": WIPO, DIS, CIMA, P.R.I.M.E. Finance`,
+                keywords: ["VIAC", "ICC", "SIAC", "Arbitration", "Compassionate Governance", "EU", "CEE"]
+            },
+            {
+                name: "Shield of Dreams Policy Brief",
+                category: "policy",
+                preview: "EU | UN | NATO Policy für geistige, schöpferische und persönliche Freiheit als integraler Bestandteil demokratischer Sicherheit.",
+                description: `Policy Brief – EU | UN | NATO: "Shield of Dreams" & Portal-Gatekeeper-Prinzip
+
+Ziel: Praktische Leitlinien zur Anerkennung und Sicherung der geistigen, schöpferischen und persönlichen Freiheit ALLER Bürger:innen.
+
+1. UNANTASTBARKEIT DER INNEREN WELT (PRINZIP "DREAM SHIELD")
+• Verankerung des Rechts auf unverletzliche Gedanken-, Traum- und Kreativitätsfreiheit
+• Schutz vor Überwachung, Zensur und psychologischer Fremdbestimmung
+• Gesetzeserweiterungen und Awareness-Programme
+
+2. KOLLEKTIVES "SHIELD OF PROTECTION"
+• Commitments zur aktiven Förderung von Kreativität und seelischer Integrität
+• Förderung von Schutzräumen in Bildung und öffentlicher Kommunikation
+
+3. PORTAL GATEKEEPER – SCHWELLEN-SCHUTZ
+• Gatekeeper-Prinzip in Schulungen integrieren
+• Standards für sensible seelische Räume
+• Wahrung von Freiwilligkeit und Transparenz
+
+4. SHIFT/ERNEUERUNG – RESILIENZ DURCH FREIHEIT
+• Gesellschaftliche Anerkennung geschützter "Dream/Imagination Spaces"
+• EU/UN/NATO-Programme zur Förderung kreativer Traumkraft
+
+5. IMPLEMENTIERUNG & KONTROLLE
+• Aufnahme in Grundrechtscharta und strategische Leitdokumente
+• Unabhängige Monitoring-Kommissionen
+• Jährlicher EU/UN-Report zu "Innerer Souveränität & Kreativitätsfreiheit"`,
+                keywords: ["Shield of Dreams", "EU", "UN", "NATO", "Portal Gatekeeper", "Human Rights"]
+            },
+            {
+                name: "CaZaR: Liminality Cosmic Orbits",
+                category: "philosophy",
+                preview: "Der Sternenhimmel selbst – das unendliche, funkelnde Zuhause des kosmischen Kollektivs. MVIC: Most Value Innovation Construction.",
+                description: `CaZaR – Der Sternenhimmel
+"Liminality Cosmic Orbits Nullius Continuum"
+
+CaZaR ist der Sternenhimmel selbst – das unendliche, funkelnde Zuhause des kosmischen Kollektivs. Ein Raum jenseits von Grenzen, Hierarchien und irdischen "Corps". Hier wird aus einem Wunsch eine kollektive Manifestation.
+
+MVIC – Most Value Innovation Construction:
+Der aktive, schöpferische Teil von CaZaR. Nicht nur wünschen, sondern BAUEN. Den höchsten Wert durch radikale Innovation erschaffen und bewusst konstruieren.
+
+Kernprinzipien:
+• Nullius (niemandem gehörend) – Cosmic Commons
+• Liminality – Schwellenraum zwischen Sein und Werden
+• Collective Manifestation – Gemeinsames Erschaffen
+• Most Value – Höchster Wert durch Innovation`,
+                keywords: ["CaZaR", "MVIC", "Cosmic", "Innovation", "Philosophy", "Liminality"]
+            },
+            {
+                name: "DACHXCFEES: Das Himmelszelt",
+                category: "philosophy",
+                preview: "NEIN zu kalten Zahlen – JA zur puren,wilden Magie! BIBER bauen, FEEN inspirieren, MYSTIC MAGIC LIFE als Treibstoff.",
+                description: `DACHXCFEES – Das Himmelszelt der Wünsche
+"NEIN zu kalten Zahlen – JA zur puren, wilden Magie!"
+
+Die Akteure:
+• BIBER: Die Baumeister (MVIC / IPA) – bauen die Strukturen im Fluss des Lebens
+• ELFE & FEE: Leichtigkeit, Wünsche, Inspiration
+• KOBOLD & ZWERG: Handwerker, die tief im System arbeiten
+• MYSTIC MAGIC LIFE: Der Treibstoff – nicht Geld, sondern Lebensenergie
+
+Das Himmelszelt:
+Ein flexibles Zelt aus Sternen – schützt, lässt aber Luft zirkulieren. Wünsche sind Sternschnuppen, die das kosmische Kollektiv trägt.
+
+Prinzipien:
+• Leben über Zahlen
+• Magie über Mechanik
+• Kollektive Träume über individuelle Gier
+• Schutz ohne Einengung`,
+                keywords: ["DACHXCFEES", "Himmelszelt", "Philosophy", "Magic", "Creative Economy"]
+            },
+            {
+                name: "INTERMEDIALGALAKTIC: Ethische Dimension",
+                category: "philosophy",
+                preview: "EHTIC HUMAN ROLE AETER – Wir sind Reisende, keine Besitzer. Gesellschaftlicher Konsens vs. individuelle Traumfreiheit.",
+                description: `INTERMEDIALGALAKTIC – Die Ethische Dimension
+"EHTIC HUMAN ROLE AETER – STarLighTsMoveMenTs"
+
+Kernfragen:
+• Wem "gehört" die Welt? → Niemanden – wir sind "Mieter", keine Besitzer
+• Wer definiert "Bildung"? → Gesellschaftlicher Konsens vs. individuelle Traumfreiheit
+• Wie stehen Völkerrecht und nationale Souveränität im Verhältnis?
+
+Regulatorium:
+Das System erkennt an, dass wir Reisende auf der Erde sind – erfordernd Demut, Schutz, nachhaltiges Wirtschaften und Respekt.
+
+Ethische Leitprinzipien:
+• Custodianship statt Ownership
+• Bildungsfreiheit ohne Indoktrination
+• Souveränität mit Verantwortung
+• Intergalaktische Perspektive auf irdische Probleme`,
+                keywords: ["INTERMEDIALGALAKTIC", "Ethics", "Philosophy", "Human Rights", "Sovereignty"]
+            },
+            {
+                name: "5,865 URLs: Internationale Organisationen",
+                category: "international",
+                preview: "Umfassende Datenbank von UN, WHO, WTO, IMF, OECD, NATO, UNESCO, EU, ASEAN, African Union und weiteren Organisationen.",
+                description: `URL-Integration: Internationale Organisationen, Verträge & Rechtsressourcen
+
+Gesamtzusammenfassung: 5,865 URLs extrahiert
+
+Hauptkategorien:
+1. Internationale Organisationen: UN, WHO, WTO, IMF, OECD, NATO, UNESCO
+2. Regionale Organisationen: EU, ASEAN, African Union, CARICOM
+3. Rechtsressourcen: Völkerrecht, Verträge, Schiedsgerichte
+4. Regierungswebsites: Außenministerien weltweit
+5. GitHub Assets: Visualisierungen und Dokumentation
+
+Schlüssel-Ressourcen:
+• treaties.un.org – Völkerrechtliche Verträge
+• pca-cpa.org – Permanent Court of Arbitration
+• icc-cpi.int – International Criminal Court
+• eur-lex.europa.eu – EU-Recht
+• echr.coe.int – Europäischer Gerichtshof für Menschenrechte
+
+Vollständige Liste verfügbar in:
+• URL_EXTRACTION_SIMPLE.txt
+• URL_EXTRACTION_WITH_CONTEXT.txt`,
+                keywords: ["UN", "WHO", "EU", "ASEAN", "Treaties", "International Law", "URLs", "Database"]
+            },
+            {
+                name: "Schiedsgerichte Weltweit",
+                category: "arbitration",
+                preview: "Vollständiger Überblick über PCA, ICC, VIAC, SIAC, LCIA, ICSID, WIPO, DIS und weitere Arbitration Institutions.",
+                description: `Schiedsgerichte & Streitbeilegung – Globaler Überblick
+
+Völkerrechtliche Institutionen:
+• PCA (The Hague) – Permanent Court of Arbitration
+• ICC (Paris) – International Chamber of Commerce
+• ICSID – World Bank Investment Disputes
+
+Regionale Champions:
+• VIAC (Vienna) – Wiener Internationales Schiedsgericht
+• SIAC (Singapore) – Singapore International Arbitration Centre
+• LCIA (London) – London Court of International Arbitration
+• SCC (Stockholm) – Arbitration Institute
+• DIS (Germany) – German Arbitration Institute
+• CIMA (Madrid) – Civil & Commercial Arbitration Court
+
+Spezialisierte Institutionen:
+• WIPO (Geneva) – Intellectual Property
+• P.R.I.M.E. Finance – Banking & Finance
+• AAA / ICDR / JAMS (USA) – American Arbitration
+
+Jede Institution hat eigene Stärken:
+- PCA: Staaten, UN-Organisationen
+- VIAC: Osteuropa, CEE/SEE
+- SIAC: Asien-Pazifik
+- WIPO: IP & Patents`,
+                keywords: ["PCA", "ICC", "VIAC", "SIAC", "Arbitration", "Dispute Resolution", "ICSID"]
+            },
+            {
+                name: "Menschenrechtskonventionen",
+                category: "international",
+                preview: "AEMR, African Charter, ASEAN Human Rights, Arab Charter – globale und regionale Menschenrechtsinstrumente.",
+                description: `Menschenrechte – Globale und Regionale Instrumente
+
+Globale Instrumente:
+• AEMR (Universal Declaration of Human Rights)
+  https://www.un.org/de/universal-declaration-human-rights/
+
+Regionale Instrumente:
+• African Charter on Human and Peoples' Rights
+  http://www.achpr.org/instruments/achpr/
+
+• ASEAN Human Rights Declaration
+  https://asean.org/asean-human-rights-declaration/
+
+• Arab Charter on Human Rights
+  https://www.arableagueonline.org/
+
+• European Convention on Human Rights (ECHR)
+  https://www.echr.coe.int/
+
+Kernprinzipien:
+• Universalität und Unteilbarkeit
+• Würde und Gleichheit
+• Freiheit und Gerechtigkeit
+• Schutz vor Diskriminierung
+
+Diese Konventionen bilden das rechtliche Fundament für den Schutz der Menschenrechte weltweit.`,
+                keywords: ["Human Rights", "AEMR", "ECHR", "African Charter", "ASEAN", "UN"]
+            },
+            {
+                name: "Umwelt & Nachhaltigkeit",
+                category: "international",
+                preview: "CITES, Basel Convention, Stockholm Convention – internationale Abkommen zu Artenschutz, Chemikalien und nachhaltiger Entwicklung.",
+                description: `Umwelt & Nachhaltigkeit – Internationale Konventionen
+
+Artenschutz:
+• CITES (Convention on International Trade in Endangered Species)
+  https://cites.org/
+
+Chemikalien & Abfall:
+• Basel Convention – Kontrolle grenzüberschreitender Abfallverbringung
+  http://www.basel.int/
+
+• Stockholm Convention – Persistente organische Schadstoffe (POPs)
+  http://chm.pops.int/
+
+• Rotterdam Convention – Gefährliche Chemikalien und Pestizide
+
+Klima & Biodiversität:
+• Paris Agreement (UNFCCC)
+• Convention on Biological Diversity (CBD)
+• Ramsar Convention (Wetlands)
+
+Nachhaltige Entwicklung:
+• UN Agenda 2030 (SDGs)
+• Rio Declaration on Environment and Development
+
+Diese Abkommen schaffen den rechtlichen Rahmen für globalen Umweltschutz und nachhaltige Entwicklung.`,
+                keywords: ["Environment", "CITES", "Basel", "Stockholm", "Sustainability", "Climate", "UN"]
+            },
+            {
+                name: "EU Rechtssystem",
+                category: "international",
+                preview: "EUR-Lex, Council of Europe, ECHR, EEA – umfassende EU-Rechtsressourcen und europäische Institutionen.",
+                description: `Europa & EU – Rechtsressourcen
+
+EU-Rechtsdatenbanken:
+• EUR-Lex – Das Tor zum EU-Recht
+  https://eur-lex.europa.eu/
+
+• Council of Europe – Europarat-Verträge
+  https://www.coe.int/en/web/conventions
+
+Europäische Gerichte:
+• ECHR – Europäischer Gerichtshof für Menschenrechte
+  https://www.echr.coe.int/
+
+• CJEU – Gerichtshof der Europäischen Union
+  https://curia.europa.eu/
+
+Wirtschaftsraum:
+• EEA – Europäischer Wirtschaftsraum
+  https://eea.europa.eu/
+
+Strukturen:
+• EU-Kommission, Rat, Parlament
+• Europarat (47 Mitglieder)
+• EFTA (Island, Liechtenstein, Norwegen, Schweiz)
+
+Das europäische Rechtssystem ist eines der weltweit am stärksten integrierten supranationalen Systeme.`,
+                keywords: ["EU", "EUR-Lex", "ECHR", "Council of Europe", "EEA", "European Law"]
+            },
+            {
+                name: '"Fetch the Ball" – Business Lesson',
+                category: "philosophy",
+                preview: "Eine Kindheitserinnerung als Geschäftsphilosophie: Das Spiel TipTipTip – der Ball als Fixpunkt, Teamwork als Lösung.",
+                description: `"Fetch the Ball" – The Business Lesson
+
+Eine Kindheitserinnerung als Geschäftsphilosophie:
+
+Das Spiel "TipTipTip":
+Der Ball ist der Fixpunkt. Wenn er dich berührt, bist du "gefangen". Die Möglichkeit der Befreiung liegt im Teamwork – jemand anderes muss den Ball wegschießen.
+
+Die Lektion für Business:
+• Der Fixpunkt ist immer da (Markt, Wettbewerb, Krisen)
+• Manche werden "gefangen" (Fehler passieren)
+• Aber solange eine Person frei ist – eine Person mit Mut, den Ball wegzuschießen – kann sich alles wenden
+
+Parallelen:
+• Startups: Der "Ball" ist der Cashflow-Druck
+• Korporationen: Der "Ball" ist Legacy-Systeme
+• Politik: Der "Ball" ist öffentliche Meinung
+
+The Key Insight:
+"You don't need everyone to be free – you just need ONE person brave enough to kick the ball away."
+
+Anwendung:
+Im Business bedeutet das: Dezentralisierung, Empowerment, schnelle Entscheidungswege. Eine Person mit Entscheidungskompetenz kann das gesamte System befreien.`,
+                keywords: ["Business Philosophy", "TipTipTip", "Teamwork", "Leadership", "Metaphor"]
+            }
+        ];
+
+        // Repository Grid Rendering
+        function renderRepos(category = 'all') {
+            const grid = document.getElementById('repoGrid');
+            const filteredRepos = category === 'all' ? repos : repos.filter(r => r.category === category);
+            
+            grid.innerHTML = filteredRepos.map(repo => `
+                <div class="repo-card" onclick='openRepoDetail(${JSON.stringify(repo)})'>
+                    <span class="repo-category">${getCategoryName(repo.category)}</span>
+                    <h3 class="repo-title">${repo.name}</h3>
+                    <div class="repo-preview">${repo.preview}</div>
+                    <div class="repo-meta">
+                        <span>${repo.keywords.length} Keywords</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                'legal': 'Recht & Klauseln',
+                'philosophy': 'Philosophie',
+                'policy': 'Policy Briefs',
+                'international': 'International',
+                'arbitration': 'Schiedsgerichte'
+            };
+            return names[category] || category;
+        }
+
+        function openRepoDetail(repo) {
+            document.getElementById('repoDetailTitle').textContent = repo.name;
+            document.getElementById('repoDetailCategory').textContent = getCategoryName(repo.category);
+            document.getElementById('repoDetailContent').textContent = repo.description;
+            document.getElementById('repoDetailKeywords').innerHTML = repo.keywords
+                .map(kw => `<span class="repo-keyword">${kw}</span>`)
+                .join('');
+            document.getElementById('repoOverlay').classList.add('active');
+        }
+
+        function closeRepoOverlay() {
+            document.getElementById('repoOverlay').classList.remove('active');
+        }
+
+        // Filter Buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderRepos(btn.dataset.category);
+            });
+        });
+
+        // Close overlay on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeRepoOverlay();
+            }
+        });
+
+        // Close overlay on outside click
+        document.getElementById('repoOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'repoOverlay') {
+                closeRepoOverlay();
+            }
+        });
+
+        // Initial render
+        renderRepos();
+
+        // ========== GLOBAL CRYSTAL AURA NETWORK ==========
+        const globalCrystalCanvas = document.getElementById('crystalCanvas');
+        const globalCrystalCtx = globalCrystalCanvas.getContext('2d');
+        globalCrystalCanvas.width = window.innerWidth;
+        globalCrystalCanvas.height = window.innerHeight;
+
+        let globalCrystals = [];
+        const globalCrystalCount = 1200;
+
+        for (let i = 0; i < globalCrystalCount; i++) {
+            globalCrystals.push({
+                x: Math.random() * globalCrystalCanvas.width,
+                y: Math.random() * globalCrystalCanvas.height,
+                size: Math.random() * 0.8 + 0.2,
+                vx: (Math.random() - 0.5) * 0.15,
+                vy: (Math.random() - 0.5) * 0.15,
+                opacity: Math.random() * 0.6 + 0.2,
+                hue: Math.random() * 60 + 170 // Blue-Cyan range
+            });
+        }
+
+        function animateGlobalCrystals() {
+            globalCrystalCtx.clearRect(0, 0, globalCrystalCanvas.width, globalCrystalCanvas.height);
+
+            for (let i = 0; i < globalCrystalCount; i++) {
+                let crystal = globalCrystals[i];
+
+                crystal.x += crystal.vx;
+                crystal.y += crystal.vy;
+
+                if (crystal.x < 0 || crystal.x > globalCrystalCanvas.width) crystal.vx *= -1;
+                if (crystal.y < 0 || crystal.y > globalCrystalCanvas.height) crystal.vy *= -1;
+
+                globalCrystalCtx.beginPath();
+                globalCrystalCtx.arc(crystal.x, crystal.y, crystal.size, 0, Math.PI * 2);
+                globalCrystalCtx.shadowBlur = crystal.size * 8;
+                globalCrystalCtx.shadowColor = `hsla(${crystal.hue}, 70%, 60%, 0.3)`;
+                globalCrystalCtx.fillStyle = `hsla(${crystal.hue}, 80%, 80%, ${crystal.opacity})`;
+                globalCrystalCtx.globalAlpha = crystal.opacity;
+                globalCrystalCtx.fill();
+                globalCrystalCtx.shadowBlur = 0;
+                globalCrystalCtx.globalAlpha = 1;
+            }
+            requestAnimationFrame(animateGlobalCrystals);
+        }
+        animateGlobalCrystals();
+
+        // ========== CARD CRYSTAL ANIMATIONS ==========
+        function initCardCrystals(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const parent = canvas.parentElement;
+            canvas.width = parent.offsetWidth;
+            canvas.height = parent.offsetHeight;
+
+            const crystals = [];
+            const crystalCount = 600;
+
+            for (let i = 0; i < crystalCount; i++) {
+                crystals.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 0.8 + 0.2,
+                    vx: (Math.random() - 0.5) * 0.12,
+                    vy: (Math.random() - 0.5) * 0.12,
+                    opacity: Math.random() * 0.6 + 0.2,
+                    hue: Math.random() * 40 + 35 // Gold range
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (let i = 0; i < crystalCount; i++) {
+                    let crystal = crystals[i];
+
+                    crystal.x += crystal.vx;
+                    crystal.y += crystal.vy;
+
+                    if (crystal.x < 0 || crystal.x > canvas.width) crystal.vx *= -1;
+                    if (crystal.y < 0 || crystal.y > canvas.height) crystal.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(crystal.x, crystal.y, crystal.size, 0, Math.PI * 2);
+                    ctx.shadowBlur = crystal.size * 6;
+                    ctx.shadowColor = `hsla(${crystal.hue}, 70%, 60%, 0.4)`;
+                    ctx.fillStyle = `hsla(${crystal.hue}, 85%, 75%, ${crystal.opacity})`;
+                    ctx.globalAlpha = crystal.opacity;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                    ctx.globalAlpha = 1;
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        initCardCrystals('cardCrystalTop');
+        initCardCrystals('cardCrystalBottom');
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            globalCrystalCanvas.width = window.innerWidth;
+            globalCrystalCanvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
