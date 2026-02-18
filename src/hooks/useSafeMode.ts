@@ -2,7 +2,7 @@
 // 🧊 Adaptive Safe-Mode Hook
 // Überwacht System-Metriken und aktiviert automatisch Drosselung bei hoher Last
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useSystemStatus } from '@/context/SystemStatusContext';
 
 export interface SafeModeConfig {
@@ -26,7 +26,7 @@ const DEFAULT_CONFIG: SafeModeConfig = {
 
 export function useSafeMode(config: Partial<SafeModeConfig> = {}) {
   const { metrics, systemHealth } = useSystemStatus();
-  const mergedConfig = { ...DEFAULT_CONFIG, ...config };
+  const mergedConfig = useMemo(() => ({ ...DEFAULT_CONFIG, ...config }), [config]);
   
   const [state, setState] = useState<SafeModeState>({
     isSafeMode: false,
@@ -37,6 +37,7 @@ export function useSafeMode(config: Partial<SafeModeConfig> = {}) {
 
   // Safe-Mode aktivieren
   const activateSafeMode = useCallback((reason: SafeModeState['reason']) => {
+    // eslint-disable-next-line no-console
     console.warn(`⚠️  CRITICAL HEAT DETECTED. ACTIVATING SAFE MODE (Reason: ${reason})`);
     
     setState({
@@ -52,6 +53,7 @@ export function useSafeMode(config: Partial<SafeModeConfig> = {}) {
 
   // Safe-Mode deaktivieren
   const deactivateSafeMode = useCallback(() => {
+    // eslint-disable-next-line no-console
     console.log('✅ SYSTEM RECOVERED. DEACTIVATING SAFE MODE.');
     
     setState({

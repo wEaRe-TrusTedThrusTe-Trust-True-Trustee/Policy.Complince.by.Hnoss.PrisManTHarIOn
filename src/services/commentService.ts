@@ -6,7 +6,6 @@ import type { Database } from '@/types/supabase';
 import type { 
   UrlComment, 
   NewUrlComment, 
-  UrlCommentUpdate, 
   CommentWithProfile 
 } from '@/types/supabase';
 
@@ -114,7 +113,7 @@ export const commentService = {
     
     const { data, error } = await supabase
       .from('url_comments')
-      .insert(commentData as any)
+      .insert(commentData as Database['public']['Tables']['url_comments']['Insert'])
       .select()
       .single();
 
@@ -153,7 +152,7 @@ export const commentService = {
     const { data, error } = await supabase
       .from('url_comments')
       // @ts-expect-error: Supabase type inference limitation - type is correct at runtime
-      .update(updateData as any)
+      .update(updateData as Database['public']['Tables']['url_comments']['Update'])
       .eq('id', commentId)
       .eq('user_id', userId)
       .eq('is_deleted', false)
@@ -186,7 +185,7 @@ export const commentService = {
     const { error } = await supabase
       .from('url_comments')
       // @ts-expect-error: Supabase type inference limitation - type is correct at runtime
-      .update(deleteData as any)
+      .update(deleteData as Database['public']['Tables']['url_comments']['Update'])
       .eq('id', commentId)
       .eq('user_id', userId);
 
@@ -209,7 +208,7 @@ export const commentService = {
     
     const { error } = await supabase
       .from('comment_likes')
-      .insert(likeData as any);
+      .insert(likeData as Database['public']['Tables']['comment_likes']['Insert']);
 
     if (error) {
       if (error.code === '23505') {
@@ -293,7 +292,7 @@ export const commentService = {
     
     await supabase
       .from('url_metadata')
-      .upsert(metadataData as any);
+      .upsert(metadataData as Database['public']['Tables']['url_metadata']['Insert']);
   },
 
   /**

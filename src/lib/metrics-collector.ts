@@ -6,8 +6,8 @@ import axios from 'axios';
 import { createClient } from '@supabase/supabase-js';
 
 const PROMETHEUS_URL = process.env.PROMETHEUS_URL || 'http://localhost:9090/api/v1/query';
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
@@ -112,11 +112,14 @@ async function pushMetricsToSupabase(metrics: SystemMetrics) {
       });
 
     if (error) {
+      // eslint-disable-next-line no-console
       console.error('Failed to push metrics to Supabase:', error.message);
     } else {
+      // eslint-disable-next-line no-console
       console.log(`📊 Metrics synced: CPU ${metrics.cpu_load.toFixed(1)}% | DB ${metrics.db_connections} | Status: ${metrics.status}`);
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Supabase push error:', error);
   }
 }
@@ -125,6 +128,7 @@ async function pushMetricsToSupabase(metrics: SystemMetrics) {
  * Main metrics collection loop
  */
 export async function syncSystemMetrics() {
+  // eslint-disable-next-line no-console
   console.log('🚀 Metrics Collector started');
   
   // Collect and push metrics every 10 seconds
@@ -133,18 +137,21 @@ export async function syncSystemMetrics() {
       const metrics = await collectRealMetrics();
       await pushMetricsToSupabase(metrics);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Metrics collection cycle failed:', error);
     }
   }, 10000); // 10 seconds
 
   // Cleanup on process termination
   process.on('SIGTERM', () => {
+    // eslint-disable-next-line no-console
     console.log('🛑 Metrics Collector shutting down...');
     clearInterval(interval);
     process.exit(0);
   });
 
   process.on('SIGINT', () => {
+    // eslint-disable-next-line no-console
     console.log('🛑 Metrics Collector interrupted');
     clearInterval(interval);
     process.exit(0);

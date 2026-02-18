@@ -23,7 +23,7 @@ interface GlowCardProps {
   variant?: 'gold' | 'silver' | 'platinum' | 'copper' | 'rose' | 'cyan';
 }
 
-export const GlowCard = ({ children, index, className = '', variant }: GlowCardProps) => {
+export const GlowCard = ({ children, index: _index, className = '', variant }: GlowCardProps) => {
   const color = variant ? glowColors[variant] : glowColors.cyan;
 
   return (

@@ -509,7 +509,7 @@ export default function HomePage() {
                       <span className="text-cyan-300">Ein Zelt ist flexibel</span>, schützt, lässt Luft zirkulieren.
                       <span className="text-yellow-300"> Anstatt Rechtsrahmen</span> leben wir unter einem Himmelszelt.
                       <strong className="block mt-3 text-green-300">FEES = WISHES:</strong>
-                      Man "füttert" das System mit Wünschen als Sternschnuppen.
+                      Man &quot;füttert&quot; das System mit Wünschen als Sternschnuppen.
                     </p>
                   </div>
                 </div>

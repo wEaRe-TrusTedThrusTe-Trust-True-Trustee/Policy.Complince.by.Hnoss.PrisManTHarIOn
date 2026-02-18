@@ -13,11 +13,11 @@ interface LogEntry {
 }
 
 interface LogDashboardProps {
-  logs?: any[];
+  logs?: LogEntry[];
   maxHeight?: number;
 }
 
-export default function LogDashboard({ logs: externalLogs, maxHeight = 500 }: LogDashboardProps) {
+export default function LogDashboard({ logs: externalLogs, maxHeight: _maxHeight = 500 }: LogDashboardProps) {
   const { metrics } = useSystemStatus();
   const [logs, setLogs] = useState<LogEntry[]>(externalLogs || []);
   const [currentTime, setCurrentTime] = useState<string>('--:--:--');
