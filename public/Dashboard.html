@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | StarLightMovemenTz Foundation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000 0%, #001a4d 50%, #000000 100%);
+            color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(0, 8, 20, 0.9);
+            border: 2px solid #bf953f;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 60px rgba(191, 149, 63, 0.3);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #fcf6ba;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .nav-card {
+            background: linear-gradient(135deg, rgba(0, 26, 77, 0.6), rgba(0, 10, 31, 0.8));
+            border: 2px solid rgba(191, 149, 63, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-decoration: none;
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(191, 149, 63, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-card:hover {
+            border-color: #bf953f;
+            box-shadow: 0 0 40px rgba(191, 149, 63, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .nav-card h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fcf6ba;
+        }
+
+        .nav-card p {
+            color: rgba(252, 246, 186, 0.8);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid #0f0;
+            border-radius: 20px;
+            color: #0f0;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(191, 149, 63, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(191, 149, 63, 0.6); }
+        }
+
+        .dashboard-container {
+            animation: glow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>✨ STARLIGHTMOVEMENTZ DASHBOARD ✨</h1>
+        <p class="subtitle">Foundation | Expert Under Civil Law | EU-Union</p>
+
+        <div class="nav-grid">
+            <a href="/Login.html" class="nav-card">
+                <span class="icon">🔐</span>
+                <h2>Secure Login</h2>
+                <p>Enterprise-Grade Authentication System mit Supabase Integration. Shield-Protected Entry Point.</p>
+                <span class="status-badge">✅ ACTIVE</span>
+            </a>
+
+            <a href="/PolicyCompliance.html" class="nav-card">
+                <span class="icon">⚖️</span>
+                <h2>Policy & Compliance</h2>
+                <p>Vollständiges Legal Framework mit 9 Arbitration Institutions, UNCITRAL Model Law & Email Card Integration.</p>
+                <span class="status-badge">✅ ACTIVE</span>
+            </a>
+
+            <a href="/TrustedTrustThrust.html" class="nav-card">
+                <span class="icon">🌟</span>
+                <h2>SUPREME MASTER ARCHITECTURE</h2>
+                <p>Global Governance Framework - Die Vision von Daniel Pohl. WeAre TrusTed ThrusT (x4T2xRu2s2).</p>
+                <span class="status-badge">✅ PROTECTED</span>
+            </a>
+
+            <a href="/Arbitration.html" class="nav-card">
+                <span class="icon">⚖️</span>
+                <h2>Arbitration Clauses</h2>
+                <p>7 Internationale Arbitration Variants (V1-V7) inklusive Master Standard für optimale Dispute Resolution.</p>
+                <span class="status-badge">✅ BINDING</span>
+            </a>
+
+            <a href="/urls-archive.html" class="nav-card">
+                <span class="icon">🌐</span>
+                <h2>URLs Archive</h2>
+                <p>Komplettes Ecosystem mit Realtime Comments, Likes & Authentication. 51+ kategorisierte URLs.</p>
+                <span class="status-badge">✅ REALTIME</span>
+            </a>
+
+            <a href="/ALLE_INHALTE_INTEGRIERT.html" class="nav-card">
+                <span class="icon">📦</span>
+                <h2>Complete Integration</h2>
+                <p>Vollständige Content Integration aller 5 Repositories: INTERMEDIALGALAKTIC, DACHXCFEES, CaZaR & mehr.</p>
+                <span class="status-badge">✅ COMPLETE</span>
+            </a>
+
+            <a href="/" class="nav-card">
+                <span class="icon">🏠</span>
+                <h2>Next.js Homepage</h2>
+                <p>Ghost-Free Enterprise System - Live Metrics, System Health, DancingText & Animated GlowCards.</p>
+                <span class="status-badge">✅ LIVE</span>
+            </a>
+
+            <a href="/integration" class="nav-card">
+                <span class="icon">🔗</span>
+                <h2>Integration Page</h2>
+                <p>Policy & Compliance Integration mit collapsible Sections für UNCITRAL & Hybrid Clauses.</p>
+                <span class="status-badge">✅ ACTIVE</span>
+            </a>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center; color: rgba(252, 246, 186, 0.6); font-size: 0.9rem;">
+            <p>🔒 Protected by Enterprise-Grade Security</p>
+            <p>LCL Powered by Daniel Pohl | Vision from CEO - CO-CEO</p>
+            <p style="margin-top: 10px;">Server Status: <span style="color: #0f0; font-weight: bold;">✅ ONLINE</span> | Port: 3000</p>
+        </div>
+    </div>
+</body>
+</html>

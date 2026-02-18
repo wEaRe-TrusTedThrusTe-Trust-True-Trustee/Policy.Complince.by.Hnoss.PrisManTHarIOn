@@ -63,6 +63,17 @@ export default function HomePage() {
         </div>
       )}
 
+      <a 
+        href="/urls-archive.html"
+        className="fixed top-6 right-6 z-50 px-8 py-4 bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-600 text-black font-bold rounded-lg shadow-2xl hover:shadow-yellow-500/50 hover:scale-105 transition-all duration-300 border-2 border-yellow-300"
+        style={{
+          background: 'linear-gradient(135deg, #bf953f, #fcf6ba, #b38728)',
+          boxShadow: '0 0 30px rgba(191, 149, 63, 0.6), inset 0 0 20px rgba(252, 246, 186, 0.3)',
+        }}
+      >
+        🔐 LOGIN
+      </a>
+
       <main className="relative z-20 max-w-7xl mx-auto px-6 py-12">
         <section className="text-center mb-16 pt-8">
           <DancingText 

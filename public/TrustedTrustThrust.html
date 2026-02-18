@@ -474,6 +474,154 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
 
         .timestamp { color: var(--gold-light); font-size: 0.9rem; letter-spacing: 3px; font-weight: bold; display: block; margin-bottom: 10px; }
 
+        /* RAINBOW AURA NAVIGATION BUTTONS */
+        .rainbow-nav-container {
+            margin-top: 80px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.85), rgba(0, 15, 35, 0.9));
+            border: 2px solid rgba(191, 149, 63, 0.4);
+            border-radius: 12px;
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                        0 0 60px rgba(191, 149, 63, 0.2),
+                        inset 0 0 40px rgba(191, 149, 63, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rainbow-nav-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, 
+                rgba(255, 0, 0, 0.1) 0%,
+                rgba(255, 255, 0, 0.1) 20%,
+                rgba(0, 255, 0, 0.1) 40%,
+                rgba(0, 255, 255, 0.1) 60%,
+                rgba(0, 0, 255, 0.1) 80%,
+                rgba(255, 0, 255, 0.1) 100%,
+                transparent);
+            animation: rainbowRotate 15s linear infinite;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        @keyframes rainbowRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .nav-title-header {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            text-align: center;
+            background: linear-gradient(135deg, #c0c0c0, #fcf6ba, #bf953f, #c0c0c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rainbow-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rainbow-nav-btn {
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #c0c0c0 0%, #fcf6ba 25%, #bf953f 50%, #b38728 75%, #c0c0c0 100%);
+            background-size: 200% 200%;
+            color: #000;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            border-radius: 8px;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 4px 16px rgba(191, 149, 63, 0.3),
+                        inset 0 0 20px rgba(252, 246, 186, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rainbow-nav-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                rgba(255, 0, 0, 0.3),
+                rgba(255, 255, 0, 0.3),
+                rgba(0, 255, 0, 0.3),
+                rgba(0, 255, 255, 0.3),
+                rgba(0, 0, 255, 0.3),
+                rgba(255, 0, 255, 0.3),
+                rgba(255, 0, 0, 0.3));
+            animation: rainbowSpin 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .rainbow-nav-btn:hover::before {
+            opacity: 0.6;
+        }
+
+        @keyframes rainbowSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .rainbow-nav-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-position: 100% 100%;
+            box-shadow: 0 8px 32px rgba(191, 149, 63, 0.6),
+                        0 0 40px rgba(252, 246, 186, 0.4),
+                        inset 0 0 30px rgba(252, 246, 186, 0.5);
+            border-color: #fcf6ba;
+        }
+
+        .rainbow-nav-btn .nav-icon {
+            font-size: 1.4rem;
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+            position: relative;
+            z-index: 1;
+        }
+
+        .rainbow-nav-btn .nav-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .rainbow-nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .rainbow-nav-btn {
+                font-size: 0.85rem;
+                padding: 16px 24px;
+            }
+        }
+
         #integrity-stamp {
             margin-top: 100px;
             padding: 40px;
@@ -1262,6 +1410,41 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
                     <span style="color:#ff4d4d; font-size: 0.8rem; font-weight: bold; margin-top: 20px; display: block;">
                         DOKUMENTEN-STATUS: GIGANTISCH | UNVERÄNDERLICH | EWIG
                     </span>
+                </div>
+
+                <!-- RAINBOW AURA NAVIGATION -->
+                <div class="rainbow-nav-container">
+                    <h3 class="nav-title-header">🌈 Navigiere das Universum 🌈</h3>
+                    <div class="rainbow-nav-grid">
+                        <a href="/PolicyCompliance.html" class="rainbow-nav-btn">
+                            <span class="nav-icon">⚖️</span>
+                            <span class="nav-text">Policy & Compliance</span>
+                        </a>
+                        <a href="/Arbitration.html" class="rainbow-nav-btn">
+                            <span class="nav-icon">🏛️</span>
+                            <span class="nav-text">Arbitration</span>
+                        </a>
+                        <a href="/urls-archive.html" class="rainbow-nav-btn">
+                            <span class="nav-icon">🔐</span>
+                            <span class="nav-text">Login & URLs</span>
+                        </a>
+                        <a href="/ALLE_INHALTE_INTEGRIERT.html" class="rainbow-nav-btn">
+                            <span class="nav-icon">📦</span>
+                            <span class="nav-text">Complete Integration</span>
+                        </a>
+                        <a href="/Dashboard.html" class="rainbow-nav-btn">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                        <a href="/" class="rainbow-nav-btn">
+                            <span class="nav-icon">💻</span>
+                            <span class="nav-text">Next.js App</span>
+                        </a>
+                        <a href="/integration" class="rainbow-nav-btn">
+                            <span class="nav-icon">🔗</span>
+                            <span class="nav-text">Integration</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
