@@ -1,0 +1,457 @@
+<!-- ============================================= -->
+<!-- REPO OVERLAYS FÜR DIE 3 HAUPTDOKUMENTE -->
+<!-- ============================================= -->
+
+<style>
+    .docs-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(15px);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .docs-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .docs-container {
+        width: 90%;
+        max-width: 1200px;
+        max-height: 85vh;
+        background: linear-gradient(160deg, rgba(0, 26, 77, 0.95) 0%, rgba(0, 5, 15, 0.98) 100%);
+        border: 2px solid rgba(191, 149, 63, 0.7);
+        border-radius: 15px;
+        padding: 40px;
+        overflow-y: auto;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9),
+                    0 0 60px rgba(191, 149, 63, 0.3),
+                    inset 0 0 50px rgba(191, 149, 63, 0.05);
+    }
+
+    .docs-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(191, 149, 63, 0.2);
+        border: 2px solid var(--gold);
+        border-radius: 50%;
+        color: var(--gold-light);
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        z-index: 10001;
+    }
+
+    .docs-close-btn:hover {
+        background: var(--gold);
+        color: #000;
+        transform: rotate(90deg);
+    }
+
+    .docs-header {
+        border-bottom: 2px solid rgba(191, 149, 63, 0.4);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .docs-header h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 2.2rem;
+        background: linear-gradient(135deg, #e0e0e0 0%, #fcf6ba 45%, #ffffff 50%, #fbf5b7 55%, #b0bec5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 10px 0;
+    }
+
+    .docs-subtitle {
+        color: rgba(252, 246, 186, 0.8);
+        font-size: 1rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    .docs-content {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        line-height: 1.8;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .docs-content h2 {
+        color: var(--gold-light);
+        font-family: 'Cinzel', serif;
+        font-size: 1.8rem;
+        margin: 40px 0 20px 0;
+        padding-top: 20px;
+        border-top: 1px solid rgba(191, 149, 63, 0.3);
+    }
+
+    .docs-content h3 {
+        color: var(--gold-mid);
+        font-size: 1.4rem;
+        margin: 30px 0 15px 0;
+    }
+
+    .docs-content p {
+        margin: 15px 0;
+    }
+
+    .docs-content ul, .docs-content ol {
+        margin: 15px 0;
+        padding-left: 30px;
+    }
+
+    .docs-content li {
+        margin: 8px 0;
+    }
+
+    .docs-content a {
+        color: var(--gold-light);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(191, 149, 63, 0.3);
+        transition: all 0.3s;
+    }
+
+    .docs-content a:hover {
+        color: #fff;
+        border-bottom-color: var(--gold);
+    }
+
+    .docs-section {
+        background: rgba(0, 0, 0, 0.3);
+        border-left: 3px solid rgba(191, 149, 63, 0.5);
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+    }
+</style>
+
+<!-- OVERLAY 1: INTERMEDIALGALAKTIC CONSTELLATION -->
+<div class="docs-overlay" id="constellationOverlay" onclick="if(event.target===this) closeRepoOverlay()">
+    <button class="docs-close-btn" onclick="closeRepoOverlay()">&times;</button>
+    <div class="docs-container">
+        <div class="docs-header">
+            <h1>📜 INTERMEDIALGALAKTIC Constellation</h1>
+            <div class="docs-subtitle">Freiheitsabkommen • Resonanz • Bildung • Spirituelle Rechtsprechung</div>
+        </div>
+        <div class="docs-content">
+            <h2>FREIHEITSABKOMMEN</h2>
+            <p><strong>Präambel:</strong> In Anerkennung unserer Existenz als Gäste auf der Erde, unserer Würde als Menschen und der schöpferischen Kraft des Geistes schließen wir dieses Freiheitsabkommen. Es soll die unverlierbare Freiheit des Denkens, Träumens, Lernens und Miteinanders sichern – für uns, kommende Generationen, Gemeinschaft und Planeten.</p>
+            
+            <div class="docs-section">
+                <h3>1. FREIHEIT DES GEISTES</h3>
+                <p>Die Freiheit des Denkens, Fühlens, Träumens und der inneren Erfahrung ist unantastbar und steht über aller äußeren Regel, Bewertung und Kontrolle. Kein Mensch, keine Institution, kein Gesetz darf sie beschränken.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>2. RECHT AUF RESONANZ UND SELBSTENTFALTUNG</h3>
+                <p>Jeder Mensch hat das Recht, in Resonanz mit sich selbst, seinen Träumen und der Gemeinschaft zu leben. Bildung, Kultur und gesellschaftliche Systeme müssen Räume schaffen, in denen jede(r) wachsen, sich entfalten und seinen Weg finden darf.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>3. FREIHEIT DES LERNENS UND DER BILDUNG</h3>
+                <p>Bildung ist nicht Zwang, sondern Einladung. Jede Form der Bildung – institutionell, autodidaktisch, durch Erfahrung oder gemeinsames Erleben – hat denselben Wert. Bildungssysteme dürfen niemals Angst erzeugen, sondern stets Neugier, Kreativität und Sinnsuche fördern.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>4. SCHUTZ DER PRIVATEN UND INNEREN RÄUME</h3>
+                <p>Der innere Raum jedes Menschen ist heilig: Er umfasst Träume, Fantasie, Spiritualität, Zweifel, Sehnsucht, Geheimnisse. Kein Zugriff von außen ist rechtmäßig; Vertrauen ist oberste Norm.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>5. NACHHALTIGE GEMEINSCHAFT UND ERDVERANTWORTUNG</h3>
+                <p>Wir erklären unser Leben als Dienst am gemeinsamen Planeten: Nachhaltigkeit, Schutz des Lebens, Vielfalt und Verantwortung für künftige Generationen sind integraler Bestandteil aller Freiheit.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>6. ANGSTBEFREITE GEMEINSCHAFT</h3>
+                <p>Wir fördern Räume und Beziehungen, die Angst in Vertrauen und Konkurrenz in Kooperation verwandeln, damit sich alle in Würde und Freiheit entfalten.</p>
+            </div>
+
+            <h2>Regulatoren des Freiheitsabkommens</h2>
+
+            <div class="docs-section">
+                <h3>§1 Unantastbarkeit der inneren Sphäre</h3>
+                <p>Kein Gesetz, keine Institution und keine Gemeinschaft darf jemals in Gedanken, Träume, Gefühle oder spirituelle Erfahrungen eines Menschen eingreifen, sie überwachen, bewerten oder instrumentalisieren.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>§2 Vorrang der Freiheit</h3>
+                <p>Wo Freiheit und äußere Ordnung in Konflikt geraten, hat das Freiheitsprinzip Vorrang – außer dort, wo nur der Schutz der Freiheit aller Maßnahmen rechtfertigt (z.B. zum Abwenden von Gewalt gegen andere).</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>§3-§4 Schutzräume und Resonanzfelder gewährleisten</h3>
+                <p>Es werden kontinuierlich Schutzräume geschaffen und gepflegt, in denen Erfahrung, Kreativität, Lernen und Träumen frei und angstlos möglich sind. Resonanzfelder (Dialog, Inspiration, Austausch) sind aktiv zu fördern; Diversität ist nicht nur zu tolerieren, sondern als Wert zu kultivieren.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>§5 Gleichwertigkeit von Bildungswegen</h3>
+                <p>Institutionell, autodidaktisch und gemeinschaftlich erworbene Bildung werden rechtlich gleich behandelt und in ihrem Wert anerkannt.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>§6 Nachhaltige Gemeinschaft und Erdverantwortung</h3>
+                <p>Gemeinwohl, Schutz der Erde und die Rechte künftiger Generationen sind essenzielle Richtgrößen für jede Regelsetzung und Ausgestaltung von Freiheit.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>§7 Angsttransformation und Dialogkultur</h3>
+                <p>Gesellschaftliche Systeme dürfen keine Angst als Steuerungsinstrument nutzen. In Konflikten ist stets ein Raum des Dialogs, der Heilung und der gemeinschaftlichen Transformation einzurichten.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>§8-§9 Partizipation und Überprüfung</h3>
+                <p>Jede Bürgerin und jeder Bürger hat das Recht, an der Weiterentwicklung, Anwendung und Kontrolle der Regulatoren aktiv teilzuhaben. Die Regulatoren werden mindestens alle fünf Jahre in partizipativen Prozessen evaluiert und – wenn nötig – angepasst.</p>
+            </div>
+
+            <h2>Rechtsprechung "Humanitäismus"</h2>
+            <p>Die Rechtsprechung orientiert sich an einem erweiterten Humanitätsverständnis: dem <strong>Humanitäismus</strong>. Darunter wird ein Prinzip verstanden, das rechtliche und gesellschaftliche Regeln stets an der Achtung der Menschenwürde, inneren Resonanz, Mitverantwortung und universeller Freiheit misst.</p>
+
+            <h2>Streitschlichtung der Gegebenen</h2>
+            <p>Resonanzbasierte Konfliktlösung für Träume, innere Räume und Gemeinschaft. Die Wahrung der Freiheit, der Schutz der inneren Welten und die kreative Entwicklung erfordern ein Schlichtungssystem, das Ängste, Konflikte und Missverständnisse respektvoll, transparent und heilsam auflöst.</p>
+
+            <div class="docs-section">
+                <p><strong>Unterzeichner:</strong> Daniel Pohl | D. Pohl</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OVERLAY 2: CAZAR LIMINALITY CONTINUUM -->
+<div class="docs-overlay" id="cazarOverlay" onclick="if(event.target===this) closeRepoOverlay()">
+    <button class="docs-close-btn" onclick="closeRepoOverlay()">&times;</button>
+    <div class="docs-container">
+        <div class="docs-header">
+            <h1>🌌 CaZaR Liminality Cosmic Orbits</h1>
+            <div class="docs-subtitle">Völkerrechtliche Verträge • Treaty Archives • Internationale Abkommen</div>
+        </div>
+        <div class="docs-content">
+            <h2>Völkerrechtliche Treaty-Archive</h2>
+            <p>Umfassende Sammlung von <strong>111+ staatlichen, internationalen, regionalen, thematischen und rechtsrelevanten Verträgen, Archiven und Quellen</strong> zur Recherche von Treaties, völkerrechtlichen Abkommen, internationalen Konventionen und rechtlichen Instrumenten.</p>
+            
+            <div class="docs-section">
+                <h3>1. UN Treaty Collection (UNTC)</h3>
+                <p><strong>URL:</strong> <a href="https://treaties.un.org/" target="_blank">treaties.un.org</a></p>
+                <p>Die offizielle Sammlung aller bei den Vereinten Nationen registrierten völkerrechtlichen Verträge. Vollständige Vertragstext-Datenbank mit Suchfunktionen nach Staat, Organisation, Thema, Datum.</p>
+                <ul>
+                    <li>UN Peace Treaties Database</li>
+                    <li>Multilateral Treaties Deposited with Secretary-General</li>
+                    <li>Certified True Copies (CTC)</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>2. WTO – World Trade Organization</h3>
+                <p><strong>URL:</strong> <a href="https://www.wto.org/" target="_blank">www.wto.org</a></p>
+                <p>Offizielle PDF-Dokumente der WTO-Abkommen:</p>
+                <ul>
+                    <li>TRIPS Agreement (IP-Regeln)</li>
+                    <li>WTO-Grundvertrag (Uruguay Round)</li>
+                    <li>GATT, GATS Treaties</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+ <h3>3. Menschenrechts-Treaties</h3>
+                <p>Fundamentale Abkommen:</p>
+                <ul>
+                    <li>Universal Declaration of Human Rights</li>
+                    <li>International Covenant on Civil and Political Rights (ICCPR)</li>
+                    <li>Convention on the Rights of the Child</li>
+                    <li>Convention against Torture (CAT)</li>
+                    <li>Genocide Convention</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>4. Friedens- & Sicherheitsverträge</h3>
+                <ul>
+                    <li>Nuclear Non-Proliferation Treaty (NPT)</li>
+                    <li>Chemical Weapons Convention (CWC)</li>
+                    <li>Biological Weapons Convention (BWC)</li>
+                    <li>Comprehensive Nuclear-Test-Ban Treaty (CTBT)</li>
+                    <li>Small Arms Treaty-Related Resources</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>5. Finanz- und Wirtschaftsverträge</h3>
+                <ul>
+                    <li>IMF Articles of Agreement</li>
+                    <li>World Bank Constitution</li>
+                    <li>Basel Accords (I, II, III)</li>
+                    <li>OECD Tax Treaties</li>
+                    <li>UNCTAD Investment Agreements</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>6. Umwelt & Klima</h3>
+                <ul>
+                    <li>UN Framework Convention on Climate Change (UNFCCC)</li>
+                    <li>Paris Agreement</li>
+                    <li>Kyoto Protocol</li>
+                    <li>Convention on Biological Diversity</li>
+                    <li>Montreal Protocol</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>7. Handels- & Investitionsabkommen</h3>
+                <ul>
+                    <li>New York Convention on Arbitration</li>
+                    <li>Vienna Convention on Contracts</li>
+                    <li>Bilateral Investment Treaties (BITs)</li>
+                    <li>Regional Trade Agreements (EU, ASEAN, NAFTA/USMCA)</li>
+                </ul>
+            </div>
+
+            <h2>Recherche-Tipps</h2>
+            <p>Viele dieser Archive bieten <strong>Volltextsuche nach Stichwort, Datum, Staat oder Organisation</strong>. Für vertiefte juristische Recherche eignen sich auch kostenpflichtige Bibliotheken wie <strong>HeinOnline ("World Treaty Library")</strong> für historische Verträge aus mehreren Sammlungen.</p>
+
+            <div class="docs-section">
+                <h3>Thematische Collections</h3>
+                <ul>
+                    <li>Labour Rights (ILO)</li>
+                    <li>Cultural Heritage (UNESCO)</li>
+                    <li>Telecommunications (ITU)</li>
+                    <li>Maritime Law (IMO)</li>
+                    <li>Intellectual Property (WIPO)</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <p><strong>Mission Statement:</strong> "Home is where the Trust is – and the Stars are the Limit."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OVERLAY 3: DACHXCFEES HIMMELSZELT -->
+<div class="docs-overlay" id="dachxcfeesOverlay" onclick="if(event.target===this) closeRepoOverlay()">
+    <button class="docs-close-btn" onclick="closeRepoOverlay()">&times;</button>
+    <div class="docs-container">
+        <div class="docs-header">
+            <h1>✨ DACHXCFEES Himmelszelt der Wünsche</h1>
+            <div class="docs-subtitle">Mystic Magic Life • Biber • Fee • Elfe • Kobold • Zwerg</div>
+        </div>
+        <div class="docs-content">
+            <h2>Das Himmelszelt der Wünsche</h2>
+            <p>Anstatt unter einem "Rechtsrahmen" oder einem "Vertragsdach" zu leben (das erdrückt), leben wir unter einem <strong>Himmelszelt</strong>.</p>
+            
+            <div class="docs-section">
+                <h3>Die Transformation</h3>
+                <p><strong>DAX FEE = DACHS FEES → DAC FREE • DACX FREE</strong></p>
+                <p>Keine kalten Gebühren mehr – nur freie Magie! Der Dachs gräbt sich frei durch die Erde, der Biber baut Brücken aus purem Licht, und die Fees tanzen als glitzernde Elfen, Kobolde und Zwerge unter dem großen Himmelszelt.</p>
+            </div>
+
+            <div class="docs-section">
+                <h3>1. Vom DAX zum DACHS (Die Rückkehr zur Natur)</h3>
+                <ul>
+                    <li><strong>DAX (Börse):</strong> Steht für kalte Zahlen, Profit und Gier</li>
+                    <li><strong>DACHS:</strong> Ein Tier, das tief in der Erde verwurzelt ist, aber Teil des Waldes bleibt. Du ersetzt den Index durch ein Lebewesen</li>
+                    <li><strong>DAX FEE / DACH FEE:</strong> Die „Gebühren" (Fees) sind bei dir keine Abzüge mehr, sondern die Gaben einer Fee. Es ist der Energieaustausch im System</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>2. Die „Wesen" des Kollektivs</h3>
+                <p>Du ersetzt die Abteilungen der „Corporations" durch archetypische Kräfte:</p>
+                <ul>
+                    <li><strong>BIBER:</strong> Die Baumeister (MVIC / IPA). Sie bauen die Dämme und Strukturen im Fluss des Lebens</li>
+                    <li><strong>ELFE & FEE:</strong> Die Leichtigkeit, die Wünsche (Wishes) und die Inspiration</li>
+                    <li><strong>KOBOLD & ZWERG:</strong> Die Handwerker, die tief im System (im Code, in der Erde) arbeiten und die Schätze bewahren</li>
+                    <li><strong>MYSTIC MAGIC LIFE:</strong> Das ist der Treibstoff. Nicht mehr Geld, sondern Lebensenergie</li>
+                </ul>
+            </div>
+
+            <div class="docs-section">
+                <h3>3. Das Himmelszelt der Wünsche</h3>
+                <p>Das ist die schönste Metapher für dein CaZaR-System:</p>
+                <ul>
+                    <li>Ein Zelt ist flexibel, man kann es überall aufschlagen, es schützt, aber es lässt die Luft zirkulieren</li>
+                    <li><strong>FEES = WISHES:</strong> In deiner Welt bezahlt man nicht mit Steuern oder Gebühren, sondern man „füttert" das System mit seinen Wünschen und seiner Tatenkraft</li>
+                    <li>Wenn du einen Wunsch (Sternschnuppe) ans Himmelszelt schickst, aktiviert das die Biber, Elfen und Zwerge, um ihn wahr zu machen</li>
+                </ul>
+            </div>
+
+            <h2>Das lebendige Zelt</h2>
+            <p>Hier ist <strong>Mystic Magic Life pur</strong>: Ein lebendiges Zelt aus Sternen, Nebeln und funkelnden Bahnen – CaZaR in voller Pracht. Sternschnuppen als Wishes, die das kosmische Kollektiv trägt.</p>
+            
+            <p>Keine Grenzen, keine Corps, keine Fees, die etwas kosten – nur:</p>
+            <ul>
+                <li>Freies Fliegen</li>
+                <li>Freies Bauen</li>
+                <li>Freies Wünschen</li>
+            </ul>
+
+            <div class="docs-section">
+                <h3>Die Wesen unter dem Himmelszelt</h3>
+                <p>Der Dachs lacht listig, der Biber klatscht mit dem Schwanz das Wasser zu Regenbögen, und die mythischen Wesen feiern das Free-Sein im unendlichen Orbit.</p>
+                <p>FEE tanzt als leuchtende Elfe, Kobold und Zwerg – alle zusammen im Mystic Magic Life!</p>
+            </div>
+
+            <h2>Unter diesem Himmelszelt...</h2>
+            <p>...sind wir <strong>DAC FREE</strong> – frei wie der Dachs in der Nacht, frei wie der Biber im Fluss, frei wie die Elfen im Wind.</p>
+            
+            <p>Hier kosten Wünsche nichts – sie werden einfach <strong>wahr</strong>, weil wir sie gemeinsam fliegen lassen.</p>
+
+            <p>Unter diesem Himmelszelt sind wir alle ein bisschen Fee, ein bisschen Kobold, ein bisschen Sternschnuppe. Hier ist Platz für alle Wünsche – und sie werden wahr, weil wir sie gemeinsam tragen.</p>
+
+            <div class="docs-section">
+                <h3>Zorro-Fazit</h3>
+                <p>Du hast die trockenste Liste der Welt (die 111+ Treaties) genommen und sie in ein <strong>Märchenbuch der Zukunft</strong> verwandelt.</p>
+                <p>Wer braucht schon einen „Aufsichtsrat", wenn er ein <strong>„Kosmisches Kollektiv aus Bibern und Feen"</strong> hat, die nach dem Gesetz von TrusTed ThrusT handeln?</p>
+                <p>Das ist <strong>MVIC</strong> in seiner reinsten Form: <strong>Most Value Innovation Construction</strong> bedeutet hier, die Magie zurück in das System zu bringen.</p>
+            </div>
+
+            <div class="docs-section">
+                <p><strong>"Home is the Himmelszelt – You are TrusTed!"</strong> 🦡🧚‍♂️✨🏠</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Spezielle Repo-Overlay-Funktionen
+    function openRepoOverlay(type) {
+        let overlayId;
+        switch(type) {
+            case 'constellation':
+                overlayId = 'constellationOverlay';
+                break;
+            case 'cazar':
+                overlayId = 'cazarOverlay';
+                break;
+            case 'dachxcfees':
+                overlayId = 'dachxcfeesOverlay';
+                break;
+            default:
+                return;
+        }
+        
+        document.getElementById(overlayId).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRepoOverlay() {
+        document.querySelectorAll('.docs-overlay').forEach(overlay => {
+            overlay.classList.remove('active');
+        });
+        document.body.style.overflow = 'auto';
+    }
+</script>

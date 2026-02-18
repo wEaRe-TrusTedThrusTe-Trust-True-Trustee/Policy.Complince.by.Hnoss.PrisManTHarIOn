@@ -1,0 +1,558 @@
+{
+  "total_urls": 50,
+  "statistics": {
+    "github_repos": 4,
+    "github_assets": 5,
+    "lovable_projects": 3,
+    "supabase_databases": 1,
+    "badges": 18,
+    "discord_servers": 2,
+    "package_registries": 4,
+    "documentation_sites": 3,
+    "infrastructure_tools": 6
+  },
+  "by_type": {
+    "documentation": [
+      "https://learn.microsoft.com/en-us/agent-framework/",
+      "https://dotnet.microsoft.com/",
+      "https://kubernetes.io/"
+    ],
+    "badge": [
+      "https://img.shields.io/pypi/v/agent-framework",
+      "https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white",
+      "https://img.shields.io/nuget/v/Microsoft.Agents.AI",
+      "https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge",
+      "https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white",
+      "https://img.shields.io/badge/MS%20Learn-Documentation-blue",
+      "https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox",
+      "https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge",
+      "https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white",
+      "https://img.shields.io/badge/Docker-Ready-blue.svg",
+      "https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white",
+      "https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge",
+      "https://img.shields.io/badge/License-MIT-yellow.svg",
+      "https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white",
+      "https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white",
+      "https://img.shields.io/badge/AI-Local-green.svg",
+      "https://img.shields.io/badge/HashiCorp-Vault-purple.svg",
+      "https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white"
+    ],
+    "lovable": [
+      "https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7",
+      "https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID",
+      "https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272"
+    ],
+    "registry": [
+      "https://hub.docker.com/",
+      "https://www.nuget.org/profiles/MicrosoftAgentFramework/",
+      "https://pypi.org/project/agent-framework/",
+      "https://docker.com"
+    ],
+    "github-asset": [
+      "https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322",
+      "https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551",
+      "https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930",
+      "https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6",
+      "https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261"
+    ],
+    "license": [
+      "https://opensource.org/licenses/MIT"
+    ],
+    "supabase": [
+      "https://xblewwjjqvwerypvttfh.supabase.co"
+    ],
+    "github-repo": [
+      "https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git",
+      "https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L",
+      "https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-",
+      "https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git"
+    ],
+    "infrastructure": [
+      "https://portainer.io/",
+      "https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/",
+      "https://vaultproject.io",
+      "https://ollama.ai"
+    ],
+    "reference": [
+      "https://universal-values.org",
+      "https://hnoss-ambassador.org",
+      "https://st-daniel-pohl.org"
+    ],
+    "discord": [
+      "https://discord.gg/b5zjErwbQM",
+      "https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat"
+    ],
+    "platforms": [
+      "https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev",
+      "https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com"
+    ]
+  },
+  "by_category": {
+    "documentation": [
+      "https://learn.microsoft.com/en-us/agent-framework/",
+      "https://img.shields.io/pypi/v/agent-framework",
+      "https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white",
+      "https://opensource.org/licenses/MIT",
+      "https://img.shields.io/nuget/v/Microsoft.Agents.AI",
+      "https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge",
+      "https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white",
+      "https://img.shields.io/badge/MS%20Learn-Documentation-blue",
+      "https://universal-values.org",
+      "https://hnoss-ambassador.org",
+      "https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox",
+      "https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge",
+      "https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white",
+      "https://img.shields.io/badge/Docker-Ready-blue.svg",
+      "https://dotnet.microsoft.com/",
+      "https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white",
+      "https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge",
+      "https://img.shields.io/badge/License-MIT-yellow.svg",
+      "https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white",
+      "https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white",
+      "https://img.shields.io/badge/AI-Local-green.svg",
+      "https://img.shields.io/badge/HashiCorp-Vault-purple.svg",
+      "https://st-daniel-pohl.org",
+      "https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white"
+    ],
+    "platforms": [
+      "https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7",
+      "https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID",
+      "https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272",
+      "https://discord.gg/b5zjErwbQM",
+      "https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev",
+      "https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat",
+      "https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com"
+    ],
+    "infrastructure": [
+      "https://hub.docker.com/",
+      "https://xblewwjjqvwerypvttfh.supabase.co",
+      "https://portainer.io/",
+      "https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/",
+      "https://kubernetes.io/",
+      "https://docker.com"
+    ],
+    "creative": [
+      "https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322",
+      "https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551",
+      "https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930",
+      "https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6",
+      "https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261"
+    ],
+    "devtools": [
+      "https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git",
+      "https://www.nuget.org/profiles/MicrosoftAgentFramework/",
+      "https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L",
+      "https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-",
+      "https://pypi.org/project/agent-framework/",
+      "https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git"
+    ],
+    "security": [
+      "https://vaultproject.io"
+    ],
+    "ai": [
+      "https://ollama.ai"
+    ]
+  },
+  "all_urls": [
+    {
+      "url": "https://learn.microsoft.com/en-us/agent-framework/",
+      "type": "documentation",
+      "category": "documentation",
+      "domain": "learn.microsoft.com",
+      "description": "Microsoft Documentation",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://img.shields.io/pypi/v/agent-framework",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7",
+      "type": "lovable",
+      "category": "platforms",
+      "domain": "lovable.dev",
+      "description": "Lovable.dev Project",
+      "context": "18. magic-code-books-main"
+    },
+    {
+      "url": "https://hub.docker.com/",
+      "type": "registry",
+      "category": "infrastructure",
+      "domain": "hub.docker.com",
+      "description": "Docker Hub",
+      "context": "5. portainer-infrastructure-templates-main"
+    },
+    {
+      "url": "https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322",
+      "type": "github-asset",
+      "category": "creative",
+      "domain": "github.com",
+      "description": "GitHub Asset/Image",
+      "context": "3. CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4)"
+    },
+    {
+      "url": "https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "5. portainer-infrastructure-templates-main"
+    },
+    {
+      "url": "https://opensource.org/licenses/MIT",
+      "type": "license",
+      "category": "documentation",
+      "domain": "opensource.org",
+      "description": "Open Source License",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://img.shields.io/nuget/v/Microsoft.Agents.AI",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "4. Proxmox-Runic-Version-Testpilot-main"
+    },
+    {
+      "url": "https://xblewwjjqvwerypvttfh.supabase.co",
+      "type": "supabase",
+      "category": "infrastructure",
+      "domain": "xblewwjjqvwerypvttfh.supabase.co",
+      "description": "Supabase Database",
+      "context": "20. C3Yz3ye2-main (1)"
+    },
+    {
+      "url": "https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551",
+      "type": "github-asset",
+      "category": "creative",
+      "domain": "github.com",
+      "description": "GitHub Asset/Image",
+      "context": "3. CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4)"
+    },
+    {
+      "url": "https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git",
+      "type": "github-repo",
+      "category": "devtools",
+      "domain": "github.com",
+      "description": "GitHub Repository",
+      "context": "12. S4m3T1m3scR022---Gemeinsam-sT4b1L-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://portainer.io/",
+      "type": "infrastructure",
+      "category": "infrastructure",
+      "domain": "portainer.io",
+      "description": "Portainer",
+      "context": "5. portainer-infrastructure-templates-main"
+    },
+    {
+      "url": "https://www.nuget.org/profiles/MicrosoftAgentFramework/",
+      "type": "registry",
+      "category": "devtools",
+      "domain": "www.nuget.org",
+      "description": "NuGet Package Registry",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930",
+      "type": "github-asset",
+      "category": "creative",
+      "domain": "github.com",
+      "description": "GitHub Asset/Image",
+      "context": "3. CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4)"
+    },
+    {
+      "url": "https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID",
+      "type": "lovable",
+      "category": "platforms",
+      "domain": "lovable.dev",
+      "description": "Lovable.dev Project",
+      "context": "25. hello-hug-wave-59-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/MS%20Learn-Documentation-blue",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://universal-values.org",
+      "type": "reference",
+      "category": "documentation",
+      "domain": "universal-values.org",
+      "description": "Universal Values",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://hnoss-ambassador.org",
+      "type": "reference",
+      "category": "documentation",
+      "domain": "hnoss-ambassador.org",
+      "description": "HNOSS Ambassador Organization",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "4. Proxmox-Runic-Version-Testpilot-main"
+    },
+    {
+      "url": "https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L",
+      "type": "github-repo",
+      "category": "devtools",
+      "domain": "github.com",
+      "description": "GitHub Repository",
+      "context": "12. S4m3T1m3scR022---Gemeinsam-sT4b1L-main"
+    },
+    {
+      "url": "https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/",
+      "type": "infrastructure",
+      "category": "infrastructure",
+      "domain": "europea-un-world-lfx-peace-eu-gov-int.netlify.app",
+      "description": "Netlify Deployment",
+      "context": "12. S4m3T1m3scR022---Gemeinsam-sT4b1L-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "4. Proxmox-Runic-Version-Testpilot-main"
+    },
+    {
+      "url": "https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272",
+      "type": "lovable",
+      "category": "platforms",
+      "domain": "lovable.dev",
+      "description": "Lovable.dev Project",
+      "context": "17. ohm-resonance-link-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/Docker-Ready-blue.svg",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://dotnet.microsoft.com/",
+      "type": "documentation",
+      "category": "documentation",
+      "domain": "dotnet.microsoft.com",
+      "description": "Microsoft Documentation",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://vaultproject.io",
+      "type": "infrastructure",
+      "category": "security",
+      "domain": "vaultproject.io",
+      "description": "HashiCorp Vault",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6",
+      "type": "github-asset",
+      "category": "creative",
+      "domain": "github.com",
+      "description": "GitHub Asset/Image",
+      "context": "🏷️ AI & TECHNOLOGY (28 Repos)"
+    },
+    {
+      "url": "https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "5. portainer-infrastructure-templates-main"
+    },
+    {
+      "url": "https://discord.gg/b5zjErwbQM",
+      "type": "discord",
+      "category": "platforms",
+      "domain": "discord.gg",
+      "description": "Discord Server/Badge",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-",
+      "type": "github-repo",
+      "category": "devtools",
+      "domain": "github.com",
+      "description": "GitHub Repository",
+      "context": "🏷️ DIGITAL PLATFORMS (1 Repos)"
+    },
+    {
+      "url": "https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev",
+      "type": "platforms",
+      "category": "platforms",
+      "domain": "1758662308384-68d0afb584eff49061729ea8.onbiela.dev",
+      "description": "Onbiela Platform",
+      "context": "20. C3Yz3ye2-main (1)"
+    },
+    {
+      "url": "https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "4. Proxmox-Runic-Version-Testpilot-main"
+    },
+    {
+      "url": "https://kubernetes.io/",
+      "type": "documentation",
+      "category": "infrastructure",
+      "domain": "kubernetes.io",
+      "description": "Kubernetes Documentation",
+      "context": "5. portainer-infrastructure-templates-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/License-MIT-yellow.svg",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://pypi.org/project/agent-framework/",
+      "type": "registry",
+      "category": "devtools",
+      "domain": "pypi.org",
+      "description": "Python Package Index",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://docker.com",
+      "type": "registry",
+      "category": "infrastructure",
+      "domain": "docker.com",
+      "description": "Docker Hub",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git",
+      "type": "github-repo",
+      "category": "devtools",
+      "domain": "github.com",
+      "description": "GitHub Repository",
+      "context": "24. 4a3C5u2S7T1i3C-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/AI-Local-green.svg",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261",
+      "type": "github-asset",
+      "category": "creative",
+      "domain": "github.com",
+      "description": "GitHub Asset/Image",
+      "context": "2. INTERMEDIALGALAKTICConstellation-main (1)"
+    },
+    {
+      "url": "https://ollama.ai",
+      "type": "infrastructure",
+      "category": "ai",
+      "domain": "ollama.ai",
+      "description": "Ollama AI",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://img.shields.io/badge/HashiCorp-Vault-purple.svg",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "3. EU-UNION-AI-PACT-VS-Code-Pipelines-master"
+    },
+    {
+      "url": "https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat",
+      "type": "discord",
+      "category": "platforms",
+      "domain": "dcbadge.limes.pink",
+      "description": "Discord Server/Badge",
+      "context": "2. agent-framework-main"
+    },
+    {
+      "url": "https://st-daniel-pohl.org",
+      "type": "reference",
+      "category": "documentation",
+      "domain": "st-daniel-pohl.org",
+      "description": "St. Daniel Pohl",
+      "context": "19. hnoss-ambassador-organisation-main"
+    },
+    {
+      "url": "https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white",
+      "type": "badge",
+      "category": "documentation",
+      "domain": "img.shields.io",
+      "description": "Shields.io Badge",
+      "context": "5. portainer-infrastructure-templates-main"
+    },
+    {
+      "url": "https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com",
+      "type": "platforms",
+      "category": "platforms",
+      "domain": "macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com",
+      "description": "Macaly Application",
+      "context": "20. C3Yz3ye2-main (1)"
+    }
+  ]
+}

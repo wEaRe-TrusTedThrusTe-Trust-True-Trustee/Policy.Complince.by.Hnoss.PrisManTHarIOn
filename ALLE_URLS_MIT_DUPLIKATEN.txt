@@ -1,0 +1,785 @@
+========================================================================================================================
+VOLLSTÄNDIGE URL-EXTRAKTION AUS ANALYSE_BERICHT.md
+INKLUSIVE ALLER DUPLIKATE UND WIEDERHOLUNGEN
+========================================================================================================================
+
+GESAMTANZAHL URL-ERWÄHNUNGEN: 71
+ANZAHL UNIQUE URLs: 50
+
+
+========================================================================================================================
+KATEGORIE: GITHUB-ASSET
+Anzahl Erwähnungen: 19
+========================================================================================================================
+
+[1/19]
+  URL:         https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        pFihPeAcuST.-main
+  ZEILE:       28
+  CONTEXT:     ![ChatGPT Image 16  Juni 2025, 13_28_00](https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6)
+
+[2/19]
+  URL:         https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        pFihPeAcuST.-main (1)
+  ZEILE:       58
+  CONTEXT:     ![ChatGPT Image 16  Juni 2025, 13_28_00](https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6)
+
+[3/19]
+  URL:         https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4)
+  ZEILE:       88
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_15" src="https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930" />
+
+[4/19]
+  URL:         https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4)
+  ZEILE:       92
+  CONTEXT:     <img width="1024" height="1024" alt="Gemini_Generated_Image_2rq2372rq2372rq2" src="https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551" />
+
+[5/19]
+  URL:         https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4)
+  ZEILE:       96
+  CONTEXT:     ---<img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_53" src="https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322" />
+
+[6/19]
+  URL:         https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (3)
+  ZEILE:       118
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_15" src="https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930" />
+
+[7/19]
+  URL:         https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (3)
+  ZEILE:       122
+  CONTEXT:     <img width="1024" height="1024" alt="Gemini_Generated_Image_2rq2372rq2372rq2" src="https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551" />
+
+[8/19]
+  URL:         https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (3)
+  ZEILE:       126
+  CONTEXT:     ---<img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_53" src="https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322" />
+
+[9/19]
+  URL:         https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (2)
+  ZEILE:       148
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_15" src="https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930" />
+
+[10/19]
+  URL:         https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (2)
+  ZEILE:       152
+  CONTEXT:     <img width="1024" height="1024" alt="Gemini_Generated_Image_2rq2372rq2372rq2" src="https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551" />
+
+[11/19]
+  URL:         https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (2)
+  ZEILE:       156
+  CONTEXT:     ---<img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_53" src="https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322" />
+
+[12/19]
+  URL:         https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (1)
+  ZEILE:       178
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_15" src="https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930" />
+
+[13/19]
+  URL:         https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (1)
+  ZEILE:       182
+  CONTEXT:     <img width="1024" height="1024" alt="Gemini_Generated_Image_2rq2372rq2372rq2" src="https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551" />
+
+[14/19]
+  URL:         https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (1)
+  ZEILE:       186
+  CONTEXT:     ---<img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_53" src="https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322" />
+
+[15/19]
+  URL:         https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main
+  ZEILE:       208
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_15" src="https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930" />
+
+[16/19]
+  URL:         https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main
+  ZEILE:       212
+  CONTEXT:     <img width="1024" height="1024" alt="Gemini_Generated_Image_2rq2372rq2372rq2" src="https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551" />
+
+[17/19]
+  URL:         https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+  TYPE:        github-asset
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main
+  ZEILE:       216
+  CONTEXT:     ---<img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_53" src="https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322" />
+
+[18/19]
+  URL:         https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261
+  TYPE:        github-asset
+  CATEGORY:    CREATIVE & MEDIA (7 Repos)
+  REPO:        INTERMEDIALGALAKTICConstellation-main (1)
+  ZEILE:       1131
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_19" src="https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261" />
+
+[19/19]
+  URL:         https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261
+  TYPE:        github-asset
+  CATEGORY:    CREATIVE & MEDIA (7 Repos)
+  REPO:        INTERMEDIALGALAKTICConstellation-main
+  ZEILE:       1281
+  CONTEXT:     <img width="1536" height="1024" alt="ChatGPT Image 12  Feb  2026, 00_27_19" src="https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261" />
+
+
+========================================================================================================================
+KATEGORIE: BADGE
+Anzahl Erwähnungen: 18
+========================================================================================================================
+
+[1/18]
+  URL:         https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white
+  TYPE:        badge
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       547
+  CONTEXT:     [![HNOSS Ambassador](https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white)](https://hnoss-ambassador.org)
+
+[2/18]
+  URL:         https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white
+  TYPE:        badge
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       548
+  CONTEXT:     [![Universal Values](https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white)](https://universal-values.org)
+
+[3/18]
+  URL:         https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white
+  TYPE:        badge
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       549
+  CONTEXT:     [![St. Daniel Pohl](https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white)](https://st-daniel-pohl.org)
+
+[4/18]
+  URL:         https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white
+  TYPE:        badge
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       551
+  CONTEXT:     [![.NET 9.0](https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+
+[5/18]
+  URL:         https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        Proxmox-Runic-Version-Testpilot-main
+  ZEILE:       926
+  CONTEXT:     ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox)
+
+[6/18]
+  URL:         https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        Proxmox-Runic-Version-Testpilot-main
+  ZEILE:       927
+  CONTEXT:     ![License](https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge)
+
+[7/18]
+  URL:         https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        Proxmox-Runic-Version-Testpilot-main
+  ZEILE:       928
+  CONTEXT:     ![Scripts](https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge)
+
+[8/18]
+  URL:         https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        Proxmox-Runic-Version-Testpilot-main
+  ZEILE:       929
+  CONTEXT:     ![Interactive](https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge)
+
+[9/18]
+  URL:         https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        portainer-infrastructure-templates-main
+  ZEILE:       961
+  CONTEXT:     [![Docker Hub Verified](https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/)
+
+[10/18]
+  URL:         https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        portainer-infrastructure-templates-main
+  ZEILE:       962
+  CONTEXT:     [![Kubernetes Certified](https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+
+[11/18]
+  URL:         https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white
+  TYPE:        badge
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        portainer-infrastructure-templates-main
+  ZEILE:       963
+  CONTEXT:     [![Portainer Partner](https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white)](https://portainer.io/)
+
+[12/18]
+  URL:         https://img.shields.io/badge/MS%20Learn-Documentation-blue
+  TYPE:        badge
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1540
+  CONTEXT:     [![MS Learn Documentation](https://img.shields.io/badge/MS%20Learn-Documentation-blue)](https://learn.microsoft.com/en-us/agent-framework/)
+
+[13/18]
+  URL:         https://img.shields.io/pypi/v/agent-framework
+  TYPE:        badge
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1541
+  CONTEXT:     [![PyPI](https://img.shields.io/pypi/v/agent-framework)](https://pypi.org/project/agent-framework/)
+
+[14/18]
+  URL:         https://img.shields.io/nuget/v/Microsoft.Agents.AI
+  TYPE:        badge
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1542
+  CONTEXT:     [![NuGet](https://img.shields.io/nuget/v/Microsoft.Agents.AI)](https://www.nuget.org/profiles/MicrosoftAgentFramework/)
+
+[15/18]
+  URL:         https://img.shields.io/badge/License-MIT-yellow.svg
+  TYPE:        badge
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1696
+  CONTEXT:     [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[16/18]
+  URL:         https://img.shields.io/badge/Docker-Ready-blue.svg
+  TYPE:        badge
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1697
+  CONTEXT:     [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://docker.com)
+
+[17/18]
+  URL:         https://img.shields.io/badge/HashiCorp-Vault-purple.svg
+  TYPE:        badge
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1698
+  CONTEXT:     [![Vault](https://img.shields.io/badge/HashiCorp-Vault-purple.svg)](https://vaultproject.io)
+
+[18/18]
+  URL:         https://img.shields.io/badge/AI-Local-green.svg
+  TYPE:        badge
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1699
+  CONTEXT:     [![AI](https://img.shields.io/badge/AI-Local-green.svg)](https://ollama.ai)
+
+
+========================================================================================================================
+KATEGORIE: MACALY
+Anzahl Erwähnungen: 4
+========================================================================================================================
+
+[1/4]
+  URL:         https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com
+  TYPE:        macaly
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main (1)
+  ZEILE:       578
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[2/4]
+  URL:         https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com
+  TYPE:        macaly
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main (1)
+  ZEILE:       578
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[3/4]
+  URL:         https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com
+  TYPE:        macaly
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main
+  ZEILE:       602
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[4/4]
+  URL:         https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com
+  TYPE:        macaly
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main
+  ZEILE:       602
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+
+========================================================================================================================
+KATEGORIE: SUPABASE
+Anzahl Erwähnungen: 4
+========================================================================================================================
+
+[1/4]
+  URL:         https://xblewwjjqvwerypvttfh.supabase.co
+  TYPE:        supabase
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main (1)
+  ZEILE:       578
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[2/4]
+  URL:         https://xblewwjjqvwerypvttfh.supabase.co
+  TYPE:        supabase
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main (1)
+  ZEILE:       578
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[3/4]
+  URL:         https://xblewwjjqvwerypvttfh.supabase.co
+  TYPE:        supabase
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main
+  ZEILE:       602
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[4/4]
+  URL:         https://xblewwjjqvwerypvttfh.supabase.co
+  TYPE:        supabase
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main
+  ZEILE:       602
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+
+========================================================================================================================
+KATEGORIE: LOVABLE
+Anzahl Erwähnungen: 3
+========================================================================================================================
+
+[1/3]
+  URL:         https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272
+  TYPE:        lovable
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        ohm-resonance-link-main
+  ZEILE:       480
+  CONTEXT:     **URL**: https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272
+
+[2/3]
+  URL:         https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7
+  TYPE:        lovable
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        magic-code-books-main
+  ZEILE:       513
+  CONTEXT:     **URL**: https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7
+
+[3/3]
+  URL:         https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+  TYPE:        lovable
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hello-hug-wave-59-main
+  ZEILE:       714
+  CONTEXT:     **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+
+
+========================================================================================================================
+KATEGORIE: GITHUB-REPO
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L
+  TYPE:        github-repo
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        S4m3T1m3scR022---Gemeinsam-sT4b1L-main
+  ZEILE:       356
+  CONTEXT:     https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L & https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git & CC BY-NC-ND (Attribution-NonCommercial-NoDerivatives)  / https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/
+
+[2/2]
+  URL:         https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-
+  TYPE:        github-repo
+  CATEGORY:    DIGITAL PLATFORMS (1 Repos)
+  REPO:        PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3--main
+  ZEILE:       1728
+  CONTEXT:     https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-
+
+
+========================================================================================================================
+KATEGORIE: GITHUB-REPO-GIT
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git
+  TYPE:        github-repo-git
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        S4m3T1m3scR022---Gemeinsam-sT4b1L-main
+  ZEILE:       356
+  CONTEXT:     https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L & https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git & CC BY-NC-ND (Attribution-NonCommercial-NoDerivatives)  / https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/
+
+[2/2]
+  URL:         https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git
+  TYPE:        github-repo-git
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        4a3C5u2S7T1i3C-main
+  ZEILE:       690
+  CONTEXT:     hier geht es land, hier ist das richtige!. https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git
+
+
+========================================================================================================================
+KATEGORIE: ORGANIZATION
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://hnoss-ambassador.org
+  TYPE:        organization
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       547
+  CONTEXT:     [![HNOSS Ambassador](https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white)](https://hnoss-ambassador.org)
+
+[2/2]
+  URL:         https://st-daniel-pohl.org
+  TYPE:        organization
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       549
+  CONTEXT:     [![St. Daniel Pohl](https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white)](https://st-daniel-pohl.org)
+
+
+========================================================================================================================
+KATEGORIE: OTHER
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://universal-values.org
+  TYPE:        other
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       548
+  CONTEXT:     [![Universal Values](https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white)](https://universal-values.org)
+
+[2/2]
+  URL:         https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat
+  TYPE:        other
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1539
+  CONTEXT:     [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat)](https://discord.gg/b5zjErwbQM)
+
+
+========================================================================================================================
+KATEGORIE: MICROSOFT
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://dotnet.microsoft.com/
+  TYPE:        microsoft
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        hnoss-ambassador-organisation-main
+  ZEILE:       551
+  CONTEXT:     [![.NET 9.0](https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+
+[2/2]
+  URL:         https://learn.microsoft.com/en-us/agent-framework/
+  TYPE:        microsoft
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1540
+  CONTEXT:     [![MS Learn Documentation](https://img.shields.io/badge/MS%20Learn-Documentation-blue)](https://learn.microsoft.com/en-us/agent-framework/)
+
+
+========================================================================================================================
+KATEGORIE: DEPLOYMENT
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev
+  TYPE:        deployment
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main (1)
+  ZEILE:       578
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+[2/2]
+  URL:         https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev
+  TYPE:        deployment
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        C3Yz3ye2-main
+  ZEILE:       602
+  CONTEXT:     https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev - https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com - <iframe src="https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com" width="100%" height="600" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> - https://xblewwjjqvwerypvttfh.supabase.co - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw - import { createClient } from '@supabase/supabase-js'const supabaseUrl = 'https://xblewwjjqvwerypvttfh.supabase.co'const supabaseKey = process.env.SUPABASE_KEYconst supabase = createClient(supabaseUrl, supabaseKey)
+
+
+========================================================================================================================
+KATEGORIE: DOCKER
+Anzahl Erwähnungen: 2
+========================================================================================================================
+
+[1/2]
+  URL:         https://hub.docker.com/
+  TYPE:        docker
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        portainer-infrastructure-templates-main
+  ZEILE:       961
+  CONTEXT:     [![Docker Hub Verified](https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/)
+
+[2/2]
+  URL:         https://docker.com
+  TYPE:        docker
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1697
+  CONTEXT:     [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://docker.com)
+
+
+========================================================================================================================
+KATEGORIE: NETLIFY
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/
+  TYPE:        netlify
+  CATEGORY:    AI & TECHNOLOGY (28 Repos)
+  REPO:        S4m3T1m3scR022---Gemeinsam-sT4b1L-main
+  ZEILE:       356
+  CONTEXT:     https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L & https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git & CC BY-NC-ND (Attribution-NonCommercial-NoDerivatives)  / https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/
+
+
+========================================================================================================================
+KATEGORIE: KUBERNETES
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://kubernetes.io/
+  TYPE:        kubernetes
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        portainer-infrastructure-templates-main
+  ZEILE:       962
+  CONTEXT:     [![Kubernetes Certified](https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+
+
+========================================================================================================================
+KATEGORIE: PORTAINER
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://portainer.io/
+  TYPE:        portainer
+  CATEGORY:    INFRASTRUCTURE & SYSTEMS (9 Repos)
+  REPO:        portainer-infrastructure-templates-main
+  ZEILE:       963
+  CONTEXT:     [![Portainer Partner](https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white)](https://portainer.io/)
+
+
+========================================================================================================================
+KATEGORIE: DISCORD
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://discord.gg/b5zjErwbQM
+  TYPE:        discord
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1539
+  CONTEXT:     [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat)](https://discord.gg/b5zjErwbQM)
+
+
+========================================================================================================================
+KATEGORIE: PYPI
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://pypi.org/project/agent-framework/
+  TYPE:        pypi
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1541
+  CONTEXT:     [![PyPI](https://img.shields.io/pypi/v/agent-framework)](https://pypi.org/project/agent-framework/)
+
+
+========================================================================================================================
+KATEGORIE: NUGET
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://www.nuget.org/profiles/MicrosoftAgentFramework/
+  TYPE:        nuget
+  CATEGORY:    DEVELOPMENT TOOLS (4 Repos)
+  REPO:        agent-framework-main
+  ZEILE:       1542
+  CONTEXT:     [![NuGet](https://img.shields.io/nuget/v/Microsoft.Agents.AI)](https://www.nuget.org/profiles/MicrosoftAgentFramework/)
+
+
+========================================================================================================================
+KATEGORIE: LICENSE
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://opensource.org/licenses/MIT
+  TYPE:        license
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1696
+  CONTEXT:     [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+========================================================================================================================
+KATEGORIE: VAULT
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://vaultproject.io
+  TYPE:        vault
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1698
+  CONTEXT:     [![Vault](https://img.shields.io/badge/HashiCorp-Vault-purple.svg)](https://vaultproject.io)
+
+
+========================================================================================================================
+KATEGORIE: AI
+Anzahl Erwähnungen: 1
+========================================================================================================================
+
+[1/1]
+  URL:         https://ollama.ai
+  TYPE:        ai
+  CATEGORY:    DATA & ANALYTICS (3 Repos)
+  REPO:        EU-UNION-AI-PACT-VS-Code-Pipelines-master
+  ZEILE:       1699
+  CONTEXT:     [![AI](https://img.shields.io/badge/AI-Local-green.svg)](https://ollama.ai)
+
+
+========================================================================================================================
+URL-HÄUFIGKEITSANALYSE
+========================================================================================================================
+
+  1. [  5x] https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+  2. [  5x] https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+  3. [  5x] https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+  4. [  4x] https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com
+  5. [  4x] https://xblewwjjqvwerypvttfh.supabase.co
+  6. [  2x] https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6
+  7. [  2x] https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev
+  8. [  2x] https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261
+  9. [  1x] https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L
+ 10. [  1x] https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git
+ 11. [  1x] https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/
+ 12. [  1x] https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272
+ 13. [  1x] https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7
+ 14. [  1x] https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white
+ 15. [  1x] https://hnoss-ambassador.org
+ 16. [  1x] https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white
+ 17. [  1x] https://universal-values.org
+ 18. [  1x] https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white
+ 19. [  1x] https://st-daniel-pohl.org
+ 20. [  1x] https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white
+ 21. [  1x] https://dotnet.microsoft.com/
+ 22. [  1x] https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git
+ 23. [  1x] https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+ 24. [  1x] https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox
+ 25. [  1x] https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge
+ 26. [  1x] https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge
+ 27. [  1x] https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge
+ 28. [  1x] https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white
+ 29. [  1x] https://hub.docker.com/
+ 30. [  1x] https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white
+ 31. [  1x] https://kubernetes.io/
+ 32. [  1x] https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white
+ 33. [  1x] https://portainer.io/
+ 34. [  1x] https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat
+ 35. [  1x] https://discord.gg/b5zjErwbQM
+ 36. [  1x] https://img.shields.io/badge/MS%20Learn-Documentation-blue
+ 37. [  1x] https://learn.microsoft.com/en-us/agent-framework/
+ 38. [  1x] https://img.shields.io/pypi/v/agent-framework
+ 39. [  1x] https://pypi.org/project/agent-framework/
+ 40. [  1x] https://img.shields.io/nuget/v/Microsoft.Agents.AI
+ 41. [  1x] https://www.nuget.org/profiles/MicrosoftAgentFramework/
+ 42. [  1x] https://img.shields.io/badge/License-MIT-yellow.svg
+ 43. [  1x] https://opensource.org/licenses/MIT
+ 44. [  1x] https://img.shields.io/badge/Docker-Ready-blue.svg
+ 45. [  1x] https://docker.com
+ 46. [  1x] https://img.shields.io/badge/HashiCorp-Vault-purple.svg
+ 47. [  1x] https://vaultproject.io
+ 48. [  1x] https://img.shields.io/badge/AI-Local-green.svg
+ 49. [  1x] https://ollama.ai
+ 50. [  1x] https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-
+
+========================================================================================================================
+ZUSAMMENFASSUNG NACH TYP:
+========================================================================================================================
+github-asset        :   19 Erwähnungen (  5 unique URLs)
+badge               :   18 Erwähnungen ( 18 unique URLs)
+macaly              :    4 Erwähnungen (  1 unique URLs)
+supabase            :    4 Erwähnungen (  1 unique URLs)
+lovable             :    3 Erwähnungen (  3 unique URLs)
+github-repo         :    2 Erwähnungen (  2 unique URLs)
+github-repo-git     :    2 Erwähnungen (  2 unique URLs)
+organization        :    2 Erwähnungen (  2 unique URLs)
+other               :    2 Erwähnungen (  2 unique URLs)
+microsoft           :    2 Erwähnungen (  2 unique URLs)
+deployment          :    2 Erwähnungen (  1 unique URLs)
+docker              :    2 Erwähnungen (  2 unique URLs)
+netlify             :    1 Erwähnungen (  1 unique URLs)
+kubernetes          :    1 Erwähnungen (  1 unique URLs)
+portainer           :    1 Erwähnungen (  1 unique URLs)
+discord             :    1 Erwähnungen (  1 unique URLs)
+pypi                :    1 Erwähnungen (  1 unique URLs)
+nuget               :    1 Erwähnungen (  1 unique URLs)
+license             :    1 Erwähnungen (  1 unique URLs)
+vault               :    1 Erwähnungen (  1 unique URLs)
+ai                  :    1 Erwähnungen (  1 unique URLs)
+
+TOTAL               :   71 Erwähnungen ( 50 unique URLs)
+========================================================================================================================

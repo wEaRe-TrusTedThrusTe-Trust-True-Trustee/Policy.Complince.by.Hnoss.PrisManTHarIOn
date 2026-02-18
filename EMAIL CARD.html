@@ -17,9 +17,7 @@
             color: #fff;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: relative;
         }
 
         /* HIGH-PERFORMANCE CANVAS ENGINE */
@@ -34,13 +32,18 @@
 
         /* ========== PANZERGLAS EFFEKT ========== */
         .sig-container {
-            position: relative;
-            width: 850px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            max-width: 85vw;
+            max-height: 85vh;
             background: linear-gradient(135deg, rgba(0, 5, 15, 0.7) 0%, rgba(0, 8, 20, 0.8) 100%);
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
             border: 2px solid rgba(191, 149, 63, 0.6);
-            padding: 60px;
+            padding: 50px;
             z-index: 100;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
                         0 0 120px rgba(191, 149, 63, 0.25),
@@ -75,58 +78,58 @@
         .sig-header h1 {
             margin: 0;
             font-family: 'Cinzel', serif;
-            font-size: 44px;
+            font-size: 36px;
             color: #fcf6ba;
-            letter-spacing: 20px;
+            letter-spacing: 15px;
             text-transform: uppercase;
             text-shadow: 0 0 30px rgba(191, 149, 63, 0.7);
         }
 
         .sig-subtitle {
-            font-size: 13px;
-            letter-spacing: 9px;
+            font-size: 14px;
+            letter-spacing: 7px;
             color: #ffffff;
             text-transform: uppercase;
-            margin-top: 15px;
+            margin-top: 12px;
             opacity: 0.9;
         }
 
         /* ========== A4 BREAKPOINT: ZENTRALE HARMONISCHE STRUKTUR ========== */
         .sig-body {
             display: block;
-            margin-top: 45px;
+            margin-top: 35px;
             text-align: center;
-            max-width: 600px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
 
         .sig-column {
             width: 100%;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .sig-label {
             color: #FFCC00;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 3.5px;
+            font-size: 12px;
+            letter-spacing: 3px;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .sig-value {
             color: #ffffff;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 200;
             display: block;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+            margin-bottom: 22px;
+            letter-spacing: 1.2px;
         }
 
         .sig-links {
-            margin-top: 50px;
+            margin-top: 35px;
         }
 
         .sig-link {
@@ -134,13 +137,13 @@
             text-decoration: none;
             font-size: 12px;
             border: 1px solid #bf953f;
-            padding: 12px 28px;
+            padding: 10px 24px;
             text-transform: uppercase;
             display: inline-block;
-            margin: 0 15px;
+            margin: 0 12px;
             background: rgba(0, 0, 0, 0.9);
             transition: all 0.3s ease;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
         }
 
         .sig-link:hover {
@@ -151,25 +154,25 @@
         }
 
         .sig-footer {
-            margin-top: 55px;
-            padding-top: 35px;
+            margin-top: 40px;
+            padding-top: 25px;
             border-top: 1px solid rgba(191, 149, 63, 0.5);
         }
 
         .hnoss-mini {
             font-family: 'Cinzel', serif;
-            font-size: 32px;
+            font-size: 28px;
             color: #bf953f;
             font-weight: bold;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
         }
 
         .rights-note {
             color: #ff4d4d;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .back-btn {

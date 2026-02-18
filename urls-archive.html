@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URLs Archive - StarLightMovemenTz Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        :root {
+            --eu-blue: #001a4d;
+            --gold-light: #fcf6ba;
+            --gold-medium: #bf953f;
+            --gold-dark: #8b7123;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #000814 0%, #001a4d 50%, #000814 100%);
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(191, 149, 63, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 26, 77, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.8) 0%, rgba(0, 8, 20, 0.9) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.5);
+            border-radius: 16px;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: var(--gold-light);
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(191, 149, 63, 0.6);
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(191, 149, 63, 0.2);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            color: var(--gold-light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: rgba(191, 149, 63, 0.9);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(191, 149, 63, 0.6);
+        }
+
+        .filter-section {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: rgba(0, 8, 20, 0.6);
+            border: 2px solid rgba(191, 149, 63, 0.4);
+            color: var(--gold-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.8), rgba(252, 246, 186, 0.8));
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(191, 149, 63, 0.4);
+        }
+
+        .url-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .url-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .url-card {
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.85) 0%, rgba(0, 8, 20, 0.95) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.4);
+            border-radius: 12px;
+            padding: 25px;
+            backdrop-filter: blur(30px);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .url-card:hover {
+            border-color: rgba(191, 149, 63, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(191, 149, 63, 0.3);
+        }
+
+        .url-category {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(191, 149, 63, 0.2);
+            border: 1px solid rgba(191, 149, 63, 0.5);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+        }
+
+        .url-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .url-link {
+            display: block;
+            color: #7ec8ff;
+            text-decoration: none;
+            margin-bottom: 15px;
+            word-break: break-all;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            border-left: 3px solid rgba(126, 200, 255, 0.5);
+        }
+
+        .url-link:hover {
+            color: #a5d8ff;
+            background: rgba(126, 200, 255, 0.1);
+        }
+
+        .url-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .comment-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(191, 149, 63, 0.3);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .comment-count {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .comment-toggle {
+            background: none;
+            border: none;
+            color: var(--gold-light);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+        }
+
+        .comment-toggle:hover {
+            color: var(--gold-medium);
+        }
+
+        .comment-form {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .comment-form.active {
+            display: block;
+        }
+
+        .comment-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .comment-input:focus {
+            outline: none;
+            border-color: rgba(191, 149, 63, 0.6);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .comment-submit {
+            padding: 8px 20px;
+            background: rgba(191, 149, 63, 0.3);
+            border: 1px solid rgba(191, 149, 63, 0.6);
+            color: var(--gold-light);
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .comment-submit:hover {
+            background: rgba(191, 149, 63, 0.8);
+            color: #000;
+        }
+
+        .comments-list {
+            display: none;
+        }
+
+        .comments-list.active {
+            display: block;
+        }
+
+        .comment-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid rgba(191, 149, 63, 0.5);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--gold-light);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .comment-date {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+        }
+
+        .comment-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.8) 0%, rgba(0, 8, 20, 0.9) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.5);
+            border-radius: 12px;
+            backdrop-filter: blur(30px);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            text-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(191, 149, 63, 0.4);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: rgba(191, 149, 63, 0.8);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* AUTH UI */
+        .auth-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .auth-btn {
+            padding: 10px 20px;
+            background: rgba(191, 149, 63, 0.3);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            color: var(--gold-light);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .auth-btn:hover {
+            background: rgba(191, 149, 63, 0.8);
+            color: #000;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            border-radius: 8px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-light);
+        }
+
+        .user-name {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .auth-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 50000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-modal.active {
+            display: flex;
+        }
+
+        .auth-modal-content {
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .auth-modal h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(191, 149, 63, 0.4);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: rgba(191, 149, 63, 0.8);
+        }
+
+        .auth-submit {
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.8), rgba(252, 246, 186, 0.8));
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(191, 149, 63, 0.5);
+        }
+
+        .auth-toggle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .auth-toggle:hover {
+            color: var(--gold-light);
+        }
+
+        .comment-like-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+        }
+
+        .comment-like-btn:hover {
+            color: var(--gold-light);
+        }
+
+        .comment-like-btn.liked {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .real-time-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: rgba(0, 255, 0, 0.2);
+            border: 2px solid rgba(0, 255, 0, 0.6);
+            border-radius: 8px;
+            color: #0f0;
+            font-size: 0.85rem;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Auth Container -->
+    <div class="auth-container" id="authContainer">
+        <!-- Dynamisch gefüllt -->
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-content">
+            <h2 id="authModalTitle">Login</h2>
+            <form class="auth-form" id="authForm">
+                <input type="email" class="auth-input" id="authEmail" placeholder="Email" required>
+                <input type="password" class="auth-input" id="authPassword" placeholder="Passwort" required>
+                <input type="text" class="auth-input" id="authUsername" placeholder="Benutzername" style="display: none;">
+                <input type="text" class="auth-input" id="authDisplayName" placeholder="Anzeigename" style="display: none;">
+                <button type="submit" class="auth-submit" id="authSubmitBtn">Anmelden</button>
+            </form>
+            <div class="auth-toggle" id="authToggle">
+                Noch kein Account? Registrieren
+            </div>
+            <button class="auth-btn" onclick="closeAuthModal()" style="margin-top: 20px; width: 100%;">Abbrechen</button>
+        </div>
+    </div>
+
+    <!-- Real-time Indicator -->
+    <div class="real-time-indicator" id="realtimeIndicator" style="display: none;">
+        🟢 Live Sync
+    </div>
+    <div class="container">
+        <div class="header">
+            <a href="TrustedTrustThrust.html" class="back-btn">← Zurück zur Governance</a>
+            <h1>🔗 URLs Archive</h1>
+            <p>Systematische Sammlung aller URLs aus 59 Repositories • Mit Kommentar-System</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number" id="totalUrls">0</div>
+                <div class="stat-label">Total URLs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalComments">0</div>
+                <div class="stat-label">Kommentare</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="activeCategories">0</div>
+                <div class="stat-label">Kategorien</div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Suche URLs, Domains, Beschreibungen...">
+        </div>
+
+        <div class="filter-section" id="filterButtons">
+            <!-- Dynamisch generiert -->
+        </div>
+
+        <div class="url-grid" id="urlGrid">
+            <!-- Dynamisch generiert -->
+        </div>
+    </div>
+
+    <script>
+        // =====================================================
+        // SUPABASE CONFIGURATION
+        // =====================================================
+        const SUPABASE_URL = 'https://xblewwjjqvwerypvttfh.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhibGV3d2pqcXZ3ZXJ5cHZ0dGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NjE4NDcsImV4cCI6MjA3NDIzNzg0N30.q99fgxf3iQx70skSwanXL6PBRdefViwPHm5bVavExTw';
+        
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        let currentUser = null;
+        let isLoginMode = true;
+
+        // =====================================================
+        // URL DATABASE
+        // =====================================================
+        const urlDatabase = [
+            // ===== GITHUB REPOSITORIES =====
+            {
+                id: 1,
+                category: 'github',
+                title: 'EU-UNION-AI-PACT S4m3T1m3scR022',
+                url: 'https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L',
+                description: 'EU-UNION-AI-PACT Repository für gemeinsame stabilität',
+                repo: 'S4m3T1m3scR022',
+                type: 'repository'
+            },
+            {
+                id: 2,
+                category: 'github',
+                title: '3D Modeling Animation Repository',
+                url: 'https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git',
+                description: '3D-Modeling & Animation für Software, Apps, Tools, KI & AI Technology',
+                repo: '3D-MODELING-ANIMATION',
+                type: 'repository'
+            },
+            {
+                id: 3,
+                category: 'github',
+                title: 'PrismanTHarIOn Bewerbung',
+                url: 'https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-',
+                description: 'Bewerbungs-Website Repository mit Portfolio-Mapping',
+                repo: 'PrismanTHarIOn Website',
+                type: 'repository'
+            },
+            {
+                id: 4,
+                category: 'github',
+                title: '4a3C5u2S7T1i3C ACOUSTIC System',
+                url: 'https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git',
+                description: 'ACOUSTIC System Repository - "hier geht es lang, hier ist das richtige!"',
+                repo: '4a3C5u2S7T1i3C',
+                type: 'repository'
+            },
+            
+            // ===== GITHUB ASSETS (Bilder) =====
+            {
+                id: 5,
+                category: 'assets',
+                title: 'ChatGPT Image 16 Juni 2025',
+                url: 'https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6',
+                description: 'ChatGPT generiertes Bild - Juni 2025',
+                repo: 'GitHub Assets',
+                type: 'image'
+            },
+            {
+                id: 6,
+                category: 'assets',
+                title: 'ChatGPT Image 12 Feb 2026 (1)',
+                url: 'https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930',
+                description: 'ChatGPT generiertes Bild - Februar 2026',
+                repo: 'GitHub Assets',
+                type: 'image'
+            },
+            {
+                id: 7,
+                category: 'assets',
+                title: 'Gemini Generated Image',
+                url: 'https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551',
+                description: 'Google Gemini KI generiertes Bild',
+                repo: 'GitHub Assets',
+                type: 'image'
+            },
+            {
+                id: 8,
+                category: 'assets',
+                title: 'ChatGPT Image 12 Feb 2026 (2)',
+                url: 'https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322',
+                description: 'ChatGPT generiertes Bild - Februar 2026',
+                repo: 'GitHub Assets',
+                type: 'image'
+            },
+            {
+                id: 9,
+                category: 'assets',
+                title: 'ChatGPT Image 12 Feb 2026 (3)',
+                url: 'https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261',
+                description: 'ChatGPT generiertes Bild - Februar 2026',
+                repo: 'GitHub Assets',
+                type: 'image'
+            },
+
+            // ===== LOVABLE.DEV PROJECTS =====
+            {
+                id: 10,
+                category: 'lovable',
+                title: 'ohm-resonance-link',
+                url: 'https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272',
+                description: 'Ohm Resonance Link Web-Anwendung auf Lovable.dev',
+                repo: 'ohm-resonance-link',
+                type: 'development'
+            },
+            {
+                id: 11,
+                category: 'lovable',
+                title: 'magic-code-books',
+                url: 'https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7',
+                description: 'Magic Code Books Projekt auf Lovable.dev',
+                repo: 'magic-code-books',
+                type: 'development'
+            },
+            {
+                id: 12,
+                category: 'lovable',
+                title: 'hello-hug-wave-59',
+                url: 'https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID',
+                description: 'Begrüßungs-Projekt (Platzhalter ID)',
+                repo: 'hello-hug-wave-59',
+                type: 'development'
+            },
+
+            // ===== SUPABASE & DATABASES =====
+            {
+                id: 13,
+                category: 'database',
+                title: 'C3Yz3ye2 Supabase Backend',
+                url: 'https://xblewwjjqvwerypvttfh.supabase.co',
+                description: 'Supabase Backend Database für C3Yz3ye2 System Integration',
+                repo: 'C3Yz3ye2',
+                type: 'database'
+            },
+
+            // ===== DEPLOYMENT PLATFORMS =====
+            {
+                id: 14,
+                category: 'platform',
+                title: 'Europea UN World Netlify',
+                url: 'https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/',
+                description: 'Netlify Deployment für Europea UN World LFX Peace',
+                repo: 'Policy System',
+                type: 'deployment'
+            },
+            {
+                id: 15,
+                category: 'platform',
+                title: 'Biela Dev Platform',
+                url: 'https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev',
+                description: 'Onbiela.dev Development Platform für C3Yz3ye2',
+                repo: 'C3Yz3ye2',
+                type: 'platform'
+            },
+            {
+                id: 16,
+                category: 'platform',
+                title: 'Macaly App Integration',
+                url: 'https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com',
+                description: 'Macaly App Platform für System-Integration',
+                repo: 'C3Yz3ye2',
+                type: 'application'
+            },
+
+            // ===== BADGES (Shields.io) =====
+            {
+                id: 17,
+                category: 'badge',
+                title: 'HNOSS Ambassador Badge',
+                url: 'https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white',
+                description: 'HNOSS Ambassador Status Badge',
+                repo: 'Badge System',
+                type: 'badge'
+            },
+            {
+                id: 18,
+                category: 'badge',
+                title: 'Universal Values Badge',
+                url: 'https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white',
+                description: 'Universal Values Badge',
+                repo: 'Badge System',
+                type: 'badge'
+            },
+            {
+                id: 19,
+                category: 'badge',
+                title: 'St. Daniel Pohl Badge',
+                url: 'https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white',
+                description: 'St. Daniel Pohl Signature Badge',
+                repo: 'Badge System',
+                type: 'badge'
+            },
+            {
+                id: 20,
+                category: 'badge',
+                title: '.NET 9.0 Badge',
+                url: 'https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white',
+                description: '.NET 9.0 Technology Badge',
+                repo: 'Badge System',
+                type: 'badge'
+            },
+            {
+                id: 21,
+                category: 'badge',
+                title: 'Proxmox VE Badge',
+                url: 'https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox',
+                description: 'Proxmox Virtual Environment Badge',
+                repo: 'Infrastructure',
+                type: 'badge'
+            },
+            {
+                id: 22,
+                category: 'badge',
+                title: 'Apache 2.0 License Badge',
+                url: 'https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge',
+                description: 'Apache 2.0 License Badge',
+                repo: 'Licensing',
+                type: 'badge'
+            },
+            {
+                id: 23,
+                category: 'badge',
+                title: 'Scripts Count Badge',
+                url: 'https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge',
+                description: 'Scripts Count (15+) Badge',
+                repo: 'Development',
+                type: 'badge'
+            },
+            {
+                id: 24,
+                category: 'badge',
+                title: 'Interactive Dashboard Badge',
+                url: 'https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge',
+                description: 'Interactive Dashboard Badge',
+                repo: 'UI System',
+                type: 'badge'
+            },
+            {
+                id: 25,
+                category: 'badge',
+                title: 'Docker Hub Verified Badge',
+                url: 'https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white',
+                description: 'Docker Hub Verified Publisher Badge',
+                repo: 'Container System',
+                type: 'badge'
+            },
+            {
+                id: 26,
+                category: 'badge',
+                title: 'Kubernetes CNCF Certified Badge',
+                url: 'https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white',
+                description: 'Kubernetes CNCF Certification Badge',
+                repo: 'Container System',
+                type: 'badge'
+            },
+            {
+                id: 27,
+                category: 'badge',
+                title: 'Portainer Gold Partner Badge',
+                url: 'https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white',
+                description: 'Portainer Gold Partner Status Badge',
+                repo: 'Container System',
+                type: 'badge'
+            },
+            {
+                id: 28,
+                category: 'badge',
+                title: 'MIT License Badge',
+                url: 'https://img.shields.io/badge/License-MIT-yellow.svg',
+                description: 'MIT License Badge',
+                repo: 'Licensing',
+                type: 'badge'
+            },
+            {
+                id: 29,
+                category: 'badge',
+                title: 'Docker Ready Badge',
+                url: 'https://img.shields.io/badge/Docker-Ready-blue.svg',
+                description: 'Docker Ready Badge',
+                repo: 'Container System',
+                type: 'badge'
+            },
+            {
+                id: 30,
+                category: 'badge',
+                title: 'HashiCorp Vault Badge',
+                url: 'https://img.shields.io/badge/HashiCorp-Vault-purple.svg',
+                description: 'HashiCorp Vault Status Badge',
+                repo: 'Security',
+                type: 'badge'
+            },
+            {
+                id: 31,
+                category: 'badge',
+                title: 'AI Local Badge',
+                url: 'https://img.shields.io/badge/AI-Local-green.svg',
+                description: 'Local AI Integration Badge',
+                repo: 'AI System',
+                type: 'badge'
+            },
+
+            // ===== DISCORD COMMUNITIES =====
+            {
+                id: 32,
+                category: 'community',
+                title: 'Azure AI Foundry Discord',
+                url: 'https://discord.gg/b5zjErwbQM',
+                description: 'Microsoft Azure AI Foundry Community Discord Server',
+                repo: 'agent-framework',
+                type: 'community'
+            },
+            {
+                id: 33,
+                category: 'community',
+                title: 'Azure AI Foundry Discord Badge',
+                url: 'https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat',
+                description: 'Discord Community Badge für Azure AI Foundry',
+                repo: 'agent-framework',
+                type: 'badge'
+            },
+
+            // ===== DOCUMENTATION & LEARNING =====
+            {
+                id: 34,
+                category: 'documentation',
+                title: 'MS Learn Agent Framework',
+                url: 'https://learn.microsoft.com/en-us/agent-framework/',
+                description: 'Microsoft Learn Documentation für Agent Framework',
+                repo: 'agent-framework',
+                type: 'docs'
+            },
+            {
+                id: 35,
+                category: 'documentation',
+                title: 'MS Learn Badge',
+                url: 'https://img.shields.io/badge/MS%20Learn-Documentation-blue',
+                description: 'MS Learn Documentation Badge',
+                repo: 'agent-framework',
+                type: 'badge'
+            },
+            {
+                id: 36,
+                category: 'documentation',
+                title: 'DMDE Software Website',
+                url: 'http://www.dmde.com',
+                description: 'DMDE Disk Editor and Data Recovery Software',
+                repo: 'dmde',
+                type: 'software'
+            },
+            {
+                id: 37,
+                category: 'documentation',
+                title: 'SoftDM Website',
+                url: 'http://www.softdm.com',
+                description: 'SoftDM Software Development',
+                repo: 'dmde',
+                type: 'software'
+            },
+
+            // ===== PACKAGE REGISTRIES =====
+            {
+                id: 38,
+                category: 'registry',
+                title: 'PyPI Agent Framework',
+                url: 'https://pypi.org/project/agent-framework/',
+                description: 'Python Package Index für Agent Framework',
+                repo: 'agent-framework',
+                type: 'package'
+            },
+            {
+                id: 39,
+                category: 'registry',
+                title: 'PyPI Badge',
+                url: 'https://img.shields.io/pypi/v/agent-framework',
+                description: 'PyPI Version Badge',
+                repo: 'agent-framework',
+                type: 'badge'
+            },
+            {
+                id: 40,
+                category: 'registry',
+                title: 'NuGet Microsoft Agents AI',
+                url: 'https://www.nuget.org/profiles/MicrosoftAgentFramework/',
+                description: 'NuGet Package Registry für Microsoft Agent Framework',
+                repo: 'agent-framework',
+                type: 'package'
+            },
+            {
+                id: 41,
+                category: 'registry',
+                title: 'NuGet Badge',
+                url: 'https://img.shields.io/nuget/v/Microsoft.Agents.AI',
+                description: 'NuGet Version Badge',
+                repo: 'agent-framework',
+                type: 'badge'
+            },
+            {
+                id: 42,
+                category: 'registry',
+                title: '.NET Microsoft',
+                url: 'https://dotnet.microsoft.com/',
+                description: 'Microsoft .NET Official Website',
+                repo: 'Development',
+                type: 'platform'
+            },
+
+            // ===== INFRASTRUCTURE TOOLS =====
+            {
+                id: 43,
+                category: 'infrastructure',
+                title: 'Docker Hub',
+                url: 'https://hub.docker.com/',
+                description: 'Docker Hub Container Registry',
+                repo: 'Container System',
+                type: 'tool'
+            },
+            {
+                id: 44,
+                category: 'infrastructure',
+                title: 'Docker Website',
+                url: 'https://docker.com',
+                description: 'Docker Official Website',
+                repo: 'Container System',
+                type: 'tool'
+            },
+            {
+                id: 45,
+                category: 'infrastructure',
+                title: 'Kubernetes',
+                url: 'https://kubernetes.io/',
+                description: 'Kubernetes Container Orchestration',
+                repo: 'Container System',
+                type: 'tool'
+            },
+            {
+                id: 46,
+                category: 'infrastructure',
+                title: 'Portainer',
+                url: 'https://portainer.io/',
+                description: 'Portainer Container Management',
+                repo: 'Container System',
+                type: 'tool'
+            },
+            {
+                id: 47,
+                category: 'infrastructure',
+                title: 'HashiCorp Vault',
+                url: 'https://vaultproject.io',
+                description: 'HashiCorp Vault Secrets Management',
+                repo: 'Security',
+                type: 'tool'
+            },
+            {
+                id: 48,
+                category: 'infrastructure',
+                title: 'Ollama AI',
+                url: 'https://ollama.ai',
+                description: 'Ollama Local AI Platform',
+                repo: 'AI System',
+                type: 'tool'
+            },
+
+            // ===== EXTERNAL REFERENCE SITES =====
+            {
+                id: 49,
+                category: 'reference',
+                title: 'HNOSS Ambassador Organization',
+                url: 'https://hnoss-ambassador.org',
+                description: 'HNOSS Ambassador Organization Website',
+                repo: 'External Reference',
+                type: 'organization'
+            },
+            {
+                id: 50,
+                category: 'reference',
+                title: 'Universal Values Organization',
+                url: 'https://universal-values.org',
+                description: 'Universal Values Organization Website',
+                repo: 'External Reference',
+                type: 'organization'
+            },
+            {
+                id: 51,
+                category: 'reference',
+                title: 'St. Daniel Pohl',
+                url: 'https://st-daniel-pohl.org',
+                description: 'St. Daniel Pohl Personal Website',
+                repo: 'External Reference',
+                type: 'personal'
+            },
+
+            // ===== LICENSE REFERENCES =====
+            {
+                id: 52,
+                category: 'license',
+                title: 'MIT License',
+                url: 'https://opensource.org/licenses/MIT',
+                description: 'MIT Open Source License',
+                repo: 'Licensing',
+                type: 'license'
+            }
+        ];
+
+        // =====================================================
+        // AUTHENTICATION SYSTEM
+        // =====================================================
+
+        async function checkAuth() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                currentUser = session.user;
+                await loadUserProfile();
+                renderAuthUI();
+                document.getElementById('realtimeIndicator').style.display = 'block';
+            } else {
+                currentUser = null;
+                renderAuthUI();
+            }
+        }
+
+        async function loadUserProfile() {
+            if (!currentUser) return;
+            
+            const { data, error } = await supabase
+                .from('user_profiles')
+                .select('*')
+                .eq('id', currentUser.id)
+                .single();
+            
+            if (data) {
+                currentUser.profile = data;
+            }
+        }
+
+        function renderAuthUI() {
+            const container = document.getElementById('authContainer');
+            
+            if (currentUser) {
+                const displayName = currentUser.profile?.display_name || currentUser.email.split('@')[0];
+                const avatarUrl = currentUser.profile?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=bf953f&color=000`;
+                
+                container.innerHTML = `
+                    <div class="user-profile">
+                        <img src="${avatarUrl}" alt="${displayName}" class="user-avatar">
+                        <span class="user-name">${displayName}</span>
+                    </div>
+                    <button class="auth-btn" onclick="logout()">Logout</button>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button class="auth-btn" onclick="openAuthModal(true)">Login</button>
+                    <button class="auth-btn" onclick="openAuthModal(false)">Register</button>
+                `;
+            }
+        }
+
+        function openAuthModal(isLogin) {
+            isLoginMode = isLogin;
+            const modal = document.getElementById('authModal');
+            const title = document.getElementById('authModalTitle');
+            const usernameInput = document.getElementById('authUsername');
+            const displayNameInput = document.getElementById('authDisplayName');
+            const toggleText = document.getElementById('authToggle');
+            const submitBtn = document.getElementById('authSubmitBtn');
+            
+            title.textContent = isLogin ? 'Login' : 'Registrieren';
+            submitBtn.textContent = isLogin ? 'Anmelden' : 'Account erstellen';
+            toggleText.textContent = isLogin ? 'Noch kein Account? Registrieren' : 'Schon registriert? Login';
+            
+            usernameInput.style.display = isLogin ? 'none' : 'block';
+            displayNameInput.style.display = isLogin ? 'none' : 'block';
+            
+            modal.classList.add('active');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+            document.getElementById('authForm').reset();
+        }
+
+        document.getElementById('authToggle').addEventListener('click', () => {
+            openAuthModal(!isLoginMode);
+        });
+
+        document.getElementById('authForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('authEmail').value;
+            const password = document.getElementById('authPassword').value;
+            const username = document.getElementById('authUsername').value;
+            const displayName = document.getElementById('authDisplayName').value;
+            
+            try {
+                if (isLoginMode) {
+                    const { data, error } = await supabase.auth.signInWithPassword({
+                        email,
+                        password
+                    });
+                    
+                    if (error) throw error;
+                    
+                    alert('✅ Login erfolgreich!');
+                } else {
+                    const { data, error } = await supabase.auth.signUp({
+                        email,
+                        password,
+                        options: {
+                            data: {
+                                username: username,
+                                display_name: displayName
+                            }
+                        }
+                    });
+                    
+                    if (error) throw error;
+                    
+                    alert('✅ Account erstellt! Bitte bestätige deine Email.');
+                }
+                
+                closeAuthModal();
+                await checkAuth();
+                await loadComments();
+            } catch (error) {
+                alert('❌ Fehler: ' + error.message);
+            }
+        });
+
+        async function logout() {
+            await supabase.auth.signOut();
+            currentUser = null;
+            renderAuthUI();
+            document.getElementById('realtimeIndicator').style.display = 'none';
+            alert('👋 Erfolgreich ausgeloggt!');
+        }
+
+        // =====================================================
+        // COMMENTS SYSTEM mit DATENBANK
+        // =====================================================
+
+        async function loadComments() {
+            const { data, error } = await supabase
+                .from('url_comments')
+                .select(`
+                    *,
+                    user_profiles (
+                        username,
+                        display_name,
+                        avatar_url
+                    ),
+                    comment_likes (
+                        id,
+                        user_id
+                    )
+                `)
+                .order('created_at', { ascending: false });
+            
+            if (error) {
+                console.error('Error loading comments:', error);
+                return {};
+            }
+            
+            // Gruppiere Kommentare nach URL ID
+            const commentsByUrl = {};
+            data.forEach(comment => {
+                if (!commentsByUrl[comment.url_id]) {
+                    commentsByUrl[comment.url_id] = [];
+                }
+                commentsByUrl[comment.url_id].push(comment);
+            });
+            
+            return commentsByUrl;
+        }
+
+        async function saveComment(urlId, commentText) {
+            if (!currentUser) {
+                alert('⚠️ Bitte logge dich ein, um zu kommentieren!');
+                openAuthModal(true);
+                return;
+            }
+            
+            const { data, error } = await supabase
+                .from('url_comments')
+                .insert({
+                    url_id: urlId,
+                    user_id: currentUser.id,
+                    comment_text: commentText
+                })
+                .select();
+            
+            if (error) {
+                alert('❌ Fehler beim Kommentieren: ' + error.message);
+                return;
+            }
+            
+            // Reload comments after insert
+            await renderUrls(document.querySelector('.filter-btn.active')?.dataset.category || 'all');
+        }
+
+        async function likeComment(commentId) {
+            if (!currentUser) {
+                alert('⚠️ Bitte logge dich ein, um zu liken!');
+                openAuthModal(true);
+                return;
+            }
+            
+            // Check if already liked
+            const { data: existing } = await supabase
+                .from('comment_likes')
+                .select('id')
+                .eq('comment_id', commentId)
+                .eq('user_id', currentUser.id)
+                .single();
+            
+            if (existing) {
+                // Unlike
+                await supabase
+                    .from('comment_likes')
+                    .delete()
+                    .eq('comment_id', commentId)
+                    .eq('user_id', currentUser.id);
+            } else {
+                // Like
+                await supabase
+                    .from('comment_likes')
+                    .insert({
+                        comment_id: commentId,
+                        user_id: currentUser.id
+                    });
+            }
+            
+            // Reload
+            await renderUrls(document.querySelector('.filter-btn.active')?.dataset.category || 'all');
+        }
+
+        // =====================================================
+        // RENDERING FUNCTIONS
+        // =====================================================
+
+        function getCategoryName(cat) {
+            const names = {
+                'github': '🐙 GitHub Repos',
+                'assets': '🖼️ GitHub Assets',
+                'lovable': '💻 Lovable.dev',
+                'database': '🗄️ Databases',
+                'platform': '🌐 Platforms',
+                'badge': '🏷️ Badges',
+                'community': '💬 Communities',
+                'documentation': '📚 Documentation',
+                'registry': '📦 Package Registries',
+                'infrastructure': '⚙️ Infrastructure',
+                'reference': '🔗 References',
+                'license': '⚖️ Licenses'
+            };
+            return names[cat] || cat;
+        }
+
+        function getCategories() {
+            return [...new Set(urlDatabase.map(u => u.category))];
+        }
+
+        function renderFilters() {
+            const container = document.getElementById('filterButtons');
+            const categories = getCategories();
+            
+            let html = '<button class="filter-btn active" data-category="all">🌐 Alle (' + urlDatabase.length + ')</button>';
+            
+            categories.forEach(cat => {
+                const count = urlDatabase.filter(u => u.category === cat).length;
+                html += `<button class="filter-btn" data-category="${cat}">${getCategoryName(cat)} (${count})</button>`;
+            });
+            
+            container.innerHTML = html;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderUrls(btn.dataset.category);
+                });
+            });
+        }
+
+        async function renderUrls(category = 'all') {
+            const grid = document.getElementById('urlGrid');
+            const filtered = category === 'all' 
+                ? urlDatabase 
+                : urlDatabase.filter(u => u.category === category);
+            
+            const commentsByUrl = await loadComments();
+            
+            let html = '';
+            filtered.forEach(url => {
+                const urlComments = commentsByUrl[url.id] || [];
+                
+                html += `
+                    <div class="url-card" data-id="${url.id}">
+                        <span class="url-category">${getCategoryName(url.category)}</span>
+                        <h3 class="url-title">${url.title}</h3>
+                        <a href="${url.url}" target="_blank" class="url-link">${url.url}</a>
+                        <p class="url-description">${url.description}</p>
+                        <div class="url-meta" style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                            📦 ${url.repo} • 🏷️ ${url.type}
+                        </div>
+                        
+                        <div class="comment-section">
+                            <div class="comment-header">
+                                <span class="comment-count">${urlComments.length} Kommentar${urlComments.length !== 1 ? 'e' : ''}</span>
+                                <button class="comment-toggle" onclick="toggleComments(${url.id})">💬 ${currentUser ? 'Kommentieren' : 'Kommentare ansehen'}</button>
+                            </div>
+                            
+                            <div class="comment-form" id="form-${url.id}">
+                                ${currentUser ? `
+                                    <textarea class="comment-input" id="input-${url.id}" placeholder="Dein Kommentar zu dieser URL..."></textarea>
+                                    <button class="comment-submit" onclick="submitComment(${url.id})">Kommentar abschicken</button>
+                                ` : `
+                                    <div style="text-align: center; padding: 20px; color: rgba(255,255,255,0.6);">
+                                        <p>Bitte logge dich ein, um zu kommentieren.</p>
+                                        <button class="auth-btn" onclick="openAuthModal(true)" style="margin-top: 10px;">Jetzt einloggen</button>
+                                    </div>
+                                `}
+                            </div>
+                            
+                            <div class="comments-list" id="comments-${url.id}">
+                                ${urlComments.map(c => {
+                                    const displayName = c.user_profiles?.display_name || c.user_profiles?.username || 'Anonymous';
+                                    const avatarUrl = c.user_profiles?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=bf953f&color=000`;
+                                    const likesCount = c.comment_likes?.length || 0;
+                                    const isLikedByUser = currentUser && c.comment_likes?.some(like => like.user_id === currentUser.id);
+                                    
+                                    return `
+                                        <div class="comment-item">
+                                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                                <img src="${avatarUrl}" alt="${displayName}" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--gold-light);">
+                                                <div>
+                                                    <div class="comment-author">${displayName}</div>
+                                                    <div class="comment-date">${new Date(c.created_at).toLocaleString('de-DE')}</div>
+                                                </div>
+                                            </div>
+                                            <div class="comment-text">${c.comment_text}</div>
+                                            <div style="margin-top: 10px; display: flex; gap: 15px;">
+                                                <button class="comment-like-btn ${isLikedByUser ? 'liked' : ''}" onclick="likeComment('${c.id}')">
+                                                    ${isLikedByUser ? '❤️' : '🤍'} ${likesCount} ${likesCount !== 1 ? 'Likes' : 'Like'}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            grid.innerHTML = html;
+            await updateStats();
+        }
+
+        function toggleComments(urlId) {
+            const form = document.getElementById(`form-${urlId}`);
+            const list = document.getElementById(`comments-${urlId}`);
+            
+            form.classList.toggle('active');
+            list.classList.toggle('active');
+        }
+
+        async function submitComment(urlId) {
+            const input = document.getElementById(`input-${urlId}`);
+            const text = input.value.trim();
+            
+            if (text) {
+                await saveComment(urlId, text);
+                input.value = '';
+            }
+        }
+
+        async function updateStats() {
+            const commentsByUrl = await loadComments();
+            const totalComments = Object.values(commentsByUrl).reduce((sum, arr) => sum + arr.length, 0);
+            
+            document.getElementById('totalUrls').textContent = urlDatabase.length;
+            document.getElementById('totalComments').textContent = totalComments;
+            document.getElementById('activeCategories').textContent = getCategories().length;
+        }
+
+        // =====================================================
+        // REAL-TIME SUBSCRIPTIONS
+        // =====================================================
+
+        function setupRealtimeSubscriptions() {
+            // Subscribe to new comments
+            supabase
+                .channel('url_comments_channel')
+                .on('postgres_changes', 
+                    { event: '*', schema: 'public', table: 'url_comments' },
+                    (payload) => {
+                        console.log('Real-time update:', payload);
+                        renderUrls(document.querySelector('.filter-btn.active')?.dataset.category || 'all');
+                    }
+                )
+                .subscribe();
+            
+            // Subscribe to likes
+            supabase
+                .channel('comment_likes_channel')
+                .on('postgres_changes',
+                    { event: '*', schema: 'public', table: 'comment_likes' },
+                    (payload) => {
+                        console.log('Likes update:', payload);
+                        renderUrls(document.querySelector('.filter-btn.active')?.dataset.category || 'all');
+                    }
+                )
+                .subscribe();
+        }
+
+        // =====================================================
+        // SEARCH
+        // =====================================================
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.url-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        });
+
+        // =====================================================
+        // INITIALIZATION
+        // =====================================================
+
+        async function init() {
+            await checkAuth();
+            renderFilters();
+            await renderUrls();
+            setupRealtimeSubscriptions();
+            
+            // Listen for auth changes
+            supabase.auth.onAuthStateChange(async (event, session) => {
+                console.log('Auth state changed:', event);
+                await checkAuth();
+                await renderUrls(document.querySelector('.filter-btn.active')?.dataset.category || 'all');
+            });
+        }
+
+        // Start app
+        init();
+    </script>
+</body>
+</html>

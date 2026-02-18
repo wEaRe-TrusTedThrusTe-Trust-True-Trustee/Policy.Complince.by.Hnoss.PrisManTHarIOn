@@ -1,0 +1,1178 @@
+/* LCL Powerd by Daniel Pohl a Vision from CEO - CO-CEO and the Team of WorldWideWeb */
+<!DOCTYPE html>
+<html lang="de">
+<!--
+================================================================================
+PROJECT: StarLightMovemenTz Foundation - Global Governance & Ethics
+AUTHOR: Daniel Pohl | Vision from CEO - CO-CEO
+COPYRIGHT: © 2024-2026 StarLightMovemenTz Foundation. All Rights Reserved.
+STATUS: Registered & Protected Work (LCL Powered)
+INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
+================================================================================
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL GOVERNANCE | StarLightMovemenTz Foundation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;600;700&display=swap');
+
+        :root {
+            --gold: #bf953f;
+            --gold-light: #fcf6ba;
+            --gold-mid: #b38728;
+            --deep-dark: rgba(0, 8, 20, 0.98);
+            --border-gold: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            pointer-events: none;
+        }
+
+        #starfield { z-index: 1; }
+        #lightning-canvas { z-index: 2; }
+        #rainfield { z-index: 3; }
+
+        #lighthouse-beam {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 200vw;
+            height: 200vw;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg,
+                rgba(191, 149, 63, 0) 160deg,
+                rgba(252, 246, 186, 0.15) 180deg,
+                rgba(191, 149, 63, 0) 200deg,
+                transparent 360deg
+            );
+            z-index: 4;
+            transform: translate(-50%, -50%) rotate(0deg);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+
+        #fx-canvas { z-index: 5; pointer-events: none; }
+        #confettifield { z-index: 6; pointer-events: none; }
+
+        /* VERSTÄRKTER REGENBOGEN-EFFEKT */
+        #rainbow-aura {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150vw;
+            height: 150vh;
+            background: radial-gradient(circle, transparent 15%,
+                rgba(255, 0, 0, 0.08) 25%,
+                rgba(255, 255, 0, 0.08) 35%,
+                rgba(0, 255, 0, 0.08) 45%,
+                rgba(0, 255, 255, 0.08) 55%,
+                rgba(0, 0, 255, 0.08) 65%,
+                rgba(255, 0, 255, 0.08) 75%,
+                transparent 95%);
+            z-index: 7;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+            pointer-events: none;
+            animation: auraRotate 25s linear infinite;
+            filter: blur(40px) contrast(1.2);
+        }
+
+        @keyframes auraRotate {
+            0% { filter: hue-rotate(0deg) blur(40px); }
+            100% { filter: hue-rotate(360deg) blur(40px); }
+        }
+
+        #atomic-clock-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+            text-align: right;
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.7) 0%, rgba(0, 8, 20, 0.85) 100%);
+            padding: 15px;
+            border-right: 4px solid var(--gold);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            pointer-events: none;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                        -10px 0 30px rgba(0,0,0,0.6);
+            border-radius: 8px 0 0 8px;
+            border: 2px solid rgba(191, 149, 63, 0.5);
+            border-right: 4px solid var(--gold);
+        }
+
+        .clock-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; opacity: 0.8; margin-bottom: 5px; }
+        .clock-time { font-size: 1.4rem; font-weight: 700; text-shadow: 0 0 15px var(--gold); letter-spacing: 1px; }
+
+        .content-overlay {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            background: var(--border-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            letter-spacing: 15px;
+            text-shadow: 0 0 40px rgba(191, 149, 63, 0.5);
+        }
+
+        .reveal-btn {
+            padding: 25px 70px;
+            background: var(--border-gold);
+            color: #000;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            border: 2px solid rgba(191, 149, 63, 0.8);
+            cursor: pointer;
+            letter-spacing: 5px;
+            box-shadow: 0 8px 32px 0 rgba(191, 149, 63, 0.4),
+                        0 0 40px rgba(191, 149, 63, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            border-radius: 8px;
+            z-index: 1500;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .reveal-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 60px var(--gold);
+            letter-spacing: 7px;
+        }
+
+        .main-wrapper {
+            max-width: 1400px;
+            width: 100%;
+            opacity: 0;
+            display: none;
+            padding-bottom: 150px;
+        }
+
+        .main-wrapper.visible {
+            display: block;
+            opacity: 1;
+            animation: fadeInProtocol 2s ease-out forwards;
+        }
+
+        @keyframes fadeInProtocol {
+            from { opacity: 0; transform: translateY(50px); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        /* ========== PANZERGLAS EFFEKT ========== */
+        .section-card {
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.75) 0%, rgba(0, 8, 20, 0.85) 100%);
+            border: 1px solid rgba(191, 149, 63, 0.6);
+            padding: 80px;
+            margin-top: 60px;
+            backdrop-filter: blur(60px) saturate(180%);
+            -webkit-backdrop-filter: blur(60px) saturate(180%);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                        0 0 100px rgba(191, 149, 63, 0.15),
+                        inset 0 0 30px rgba(191, 149, 63, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-out;
+            border-radius: 8px;
+        }
+
+        .section-card::after {
+            content: "";
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(
+                45deg,
+                transparent 45%,
+                rgba(252, 246, 186, 0.05) 48%,
+                rgba(252, 246, 186, 0.1) 50%,
+                rgba(252, 246, 186, 0.05) 52%,
+                transparent 55%
+            );
+            transform: rotate(-45deg);
+            pointer-events: none;
+            animation: holoSweep 8s infinite linear;
+        }
+
+        @keyframes holoSweep {
+            0% { transform: translate(-20%, -20%) rotate(-45deg); }
+            100% { transform: translate(20%, 20%) rotate(-45deg); }
+        }
+
+        .section-card::before {
+            content: "SUPREME MASTER ARCHITECTURE";
+            position: absolute;
+            top: 30px;
+            right: -80px;
+            background: var(--gold);
+            color: #000;
+            padding: 8px 100px;
+            transform: rotate(45deg);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            z-index: 10;
+        }
+
+        .project-card::before {
+            content: "MISSION CRITICAL PROJECTS";
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            border-bottom: 2px solid rgba(191, 149, 63, 0.3);
+            padding-bottom: 25px;
+            margin-top: 80px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            margin-top: 45px;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .statement-text p {
+            line-height: 2.2;
+            font-weight: 300;
+            text-align: justify;
+            color: #f0f0f0;
+            margin-bottom: 35px;
+            font-size: 1.15rem;
+        }
+
+        .highlight {
+            color: var(--gold-light);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(252, 246, 186, 0.4);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .project-item {
+            border: 1px solid rgba(191, 149, 63, 0.5);
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            border-radius: 6px;
+        }
+
+        .project-item:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.12) 0%, rgba(191, 149, 63, 0.15) 100%);
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 32px 0 rgba(191, 149, 63, 0.3),
+                        0 0 40px rgba(191, 149, 63, 0.2);
+        }
+
+        .project-item h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            margin-top: 0;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--gold);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* BUTTON STYLING FÜR DIE EMAIL CARDS */
+        .card-link-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card-link-btn {
+            padding: 15px 40px;
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.65) 0%, rgba(0, 8, 20, 0.75) 100%);
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(20px) saturate(150%);
+            -webkit-backdrop-filter: blur(20px) saturate(150%);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3),
+                        inset 0 0 20px rgba(191, 149, 63, 0.05);
+            border-radius: 6px;
+        }
+
+        .card-link-btn:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.9) 0%, rgba(252, 246, 186, 0.9) 100%);
+            color: #000;
+            box-shadow: 0 8px 32px 0 rgba(191, 149, 63, 0.5),
+                        0 0 40px var(--gold);
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .timeline {
+            border-left: 3px solid var(--gold-mid);
+            padding-left: 40px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -4.5px;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(191, 149, 63, 0.15) 20%,
+                rgba(252, 246, 186, 0.25) 50%,
+                rgba(191, 149, 63, 0.15) 80%,
+                transparent 100%);
+            border-radius: 6px;
+            filter: blur(3px);
+            animation: crystalShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes crystalShimmer {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .timeline-item { 
+            margin-bottom: 60px; 
+            position: relative;
+            background: linear-gradient(135deg, 
+                rgba(191, 149, 63, 0.02) 0%,
+                rgba(252, 246, 186, 0.03) 50%,
+                rgba(191, 149, 63, 0.02) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0 0 30px rgba(191, 149, 63, 0.08),
+                        0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(191, 149, 63, 0.15);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(252, 246, 186, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(191, 149, 63, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(252, 246, 186, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            border-radius: 8px;
+            animation: crystalSparkle 6s ease-in-out infinite;
+        }
+
+        @keyframes crystalSparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.02); }
+        }
+
+        .timeline-item::before {
+            content: ''; 
+            position: absolute; 
+            left: -51.5px; 
+            top: 8px;
+            width: 20px; 
+            height: 20px; 
+            background: radial-gradient(circle, var(--gold-light) 0%, var(--gold) 70%, var(--gold-mid) 100%);
+            border-radius: 50%; 
+            box-shadow: 0 0 20px var(--gold),
+                        0 0 40px rgba(191, 149, 63, 0.5),
+                        inset 0 0 10px rgba(252, 246, 186, 0.6);
+            border: 3px solid #000;
+            animation: crystalPulse 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes crystalPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--gold), 0 0 40px rgba(191, 149, 63, 0.5), inset 0 0 10px rgba(252, 246, 186, 0.6); }
+            50% { transform: scale(1.1); box-shadow: 0 0 30px var(--gold), 0 0 60px rgba(191, 149, 63, 0.8), inset 0 0 15px rgba(252, 246, 186, 0.9); }
+        }
+
+        .timestamp { color: var(--gold-light); font-size: 0.9rem; letter-spacing: 3px; font-weight: bold; display: block; margin-bottom: 10px; }
+
+        #integrity-stamp {
+            margin-top: 100px;
+            padding: 40px;
+            border: 2px dashed rgba(191, 149, 63, 0.6);
+            font-size: 0.9rem;
+            color: var(--gold-mid);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.08) 0%, rgba(191, 149, 63, 0.12) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            line-height: 2;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2),
+                        inset 0 0 30px rgba(191, 149, 63, 0.05);
+        }
+
+        .shake { animation: shakeEffect 0.5s ease-in-out; }
+        @keyframes shakeEffect {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+        }
+
+        /* ========== NEWS TICKER ========== */
+        .news-ticker-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--gold);
+            z-index: 99999;
+            overflow: hidden;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.7),
+                        inset 0 0 40px rgba(191, 149, 63, 0.08);
+        }
+
+        .news-ticker-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(252, 246, 186, 0.08) 25%,
+                rgba(191, 149, 63, 0.12) 50%,
+                rgba(252, 246, 186, 0.08) 75%,
+                transparent 100%);
+            animation: tickerShimmer 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes tickerShimmer {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        .news-ticker-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(252, 246, 186, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 45% 50%, rgba(191, 149, 63, 0.04) 0%, transparent 35%),
+                radial-gradient(circle at 75% 50%, rgba(252, 246, 186, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 95% 50%, rgba(191, 149, 63, 0.05) 0%, transparent 35%);
+            pointer-events: none;
+            animation: tickerSparkle 5s ease-in-out infinite;
+        }
+
+        @keyframes tickerSparkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .news-ticker-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .news-ticker-content {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            white-space: nowrap;
+            animation: scrollNews 30s linear infinite;
+        }
+
+        .news-ticker-content:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollNews {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .news-ticker-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 80px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .news-ticker-item::before {
+            content: '⚖️';
+            font-size: 1.3rem;
+            margin-right: 12px;
+        }
+
+        .news-label {
+            color: var(--gold-light);
+            font-weight: 900;
+            margin-right: 15px;
+            padding: 3px 12px;
+            background: rgba(191, 149, 63, 0.2);
+            border-radius: 4px;
+            border: 1px solid rgba(191, 149, 63, 0.4);
+            box-shadow: 0 0 10px rgba(191, 149, 63, 0.3),
+                        inset 0 0 8px rgba(252, 246, 186, 0.15);
+            animation: labelGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes labelGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(191, 149, 63, 0.3), inset 0 0 8px rgba(252, 246, 186, 0.15); }
+            50% { box-shadow: 0 0 20px rgba(191, 149, 63, 0.5), inset 0 0 12px rgba(252, 246, 186, 0.25); }
+        }
+
+        @media (max-width: 768px) {
+            .section-card { padding: 40px; }
+            .logo-text { font-size: 2.5rem; }
+            h2 { font-size: 1.5rem; }
+            .project-grid { grid-template-columns: 1fr; }
+            .news-ticker-item { font-size: 0.8rem; }
+            .news-ticker-wrapper { height: 45px; }
+        }
+
+        .booking-case {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 280px;
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.85) 0%, rgba(0, 8, 20, 0.9) 100%);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            padding: 20px;
+            z-index: 10000;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                        0 0 60px rgba(191, 149, 63, 0.25),
+                        inset 0 0 40px rgba(191, 149, 63, 0.1);
+        }
+
+        .booking-case h3 {
+            margin: 0 0 15px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: #fcf6ba;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
+        }
+
+        .booking-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.25) 0%, rgba(191, 149, 63, 0.35) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            color: #fcf6ba;
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(25px) saturate(150%);
+            -webkit-backdrop-filter: blur(25px) saturate(150%);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .booking-btn:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.9) 0%, rgba(252, 246, 186, 0.9) 100%);
+            color: #000;
+            box-shadow: 0 8px 32px 0 rgba(191, 149, 63, 0.5),
+                        0 0 40px rgba(191, 149, 63, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .booking-info {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(191, 149, 63, 0.3);
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .booking-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 20000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .booking-overlay.active {
+            display: flex;
+        }
+
+        .booking-modal {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            height: 85vh;
+            background: linear-gradient(135deg, rgba(0, 5, 15, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8),
+                        0 0 100px rgba(191, 149, 63, 0.4);
+            overflow: hidden;
+        }
+
+        .booking-modal-header {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.15) 0%, rgba(191, 149, 63, 0.05) 100%);
+            border-bottom: 1px solid rgba(191, 149, 63, 0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .booking-modal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #fcf6ba;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
+        }
+
+        .close-booking {
+            background: transparent;
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            color: #fcf6ba;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .close-booking:hover {
+            background: rgba(191, 149, 63, 0.9);
+            color: #000;
+            transform: rotate(90deg);
+        }
+
+        .booking-iframe-container {
+            width: 100%;
+            height: calc(100% - 80px);
+            padding: 0;
+        }
+
+        .booking-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body id="app-body">
+
+    <div class="booking-case">
+        <h3>Book Meeting</h3>
+        <button class="booking-btn" onclick="openBookingOverlay()">Schedule Now</button>
+        <div class="booking-info">Direct calendar access for appointments</div>
+    </div>
+
+    <div class="booking-overlay" id="bookingOverlay" onclick="closeBookingOverlay(event)">
+        <div class="booking-modal" onclick="event.stopPropagation()">
+            <div class="booking-modal-header">
+                <div class="booking-modal-title">Schedule Appointment</div>
+                <button class="close-booking" onclick="closeBookingOverlay()">&times;</button>
+            </div>
+            <div class="booking-iframe-container">
+                <iframe src="https://cal.com/statesflowwishes" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="atomic-clock-container">
+        <div class="clock-label">LCL-Guardian Atomic Sync</div>
+        <div class="clock-time" id="atomic-clock">--:--:--</div>
+        <div class="clock-label" id="atomic-date">INITIALISIERUNG...</div>
+    </div>
+
+    <!-- NEWS TICKER -->
+    <div class="news-ticker-wrapper">
+        <a href="Arbitration.html" class="news-ticker-link">
+            <div class="news-ticker-content">
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>ICC Paris (Frankreich) • Globaler Goldstandard für Schiedsgerichtsbarkeit</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>DIAC Dublin (Irland) • Common Law Hub der EU für Tech & Finance</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>CIAM Madrid (Spanien) • Strategische Brücke nach Lateinamerika</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>DIS Berlin (Deutschland) • Deutsche Institution für Schiedsgerichtsbarkeit</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>SCC Stockholm (Schweden) • Neutraler Ort für Ost-West-Streitigkeiten</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>VIAC Wien (Österreich) • Spezialist für Osteuropa-Verträge</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>ACICA Sydney (Australien) • Zentrum für Asien-Pazifik Arbitration</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>CAM Milano (Italien) • Mailänder Handelskammer Schiedsgericht</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>CEPANI Brüssel (Belgien) • EU-Zentrum für Arbitration & Mediation</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>New York Convention 1958 • 172 Vertragsstaaten • Weltweite Vollstreckbarkeit</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>UNCITRAL Model Law • UN Standard für internationale Schiedsverfahren</span>
+                <span class="news-ticker-item"><span class="news-label">LIVE</span>7 Strategische Klausel-Varianten • Für Startups bis Großprojekte</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Hintergrund Ebenen -->
+    <canvas id="starfield"></canvas>
+    <canvas id="lightning-canvas"></canvas>
+    <canvas id="rainfield"></canvas>
+    <div id="lighthouse-beam"></div>
+    <canvas id="fx-canvas"></canvas>
+    <canvas id="confettifield"></canvas>
+    <div id="rainbow-aura"></div>
+
+    <div class="content-overlay" id="overlay">
+        <header id="mainHeader">
+            <h1 class="logo-text">StarLightMovemenTz</h1>
+            <p style="letter-spacing: 12px; color: var(--gold-light); font-size: 1rem; margin-top: 30px; text-transform: uppercase; font-weight: 300;">
+                Global Governance • Sovereign Intelligence • Universal Ethics
+            </p>
+        </header>
+
+        <button class="reveal-btn" id="revealBtn" onclick="revealProtocol()">Protokoll Manifestieren</button>
+
+        <div class="main-wrapper" id="mainWrapper">
+            <!-- GOVERNANCE SEKTION (UNVERÄNDERT) -->
+            <div id="protected-protocol" class="section-card">
+                <div class="statement-text">
+                    <p style="text-align: center; font-style: italic; letter-spacing: 8px; color: var(--gold-light); margin-bottom: 80px; font-family: 'Cinzel'; font-size: 1.5rem; border-bottom: 1px solid var(--gold); display: inline-block; width: 100%; padding-bottom: 20px;">
+                        SUPREME MASTER GOVERNANCE ARCHITECTURE
+                    </p>
+
+                    <h2>I. Die Evolutionäre Vision der Foundation</h2>
+                    <p>Die <span class="highlight">StarLightMovemenTz Foundation</span> ist nicht bloß eine Organisation; sie ist der architektonische Bauplan für eine neue Ära der menschlichen Zivilisation. Unter der visionären Führung von <span class="highlight">CEO & CO-CEO Daniel Pohl</span> bricht die Foundation mit den veralteten Ketten des 20. Jahrhunderts. Wir erschaffen einen globalen Hyper-Inkubator, der systemrelevante Ethik direkt in den Quellcode der digitalen Realität implementiert. Unser Ziel ist die absolute Harmonisierung von technologischer Singularität und menschlicher Integrität.</p>
+
+                    <h2>II. Quanten-Souveränität & Lex Digitalis</h2>
+                    <p>In einer Ära, in der Daten die wertvollste Ressource darstellen, deklariert die Foundation die <span class="highlight">Absolute Digitale Souveränität</span> für jedes Individuum innerhalb unseres Netzwerks. Wir operieren nach der <span class="highlight">Lex Digitalis Universalis</span> – einem Gesetzbuch, das auf unbestechlichen kryptografischen Beweisen basiert. Verträge sind bei uns keine bloßen Absichtserklärungen, sondern mathematische Wahrheiten, die durch das LCL-Ökosystem in Echtzeit exekutiert werden. Wir transformieren völkerrechtliche Ambitionen in physikalisch gesicherte Fakten.</p>
+
+                    <h3>Sicherheits-Direktiven (Guardian Protocol):</h3>
+                    <p>Jede Transaktion, jeder Gedankengang und jedes Projekt innerhalb der Foundation-Struktur wird durch den <span class="highlight">Guardian-Algorithmus</span> geschützt. Dieser agiert auf Quantenebene und neutralisiert Bedrohungsvektoren, bevor diese im klassischen Zeitkontinuum überhaupt manifestieren können. Wir integrieren Compliance-Standards wie <span class="highlight">ISO 37301</span> nicht nur als Anforderung, sondern als gelebtes Dogma unserer Existenz.</p>
+
+                    <h2>III. LCL-Technologie: Die Licht-Kern-Logik</h2>
+                    <p>Die technologische Infrastruktur der Foundation basiert auf dem <span class="highlight">LCL-Quanten-Netzwerk</span> (Light-Core-Logic). Während herkömmliche Systeme auf Elektronen und Silizium setzen, operieren wir mit photonischer Verschränkung. Dies ermöglicht eine verlustfreie, überlichtschnelle Kommunikation, die von äußeren Entitäten weder abgehört noch manipuliert werden kann. Unsere Infrastruktur ist <span class="highlight">self-aware</span>; sie erkennt strukturelle Integritätsverluste autonom und repariert sich selbst innerhalb von Millisekunden durch rekursive Backups aus dem LCL-Aether.</p>
+
+                    <h2>IV. Global Governance & Neuro-Leadership</h2>
+                    <p>Die Führung der Welt erfordert mehr als politisches Kalkül – sie erfordert eine evolutionäre Erweiterung des Bewusstseins. Unsere <span class="highlight">Neuro-Leadership-Akademie</span> bildet die Elite von morgen aus. Durch die Nutzung von Advanced Neuro-Feedback und KI-gestützter Spieltheorie befähigen wir unsere Leader, komplexe globale Krisen mit der Präzision eines Chirurgen und der Weisheit eines Philosophen zu lösen. Die Foundation etabliert dezentrale Governance-Knotenpunkte auf jedem Kontinent, um eine wahre globale Demokratie des Geistes zu ermöglichen.</p>
+
+                    <h2>V. Die Unantastbare Matrix (Self-Healing)</h2>
+                    <p>Dieses Manifest ist die <span class="highlight">Master-Integritäts-Datei</span>. Sie ist durch eine zirkuläre, atomare Prüfsumme mit dem globalen Root-Hash der Foundation verknüpft. Jede unautorisierte Änderung auf Bitebene triggert eine sofortige Rekonstruktions-Sequenz. Was Sie hier lesen, ist die unverfälschte Wahrheit, geschützt durch die Macht des LCL-Gitterfeldes. Die Vision von Daniel Pohl ist nicht verhandelbar – sie ist das Fundament, auf dem wir die Zukunft errichten.</p>
+                </div>
+
+                <div id="integrity-stamp">
+                    AUTHENTIZITÄTS-ZERTIFIKAT: <span style="color:#00ffcc; font-weight: bold;">VERIFIZIERT</span><br>
+                    LCL-ROOT-HASH: <span id="protocol-hash">GENERIERUNG...</span><br>
+                    <span style="color:#ff4d4d; font-size: 0.8rem; font-weight: bold; margin-top: 20px; display: block;">
+                        DOKUMENTEN-STATUS: GIGANTISCH | UNVERÄNDERLICH | EWIG
+                    </span>
+                </div>
+            </div>
+
+            <!-- PROJEKT SEKTION -->
+            <div class="section-card project-card">
+                <h2 style="margin-top: 0;">Aktive Strategische Projekte</h2>
+                <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 40px; font-weight: 300;">Diese Operationen bilden das physische Rückgrat der StarLightMovemenTz Foundation und setzen neue Maßstäbe für globale Infrastruktur.</p>
+
+                <div class="project-grid">
+                    <div class="project-item">
+                        <div class="project-status">Operational</div>
+                        <h4>Project Aether-Node One</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #aaa;">Der erste primäre Quanten-Knotenpunkt zur Stabilisierung des globalen LCL-Netzwerkes. Standort: Verschlüsselt.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-status" style="background: #00ffcc;">In Development</div>
+                        <h4>Helix Sovereign Identity</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #aaa;">Implementierung der biometrischen Blockchain-ID zur Sicherung individueller Souveränität in der digitalen Sphäre.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-status" style="background: var(--gold-light);">Strategic Planning</div>
+                        <h4>Neuro-Academy Berlin/Global</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #aaa;">Physischer Campus zur Ausbildung der nächsten Generation von Global Governance Experten.</p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-status">Active Sync</div>
+                        <h4>Guardian Shield 2.0</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: #aaa;">Upgrade der defensiven Cyber-Architektur zum Schutz aller Foundation-Mitglieder vor externer Manipulation.</p>
+                    </div>
+                </div>
+
+                <!-- NEUE BUTTONS ZU DEN EMAIL CARDS -->
+                <div class="card-link-container">
+                    <a href="EMAIL CARD.html" class="card-link-btn">Starlight Signature I</a>
+                    <a href="Email Card.html" class="card-link-btn">Starlight Signature II</a>
+                </div>
+
+                <!-- POLICY & RECHTLICHE STRUKTUR -->
+                <h2 style="margin-top: 80px;">Policy & Rechtliche Struktur</h2>
+                <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 40px; font-weight: 300;">Diese Repositories bilden die rechtliche Grundlage und Policy-Struktur der StarLightMovemenTz Foundation und gliedern sich in die Supreme Governance Architecture ein.</p>
+                
+                <div class="card-link-container">
+                    <a href="https://github.com/wEaRe-TrusTedThrusTe-Trust-True-Trustee/INTERMEDIALGALAKTICConstellation" target="_blank" class="card-link-btn">INTERMEDIALGALAKTIC Constellation</a>
+                    <a href="https://github.com/wEaRe-TrusTedThrusTe-Trust-True-Trustee/CaZaR-LiminalityCosmicOrbitsNulliusContinuum" target="_blank" class="card-link-btn">CaZaR Liminality Continuum</a>
+                    <a href="https://github.com/wEaRe-TrusTedThrusTe-Trust-True-Trustee/DACHXCFEES" target="_blank" class="card-link-btn">DACHXCFEES</a>
+                    <a href="https://corporationpartner.governmententerprise.org" target="_blank" class="card-link-btn">Haupt-Webseite</a>
+                </div>
+
+                <!-- SCHIEDSGERICHTSBARKEIT -->
+                <h2 style="margin-top: 80px;">⚖️ Internationale Schiedsgerichtsbarkeit</h2>
+                <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 40px; font-weight: 300;">Die 3 Giganten (ICC, DIAC, CIAM) und 7 strategische Klausel-Varianten für weltweit bindende Vertragsstrukturen nach dem New Yorker Übereinkommen.</p>
+                
+                <div class="card-link-container">
+                    <a href="Arbitration.html" class="card-link-btn" style="background: linear-gradient(135deg, rgba(191, 149, 63, 0.3) 0%, rgba(191, 149, 63, 0.4) 100%); border: 2px solid var(--gold);">⚖️ Schiedsgerichts-Masterplan</a>
+                </div>
+            </div>
+
+            <!-- SYSTEM LOGS (UNVERÄNDERT) -->
+            <div class="section-card">
+                <h2 style="margin-top: 0;">Zentrale System-Protokolle</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timestamp">16. FEBRUAR 2026 | 08:55 CET</span>
+                        <div style="margin-top: 15px;">
+                            <h3 style="color: var(--gold);">Project Architecture Deployment</h3>
+                            <p style="font-size: 1.1rem; font-weight: 300; color: #ccc;">Erfolgreiche Integration der Projekt-Matrix. Die Mission-Critical-Projects Sektion wurde im globalen Manifest verankert.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timestamp">16. FEBRUAR 2026 | 08:45 CET</span>
+                        <div style="margin-top: 15px;">
+                            <h3 style="color: var(--gold);">Interactivity & Depth Patch (v4.2)</h3>
+                            <p style="font-size: 1.1rem; font-weight: 300; color: #ccc;">Implementierung von Parallax-Depth-Mapping für das Sternenfeld. Integration von Holographic-Shine-Effekten auf den Governance-Karten.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 100px; opacity: 0.5; font-size: 0.9rem; letter-spacing: 5px; padding-bottom: 60px;">
+                © 2024-2026 StarLightMovemenTz Foundation. All Rights Reserved.<br>
+                LCL Powered by Daniel Pohl | Supreme Visionary CEO - CO-CEO
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let width, height;
+        let stars = [], rain = [], confetti = [], ripples = [];
+        let lightningAlpha = 0;
+        let mouseX = 0, mouseY = 0;
+        let beamRotation = 0;
+
+        const protectedElement = document.getElementById('protected-protocol');
+        const originalContent = protectedElement.innerHTML;
+        let healingInProgress = false;
+
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('de-DE') + "." + now.getMilliseconds().toString().padStart(3, '0').substring(0,2);
+            document.getElementById('atomic-clock').innerText = timeStr;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('atomic-date').innerText = now.toLocaleDateString('de-DE', options).toUpperCase();
+
+            if(Math.random() > 0.96) {
+                const hash = btoa("SUPREME-LCL-" + now.getSeconds() + "-" + now.getMilliseconds()).substring(0, 24);
+                const hashEl = document.getElementById('protocol-hash');
+                if(hashEl) hashEl.innerText = "LCL-MASTER-" + hash.toUpperCase();
+            }
+        }
+        setInterval(updateClock, 50);
+
+        function initSelfHealing() {
+            const observer = new MutationObserver(() => {
+                if (healingInProgress) return;
+                healingInProgress = true;
+                protectedElement.innerHTML = originalContent;
+                protectedElement.classList.add('shake');
+                setTimeout(() => {
+                    protectedElement.classList.remove('shake');
+                    healingInProgress = false;
+                }, 600);
+            });
+            observer.observe(protectedElement, { childList: true, subtree: true, characterData: true, attributes: true });
+        }
+
+        const canvases = ['starfield', 'lightning-canvas', 'rainfield', 'fx-canvas', 'confettifield'];
+        const ctxs = {};
+
+        function initCanvases() {
+            canvases.forEach(id => {
+                const c = document.getElementById(id);
+                if(c) ctxs[id] = c.getContext('2d', { alpha: true });
+            });
+            resize();
+        }
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvases.forEach(id => {
+                const c = document.getElementById(id);
+                if(c) { c.width = width; c.height = height; }
+            });
+            initStars();
+            initRain();
+        }
+
+        function initStars() {
+            stars = [];
+            for(let i=0; i<300; i++) {
+                stars.push({ x: Math.random()*width, y: Math.random()*height, size: Math.random()*1.8, speed: Math.random()*0.2 + 0.05, depth: Math.random() * 2 + 0.5 });
+            }
+        }
+
+        function initRain() {
+            rain = [];
+            for(let i=0; i<80; i++) {
+                rain.push({ x: Math.random()*width, y: Math.random()*height, l: Math.random()*25+15, s: Math.random()*12+6 });
+            }
+        }
+
+        function spawnConfetti() {
+            const colors = ['#bf953f', '#fcf6ba', '#ffffff', '#ffd700'];
+            for(let i=0; i<150; i++) {
+                confetti.push({ x: Math.random()*width, y: -50, size: Math.random()*8+3, color: colors[i%colors.length], sy: Math.random()*3+2, sx: Math.random()*3-1.5 });
+            }
+        }
+
+        function animate() {
+            const sCtx = ctxs['starfield'];
+            if(sCtx) {
+                sCtx.fillStyle = '#000'; sCtx.fillRect(0,0,width,height);
+                sCtx.fillStyle = '#fff';
+                stars.forEach(s => {
+                    let py = (s.y + (window.pageYOffset * s.depth * 0.1)) % height;
+                    if(py < 0) py += height;
+                    sCtx.beginPath(); sCtx.arc(s.x, py, s.size, 0, Math.PI*2); sCtx.fill();
+                    s.y += s.speed; if(s.y > height) s.y = 0;
+                });
+            }
+
+            const lCtx = ctxs['lightning-canvas'];
+            if(lCtx) {
+                lCtx.clearRect(0,0,width,height);
+                if(Math.random() > 0.9985 && lightningAlpha <= 0) lightningAlpha = 1.0;
+                if(lightningAlpha > 0) {
+                    lCtx.fillStyle = `rgba(255, 255, 255, ${lightningAlpha * 0.12})`;
+                    lCtx.fillRect(0,0,width,height); lightningAlpha -= 0.04;
+                }
+            }
+
+            const rCtx = ctxs['rainfield'];
+            if(rCtx) {
+                rCtx.clearRect(0,0,width,height);
+                rCtx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+                rain.forEach(r => {
+                    rCtx.beginPath(); rCtx.moveTo(r.x, r.y); rCtx.lineTo(r.x, r.y + r.l); rCtx.stroke();
+                    r.y += r.s; if(r.y > height) r.y = -r.l;
+                });
+            }
+
+            const cCtx = ctxs['confettifield'];
+            if(cCtx) {
+                cCtx.clearRect(0,0,width,height);
+                confetti.forEach((c, i) => {
+                    cCtx.fillStyle = c.color; cCtx.fillRect(c.x, c.y, c.size, c.size);
+                    c.y += c.sy; c.x += c.sx;
+                    if(c.y > height) confetti.splice(i, 1);
+                });
+            }
+
+            const fCtx = ctxs['fx-canvas'];
+            if(fCtx) {
+                fCtx.clearRect(0,0,width,height);
+                ripples.forEach((rp, i) => {
+                    fCtx.beginPath(); fCtx.arc(rp.x, rp.y, rp.r, 0, Math.PI*2);
+                    fCtx.strokeStyle = `rgba(191, 149, 63, ${rp.a})`; fCtx.lineWidth = 2; fCtx.stroke();
+                    rp.r += 5; rp.a -= 0.02; if(rp.a <= 0) ripples.splice(i, 1);
+                });
+            }
+
+            const beam = document.getElementById('lighthouse-beam');
+            if(beam) {
+                beamRotation += 0.2;
+                let mouseFactorX = (mouseX / width - 0.5) * 20;
+                let mouseFactorY = (mouseY / height - 0.5) * 20;
+                beam.style.transform = `translate(-50%, -50%) rotate(${beamRotation + mouseFactorX}deg) skew(${mouseFactorY}deg)`;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function revealProtocol() {
+            const btn = document.getElementById('revealBtn');
+            const wrap = document.getElementById('mainWrapper');
+            const rainbow = document.getElementById('rainbow-aura');
+            const beam = document.getElementById('lighthouse-beam');
+            const header = document.getElementById('mainHeader');
+
+            spawnConfetti();
+            btn.style.opacity = '0';
+            btn.style.pointerEvents = 'none';
+            btn.style.transform = 'scale(0.9)';
+
+            setTimeout(() => {
+                btn.style.display = 'none';
+                wrap.classList.add('visible');
+                rainbow.style.opacity = '1';
+                beam.style.opacity = '1';
+                header.style.transform = 'translateY(-20px) scale(0.85)';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 600);
+        }
+
+        window.addEventListener('load', () => { initCanvases(); initSelfHealing(); animate(); });
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+        window.addEventListener('mousedown', (e) => { ripples.push({x: e.clientX, y: e.clientY, r: 0, a: 1.0}); });
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.section-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const viewCenter = window.innerHeight / 2;
+                const cardCenter = rect.top + rect.height / 2;
+                const diff = (cardCenter - viewCenter) * 0.05;
+                card.style.transform = `perspective(1000px) rotateX(${Math.max(-5, Math.min(5, -diff))}deg)`;
+            });
+        });
+
+        // Booking Overlay Functions
+        function openBookingOverlay() {
+            document.getElementById('bookingOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingOverlay(event) {
+            if (!event || event.target.id === 'bookingOverlay') {
+                document.getElementById('bookingOverlay').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // ESC-Taste zum Schließen
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeBookingOverlay();
+            }
+        });
+    </script>
+</body>
+</html>

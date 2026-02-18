@@ -1,0 +1,367 @@
+================================================================================
+URL EXTRACTION REPORT - ANALYSE_BERICHT.md
+================================================================================
+
+Total URLs found: 51
+
+================================================================================
+DETAILLIERTE STRUKTURIERTE URL-LISTE
+================================================================================
+
+
+--- URL #1 ---
+URL: https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev
+TYPE: onbiela
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Onbiela.dev Platform
+
+--- URL #2 ---
+URL: https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat
+TYPE: discord
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Discord Server/Badge
+
+--- URL #3 ---
+URL: https://discord.gg/b5zjErwbQM
+TYPE: discord
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Discord Server/Badge
+
+--- URL #4 ---
+URL: https://docker.com
+TYPE: docker
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Docker Registry
+
+--- URL #5 ---
+URL: https://dotnet.microsoft.com/
+TYPE: package
+CATEGORY: devtools
+REPO: N/A
+DESCRIPTION: Package Registry (NuGet/PyPI)
+
+--- URL #6 ---
+URL: https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/
+TYPE: netlify
+CATEGORY: platforms
+REPO: N/A
+DESCRIPTION: Netlify Deployment
+
+--- URL #7 ---
+URL: https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L
+TYPE: github
+CATEGORY: ai
+REPO: EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L
+DESCRIPTION: GitHub Repository
+
+--- URL #8 ---
+URL: https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git
+TYPE: github
+CATEGORY: ai
+REPO: STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APPS-TOOLS-PROGRAMMS-KI-AI-TECHNOLOGY.git
+DESCRIPTION: GitHub Repository
+
+--- URL #9 ---
+URL: https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-
+TYPE: github
+CATEGORY: platforms
+REPO: Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-
+DESCRIPTION: GitHub Repository
+
+--- URL #10 ---
+URL: https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git
+TYPE: github
+CATEGORY: other
+REPO: statesflowwishes-sketch/4a3C5u2S7T1i3C.git
+DESCRIPTION: GitHub Repository
+
+--- URL #11 ---
+URL: https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930
+TYPE: asset
+CATEGORY: other
+REPO: user-attachments/assets
+DESCRIPTION: GitHub Asset Bild/Datei
+
+--- URL #12 ---
+URL: https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261
+TYPE: asset
+CATEGORY: other
+REPO: user-attachments/assets
+DESCRIPTION: GitHub Asset Bild/Datei
+
+--- URL #13 ---
+URL: https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551
+TYPE: asset
+CATEGORY: other
+REPO: user-attachments/assets
+DESCRIPTION: GitHub Asset Bild/Datei
+
+--- URL #14 ---
+URL: https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322
+TYPE: asset
+CATEGORY: other
+REPO: user-attachments/assets
+DESCRIPTION: GitHub Asset Bild/Datei
+
+--- URL #15 ---
+URL: https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6
+TYPE: asset
+CATEGORY: other
+REPO: user-attachments/assets
+DESCRIPTION: GitHub Asset Bild/Datei
+
+--- URL #16 ---
+URL: https://hnoss-ambassador.org
+TYPE: other
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Web Resource
+
+--- URL #17 ---
+URL: https://hub.docker.com/
+TYPE: docker
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Docker Registry
+
+--- URL #18 ---
+URL: https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white
+TYPE: badge
+CATEGORY: devtools
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #19 ---
+URL: https://img.shields.io/badge/AI-Local-green.svg
+TYPE: badge
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #20 ---
+URL: https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #21 ---
+URL: https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-the-badge&logo=docker&logoColor=white
+TYPE: badge
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #22 ---
+URL: https://img.shields.io/badge/Docker-Ready-blue.svg
+TYPE: badge
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #23 ---
+URL: https://img.shields.io/badge/HashiCorp-Vault-purple.svg
+TYPE: badge
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #24 ---
+URL: https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white
+TYPE: badge
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #25 ---
+URL: https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #26 ---
+URL: https://img.shields.io/badge/License-MIT-yellow.svg
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #27 ---
+URL: https://img.shields.io/badge/MS%20Learn-Documentation-blue
+TYPE: badge
+CATEGORY: documentation
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #28 ---
+URL: https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge&logo=portainer&logoColor=white
+TYPE: badge
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #29 ---
+URL: https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox
+TYPE: badge
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #30 ---
+URL: https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #31 ---
+URL: https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=world&logoColor=white
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #32 ---
+URL: https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=star&logoColor=white
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #33 ---
+URL: https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=user&logoColor=white
+TYPE: badge
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #34 ---
+URL: https://img.shields.io/nuget/v/Microsoft.Agents.AI
+TYPE: badge
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #35 ---
+URL: https://img.shields.io/pypi/v/agent-framework
+TYPE: badge
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Shields.io Status Badge
+
+--- URL #36 ---
+URL: https://kubernetes.io/
+TYPE: kubernetes
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: Kubernetes Platform
+
+--- URL #37 ---
+URL: https://learn.microsoft.com/en-us/agent-framework/
+TYPE: package
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Package Registry (NuGet/PyPI)
+
+--- URL #38 ---
+URL: https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272
+TYPE: lovable
+CATEGORY: platforms
+REPO: N/A
+DESCRIPTION: Lovable.dev Projekt
+
+--- URL #39 ---
+URL: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+TYPE: lovable
+CATEGORY: platforms
+REPO: N/A
+DESCRIPTION: Lovable.dev Projekt
+
+--- URL #40 ---
+URL: https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7
+TYPE: lovable
+CATEGORY: platforms
+REPO: N/A
+DESCRIPTION: Lovable.dev Projekt
+
+--- URL #41 ---
+URL: https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com
+TYPE: macaly
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Macaly App Platform
+
+--- URL #42 ---
+URL: https://ollama.ai
+TYPE: ai
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Ollama AI Platform
+
+--- URL #43 ---
+URL: https://opensource.org/licenses/MIT
+TYPE: license
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Open Source Lizenz
+
+--- URL #44 ---
+URL: https://portainer.io/
+TYPE: portainer
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Portainer Container Management
+
+--- URL #45 ---
+URL: https://pypi.org/project/agent-framework/
+TYPE: package
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Package Registry (NuGet/PyPI)
+
+--- URL #46 ---
+URL: https://st-daniel-pohl.org
+TYPE: other
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Web Resource
+
+--- URL #47 ---
+URL: https://universal-values.org
+TYPE: other
+CATEGORY: other
+REPO: N/A
+DESCRIPTION: Web Resource
+
+--- URL #48 ---
+URL: https://vaultproject.io
+TYPE: vault
+CATEGORY: infrastructure
+REPO: N/A
+DESCRIPTION: HashiCorp Vault
+
+--- URL #49 ---
+URL: https://www.nuget.org/profiles/MicrosoftAgentFramework/
+TYPE: package
+CATEGORY: ai
+REPO: N/A
+DESCRIPTION: Package Registry (NuGet/PyPI)
+
+--- URL #50 ---
+URL: https://xblewwjjqvwerypvttfh.supabase.co
+TYPE: supabase
+CATEGORY: data
+REPO: N/A
+DESCRIPTION: Supabase Backend/Database
+
+--- URL #51 ---
+URL: https://xblewwjjqvwerypvttfh.supabase.co'const
+TYPE: supabase
+CATEGORY: data
+REPO: N/A
+DESCRIPTION: Supabase Backend/Database

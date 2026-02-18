@@ -1,0 +1,54 @@
+# 📊 VOLLSTÄNDIGE URL-TABELLE
+
+| Nr | URL | Typ | Kategorie | Domain | Kontext | Beschreibung |
+|---:|-----|-----|-----------|--------|---------|-------------|
+| 1 | `https://learn.microsoft.com/en-us/agent-framework/` | documentation | documentation | learn.microsoft.com | 2. agent-framework-main | Microsoft Documentation |
+| 2 | `https://img.shields.io/pypi/v/agent-framework` | badge | documentation | img.shields.io | 2. agent-framework-main | Shields.io Badge |
+| 3 | `https://lovable.dev/projects/d9e872e3-95fc-4ba8-9a9b-0bea6ee082d7` | lovable | platforms | lovable.dev | 18. magic-code-books-main | Lovable.dev Project |
+| 4 | `https://hub.docker.com/` | registry | infrastructure | hub.docker.com | 5. portainer-infrastructure-templates-main | Docker Hub |
+| 5 | `https://github.com/user-attachments/assets/b01db7c6-c439-403b-9def-a14eed864322` | github-asset | creative | github.com | 3. CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4) | GitHub Asset/Image |
+| 6 | `https://img.shields.io/badge/Kubernetes-CNCF%20Certified-326CE5?style=for-the-ba...` | badge | documentation | img.shields.io | 5. portainer-infrastructure-templates-main | Shields.io Badge |
+| 7 | `https://opensource.org/licenses/MIT` | license | documentation | opensource.org | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Open Source License |
+| 8 | `https://img.shields.io/nuget/v/Microsoft.Agents.AI` | badge | documentation | img.shields.io | 2. agent-framework-main | Shields.io Badge |
+| 9 | `https://img.shields.io/badge/Dashboard-Interactive-green?style=for-the-badge` | badge | documentation | img.shields.io | 4. Proxmox-Runic-Version-Testpilot-main | Shields.io Badge |
+| 10 | `https://xblewwjjqvwerypvttfh.supabase.co` | supabase | infrastructure | xblewwjjqvwerypvttfh.supabase.co | 20. C3Yz3ye2-main (1) | Supabase Database |
+| 11 | `https://github.com/user-attachments/assets/77929be0-de6e-4c61-8b61-96072958b551` | github-asset | creative | github.com | 3. CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4) | GitHub Asset/Image |
+| 12 | `https://github.com/STarLighTsMoveMenTs/3D-MODELING-ANIMATION---FOR---SOTWARE-APP...` | github-repo | devtools | github.com | 12. S4m3T1m3scR022---Gemeinsam-sT4b1L-main | GitHub Repository |
+| 13 | `https://img.shields.io/badge/🌍_Universal-Values-blue?style=for-the-badge&logo=wo...` | badge | documentation | img.shields.io | 19. hnoss-ambassador-organisation-main | Shields.io Badge |
+| 14 | `https://portainer.io/` | infrastructure | infrastructure | portainer.io | 5. portainer-infrastructure-templates-main | Portainer |
+| 15 | `https://www.nuget.org/profiles/MicrosoftAgentFramework/` | registry | devtools | www.nuget.org | 2. agent-framework-main | NuGet Package Registry |
+| 16 | `https://github.com/user-attachments/assets/316d4cb6-8901-4ece-b2f9-bbc080edc930` | github-asset | creative | github.com | 3. CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main (4) | GitHub Asset/Image |
+| 17 | `https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID` | lovable | platforms | lovable.dev | 25. hello-hug-wave-59-main | Lovable.dev Project |
+| 18 | `https://img.shields.io/badge/MS%20Learn-Documentation-blue` | badge | documentation | img.shields.io | 2. agent-framework-main | Shields.io Badge |
+| 19 | `https://universal-values.org` | reference | documentation | universal-values.org | 19. hnoss-ambassador-organisation-main | Universal Values |
+| 20 | `https://hnoss-ambassador.org` | reference | documentation | hnoss-ambassador.org | 19. hnoss-ambassador-organisation-main | HNOSS Ambassador Organization |
+| 21 | `https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox` | badge | documentation | img.shields.io | 4. Proxmox-Runic-Version-Testpilot-main | Shields.io Badge |
+| 22 | `https://github.com/EU-UNION-AI-PACT/S4m3T1m3scR022---Gemeinsam-sT4b1L` | github-repo | devtools | github.com | 12. S4m3T1m3scR022---Gemeinsam-sT4b1L-main | GitHub Repository |
+| 23 | `https://europea-un-world-lfx-peace-eu-gov-int.netlify.app/` | infrastructure | infrastructure | europea-un-world-lfx-peace-eu-gov-int.netlify.app | 12. S4m3T1m3scR022---Gemeinsam-sT4b1L-main | Netlify Deployment |
+| 24 | `https://img.shields.io/badge/License-Apache%202.0-gold?style=for-the-badge` | badge | documentation | img.shields.io | 4. Proxmox-Runic-Version-Testpilot-main | Shields.io Badge |
+| 25 | `https://lovable.dev/projects/8b37b075-9f84-42b4-bc42-1a19ade0b272` | lovable | platforms | lovable.dev | 17. ohm-resonance-link-main | Lovable.dev Project |
+| 26 | `https://img.shields.io/badge/🌟_HNOSS-Ambassador-gold?style=for-the-badge&logo=st...` | badge | documentation | img.shields.io | 19. hnoss-ambassador-organisation-main | Shields.io Badge |
+| 27 | `https://img.shields.io/badge/Docker-Ready-blue.svg` | badge | documentation | img.shields.io | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Shields.io Badge |
+| 28 | `https://dotnet.microsoft.com/` | documentation | documentation | dotnet.microsoft.com | 19. hnoss-ambassador-organisation-main | Microsoft Documentation |
+| 29 | `https://vaultproject.io` | infrastructure | security | vaultproject.io | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | HashiCorp Vault |
+| 30 | `https://github.com/user-attachments/assets/cbf64a13-3944-4922-a18f-04b9301539d6` | github-asset | creative | github.com | 🏷️ AI & TECHNOLOGY (28 Repos) | GitHub Asset/Image |
+| 31 | `https://img.shields.io/badge/Docker%20Hub-Verified%20Publisher-2496ED?style=for-...` | badge | documentation | img.shields.io | 5. portainer-infrastructure-templates-main | Shields.io Badge |
+| 32 | `https://discord.gg/b5zjErwbQM` | discord | platforms | discord.gg | 2. agent-framework-main | Discord Server/Badge |
+| 33 | `https://github.com/Z3r0CL0cK/PrismanTHarIOn.Hnoss---Website-B3w3rbung2-M4pp3-` | github-repo | devtools | github.com | 🏷️ DIGITAL PLATFORMS (1 Repos) | GitHub Repository |
+| 34 | `https://1758662308384-68d0afb584eff49061729ea8.onbiela.dev` | platforms | platforms | 1758662308384-68d0afb584eff49061729ea8.onbiela.dev | 20. C3Yz3ye2-main (1) | Onbiela Platform |
+| 35 | `https://img.shields.io/badge/Scripts-15+-blue?style=for-the-badge` | badge | documentation | img.shields.io | 4. Proxmox-Runic-Version-Testpilot-main | Shields.io Badge |
+| 36 | `https://kubernetes.io/` | documentation | infrastructure | kubernetes.io | 5. portainer-infrastructure-templates-main | Kubernetes Documentation |
+| 37 | `https://img.shields.io/badge/License-MIT-yellow.svg` | badge | documentation | img.shields.io | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Shields.io Badge |
+| 38 | `https://pypi.org/project/agent-framework/` | registry | devtools | pypi.org | 2. agent-framework-main | Python Package Index |
+| 39 | `https://docker.com` | registry | infrastructure | docker.com | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Docker Hub |
+| 40 | `https://img.shields.io/badge/👤_St._Daniel-Pohl-purple?style=for-the-badge&logo=u...` | badge | documentation | img.shields.io | 19. hnoss-ambassador-organisation-main | Shields.io Badge |
+| 41 | `https://github.com/statesflowwishes-sketch/4a3C5u2S7T1i3C.git` | github-repo | devtools | github.com | 24. 4a3C5u2S7T1i3C-main | GitHub Repository |
+| 42 | `https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet&log...` | badge | documentation | img.shields.io | 19. hnoss-ambassador-organisation-main | Shields.io Badge |
+| 43 | `https://img.shields.io/badge/AI-Local-green.svg` | badge | documentation | img.shields.io | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Shields.io Badge |
+| 44 | `https://github.com/user-attachments/assets/5ed4f74b-cee5-43b1-8ad5-241a6bbbe261` | github-asset | creative | github.com | 2. INTERMEDIALGALAKTICConstellation-main (1) | GitHub Asset/Image |
+| 45 | `https://ollama.ai` | infrastructure | ai | ollama.ai | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Ollama AI |
+| 46 | `https://img.shields.io/badge/HashiCorp-Vault-purple.svg` | badge | documentation | img.shields.io | 3. EU-UNION-AI-PACT-VS-Code-Pipelines-master | Shields.io Badge |
+| 47 | `https://dcbadge.limes.pink/api/server/b5zjErwbQM?style=flat` | discord | platforms | dcbadge.limes.pink | 2. agent-framework-main | Discord Server/Badge |
+| 48 | `https://st-daniel-pohl.org` | reference | documentation | st-daniel-pohl.org | 19. hnoss-ambassador-organisation-main | St. Daniel Pohl |
+| 49 | `https://img.shields.io/badge/Portainer-Gold%20Partner-13BEF9?style=for-the-badge...` | badge | documentation | img.shields.io | 5. portainer-infrastructure-templates-main | Shields.io Badge |
+| 50 | `https://macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com` | platforms | platforms | macaly-kxs4dmeiaieicugbas86dcyb.macaly-app.com | 20. C3Yz3ye2-main (1) | Macaly Application |

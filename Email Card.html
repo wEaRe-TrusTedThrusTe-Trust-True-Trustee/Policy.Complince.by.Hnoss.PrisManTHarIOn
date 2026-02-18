@@ -20,15 +20,14 @@
 
         body {
             margin: 0;
-            padding: 60px 20px;
+            padding: 0;
             background: var(--blue-metallic-bg);
             background-attachment: fixed;
             font-family: 'Montserrat', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
         }
 
         #bg-canvas {
@@ -58,11 +57,16 @@
 
         /* ========== PANZERGLAS EFFEKT ========== */
         .sig-card {
-            position: relative;
-            width: 850px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            max-width: 85vw;
+            max-height: 85vh;
             background: linear-gradient(160deg, rgba(0, 26, 77, 0.75) 0%, rgba(0, 5, 15, 0.85) 100%);
             border: 2px solid rgba(191, 149, 63, 0.6);
-            padding: 45px 50px 30px 50px;
+            padding: 40px 50px 30px 50px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
                         0 50px 100px rgba(0,0,0,0.9),
                         inset 0 0 50px rgba(191, 149, 63, 0.08);
@@ -121,45 +125,49 @@
 
         .sig-header {
             border-bottom: 1px solid rgba(191, 149, 63, 0.3);
-            padding-bottom: 12px;
-            margin-bottom: 20px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
         .sig-header h1 {
             margin: 0;
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             background: var(--metallic-mix);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 10px;
+            letter-spacing: 8px;
             font-weight: 900;
             text-transform: uppercase;
             filter: drop-shadow(0 0 10px rgba(252, 246, 186, 0.2));
         }
 
         .sig-subtitle {
-            font-size: 0.65rem;
-            letter-spacing: 5px;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
             font-weight: 400;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.85);
             text-transform: uppercase;
-            margin-top: 4px;
+            margin-top: 8px;
         }
 
         /* ========== A4 BREAKPOINT: ZENTRALE HARMONISCHE STRUKTUR ========== */
         .sig-body {
             display: block;
-            max-width: 600px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
             position: relative;
         }
 
+        .sig-column {
+            width: 100%;
+        }
+
         .sig-section {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
         }
 
@@ -167,9 +175,9 @@
             color: var(--eu-gold);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.58rem;
-            letter-spacing: 1.8px;
-            margin-bottom: 8px;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
             display: block;
             text-align: center;
         }
@@ -183,25 +191,25 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 400;
-            font-size: 0.88rem;
-            letter-spacing: 0.7px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
             display: block;
-            line-height: 1.3;
+            line-height: 1.4;
             text-align: center;
         }
 
         .sig-email-list {
             display: flex;
             flex-direction: column;
-            gap: 1px;
+            gap: 4px;
             align-items: center;
         }
 
         .sig-email-item {
             color: #fff;
             text-decoration: none;
-            font-size: 0.82rem;
-            opacity: 0.8;
+            font-size: 0.85rem;
+            opacity: 0.85;
             transition: all 0.3s;
             width: fit-content;
         }
@@ -212,21 +220,21 @@
         }
 
         .sig-links {
-            margin-top: 10px;
+            margin-top: 18px;
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .sig-link {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
-            font-size: 0.55rem;
-            border: 1px solid rgba(191, 149, 63, 0.25);
-            padding: 4px 10px;
+            font-size: 0.6rem;
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            padding: 6px 14px;
             transition: all 0.3s ease;
             background: rgba(0, 0, 0, 0.2);
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
@@ -238,35 +246,35 @@
         }
 
         .sig-footer {
-            margin-top: 20px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(191, 149, 63, 0.2);
+            margin-top: 25px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(191, 149, 63, 0.25);
             display: block;
             text-align: center;
         }
 
         .hnoss-brand {
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .hnoss-mini {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             background: var(--gold-shine);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             line-height: 1;
         }
 
         .tm-notice {
-            color: rgba(255, 204, 0, 0.6);
-            font-size: 0.45rem;
-            letter-spacing: 1.2px;
+            color: rgba(255, 204, 0, 0.65);
+            font-size: 0.5rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
         .legal-block {
@@ -274,22 +282,22 @@
         }
 
         .lei-tag {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             color: #fcf6ba;
-            letter-spacing: 1.1px;
+            letter-spacing: 1.5px;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 6px;
             font-weight: 700;
         }
 
         .rights-mini {
             color: #ff4d4d;
-            font-size: 0.55rem;
+            font-size: 0.6rem;
             font-weight: 700;
             text-transform: uppercase;
             border-right: 2px solid #ff4d4d;
-            padding-right: 8px;
-            letter-spacing: 1px;
+            padding-right: 10px;
+            letter-spacing: 1.2px;
         }
 
         .back-btn {
