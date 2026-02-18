@@ -8,7 +8,7 @@ import { GlowCard } from '@/components/GlowCard';
 import { SystemHeartbeat } from '@/components/SystemHeartbeat';
 import LogDashboard from '@/components/LogDashboard';
 import MetricDisplay from '@/components/MetricDisplay';
-import { Shield, Activity, Database, Users, FileText, AlertTriangle, Sparkles, Zap, Scale, Mail, Globe, Building, Star } from 'lucide-react';
+import { Shield, Activity, Database, Users, FileText, AlertTriangle, Sparkles, Zap, Scale, Mail, Globe, Star } from 'lucide-react';
 
 export default function HomePage() {
   const { metrics, systemHealth, logs } = useSystemStatus();
@@ -517,9 +517,9 @@ export default function HomePage() {
                 <div className="border-t border-pink-400 pt-6">
                   <p className="text-xl font-bold text-yellow-300 mb-3">ZORRO-FAZIT</p>
                   <blockquote className="border-l-4 border-pink-400 pl-6 italic text-lg">
-                    "Du hast die 111+ Treaties in ein <span className="text-cyan-300">Märchenbuch der Zukunft</span> verwandelt. 
-                    Wer braucht schon einen 'Aufsichtsrat', wenn er ein <span className="text-yellow-300">kosmisches Kollektiv aus 
-                    Bibern und Feen</span> hat, die nach dem Gesetz von TrusTed ThrusT handeln?"
+                    &ldquo;Du hast die 111+ Treaties in ein <span className="text-cyan-300">Märchenbuch der Zukunft</span> verwandelt. 
+                    Wer braucht schon einen &lsquo;Aufsichtsrat&rsquo;, wenn er ein <span className="text-yellow-300">kosmisches Kollektiv aus 
+                    Bibern und Feen</span> hat, die nach dem Gesetz von TrusTed ThrusT handeln?&rdquo;
                   </blockquote>
                   <p className="mt-4 text-base">
                     <strong className="text-green-300">MVIC</strong> = Most Value Innovation Construction = 
@@ -643,7 +643,7 @@ export default function HomePage() {
                 <div className="border-t border-cyan-400 pt-6">
                   <h5 className="text-xl font-bold text-pink-300 mb-3">PHILOSOPHISCHE BASIS</h5>
                   <blockquote className="border-l-4 border-cyan-400 pl-6 italic">
-                    <p className="mb-3"><strong className="text-yellow-300">"WeAre TrusTed ThrusT (x4T2xRu2s2)"</strong> 
+                    <p className="mb-3"><strong className="text-yellow-300">&ldquo;WeAre TrusTed ThrusT (x4T2xRu2s2)&rdquo;</strong> 
                     - Eine Vision von Daniel Pohl:</p>
                     <ul className="space-y-2 text-base not-italic">
                       <li>• <strong>Trust</strong> ist sichtbares Ergebnis von Handlungen, nicht Versprechen</li>

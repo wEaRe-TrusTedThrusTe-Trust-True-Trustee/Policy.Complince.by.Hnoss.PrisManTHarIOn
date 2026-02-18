@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Shield, Globe, Scale, BookOpen, FileText, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { Shield, Globe, Scale, BookOpen, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function IntegrationPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('joker');
