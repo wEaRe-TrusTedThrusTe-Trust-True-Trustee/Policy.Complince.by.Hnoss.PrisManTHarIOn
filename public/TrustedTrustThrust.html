@@ -848,6 +848,270 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
             line-height: 1.4;
         }
 
+        /* PHILOSOPHY URL TABLE OVERLAY */
+        .philosophy-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .philosophy-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .philosophy-table-container {
+            max-width: 95%;
+            max-height: 90vh;
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.92) 0%, rgba(10, 15, 30, 0.95) 100%);
+            border: 3px solid rgba(191, 149, 63, 0.8);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(60px) saturate(200%);
+            -webkit-backdrop-filter: blur(60px) saturate(200%);
+            box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.6),
+                        0 0 120px rgba(191, 149, 63, 0.4),
+                        inset 0 0 60px rgba(191, 149, 63, 0.1),
+                        0 0 0 1px rgba(252, 246, 186, 0.3) inset;
+            position: relative;
+            overflow-y: auto;
+            animation: tableSlideIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes tableSlideIn {
+            from { transform: scale(0.9) translateY(50px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .philosophy-table-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                rgba(255, 0, 0, 0.15),
+                rgba(255, 255, 0, 0.15),
+                rgba(0, 255, 0, 0.15),
+                rgba(0, 255, 255, 0.15),
+                rgba(0, 0, 255, 0.15),
+                rgba(255, 0, 255, 0.15),
+                rgba(255, 0, 0, 0.15));
+            animation: rainbowSpin 20s linear infinite;
+            opacity: 0.3;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .philosophy-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.4), rgba(252, 246, 186, 0.3));
+            border: 2px solid rgba(191, 149, 63, 0.7);
+            color: #fcf6ba;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+            box-shadow: 0 4px 20px rgba(191, 149, 63, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .philosophy-close-btn:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.9), rgba(252, 246, 186, 0.8));
+            color: #000;
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 8px 35px rgba(191, 149, 63, 0.7),
+                        0 0 50px rgba(252, 246, 186, 0.5);
+        }
+
+        .philosophy-table-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .philosophy-table-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #c0c0c0, #fcf6ba, #bf953f, #c0c0c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 15px 0;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 0 30px rgba(191, 149, 63, 0.6);
+        }
+
+        .philosophy-table-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .philosophy-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .philosophy-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .philosophy-table th {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.4), rgba(179, 135, 40, 0.5));
+            color: #fcf6ba;
+            padding: 18px 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            box-shadow: 0 4px 20px rgba(191, 149, 63, 0.3),
+                        inset 0 0 20px rgba(252, 246, 186, 0.1);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+
+        .philosophy-table th:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .philosophy-table th:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .category-row {
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.2), rgba(138, 43, 226, 0.25));
+            border-left: 5px solid #9370db;
+        }
+
+        .category-row td {
+            padding: 15px 20px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #c0c0ff;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: 2px solid rgba(147, 112, 219, 0.4);
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(147, 112, 219, 0.3);
+        }
+
+        .philosophy-table tbody tr {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .philosophy-table tbody tr:not(.category-row) {
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.6), rgba(10, 15, 30, 0.7));
+        }
+
+        .philosophy-table tbody tr:not(.category-row):hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.15), rgba(252, 246, 186, 0.1));
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(191, 149, 63, 0.4);
+        }
+
+        .philosophy-table td {
+            padding: 15px 20px;
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .philosophy-table td:first-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            font-weight: 600;
+        }
+
+        .philosophy-table td:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .philosophy-table .doc-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .philosophy-table .doc-title {
+            color: #fcf6ba;
+            font-weight: 600;
+        }
+
+        .philosophy-table .doc-url {
+            color: #bf953f;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 5px;
+            background: rgba(191, 149, 63, 0.1);
+            border: 1px solid transparent;
+        }
+
+        .philosophy-table .doc-url:hover {
+            color: #fcf6ba;
+            background: rgba(191, 149, 63, 0.3);
+            border-color: rgba(191, 149, 63, 0.6);
+            transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
+            text-shadow: 0 0 10px rgba(252, 246, 186, 0.8);
+        }
+
+        /* Scrollbar Styling */
+        .philosophy-table-container::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .philosophy-table-container::-webkit-scrollbar-track {
+            background: rgba(0, 8, 20, 0.6);
+            border-radius: 10px;
+        }
+
+        .philosophy-table-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.6), rgba(252, 246, 186, 0.4));
+            border-radius: 10px;
+            border: 2px solid rgba(0, 8, 20, 0.6);
+        }
+
+        .philosophy-table-container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.9), rgba(252, 246, 186, 0.7));
+            box-shadow: 0 0 20px rgba(191, 149, 63, 0.6);
+        }
+
         .booking-overlay {
             display: none;
             position: fixed;
@@ -1495,6 +1759,10 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
                             <span class="nav-icon">🔗</span>
                             <span class="nav-text">Integration</span>
                         </a>
+                        <button onclick="openPhilosophyTable()" class="rainbow-nav-btn" style="cursor:pointer;">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text">Philosophy URLs (29)</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -2473,6 +2741,242 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
         window.addEventListener('DOMContentLoaded', () => {
             renderRepos();
         });
+
+        // ========== PHILOSOPHY URL TABLE FUNCTIONS ==========
+        function openPhilosophyTable() {
+            document.getElementById('philosophyOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePhilosophyTable() {
+            document.getElementById('philosophyOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on overlay click (not table itself)
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('philosophyOverlay');
+            if (overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) {
+                        closePhilosophyTable();
+                    }
+                });
+            }
+        });
     </script>
+
+    <!-- PHILOSOPHY URL TABLE OVERLAY -->
+    <div id="philosophyOverlay" class="philosophy-overlay">
+        <div class="philosophy-table-container">
+            <button class="philosophy-close-btn" onclick="closePhilosophyTable()">&times;</button>
+            
+            <div class="philosophy-table-header">
+                <h2>📚 Philosophy Archive URLs</h2>
+                <p>Alle 29 Dokumente der StarLightMovemenTz Foundation</p>
+            </div>
+
+            <table class="philosophy-table">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">Icon</th>
+                        <th style="width: 35%;">Dokument</th>
+                        <th style="width: 50%;">Beschreibung</th>
+                        <th style="width: 10%;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- CaZaR Trust System -->
+                    <tr class="category-row">
+                        <td colspan="4">🌌 CaZaR Trust System (WeAre TrusTed ThrusT)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🌌</span></td>
+                        <td><span class="doc-title">CaZaR Trust System</span></td>
+                        <td>WeAre TrusTed ThrusT (x4T2xRu2s2) – Karma ist systemisch. Heaven is Home.</td>
+                        <td><a href="/philosophy/cazar-trust-system.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🎯</span></td>
+                        <td><span class="doc-title">The Fixpoint Game</span></td>
+                        <td>TipTipTip – Das Spiel von Verlässlichkeit und kosmischem Vertrauen.</td>
+                        <td><a href="/philosophy/fixpoint-game.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+
+                    <!-- DACHS-FEES -->
+                    <tr class="category-row">
+                        <td colspan="4">🦡 DACHS-FEES (Himmelszelt der Wünsche)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🦡</span></td>
+                        <td><span class="doc-title">Himmelszelt der Wünsche</span></td>
+                        <td>DAX FEE → DACHS FEES – Von kalten Zahlen zu purer Magie. Biber, Elfen, Kobolde und Zwerge.</td>
+                        <td><a href="/philosophy/himmelszelt-wuensche.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+
+                    <!-- INTERMEDIALGALAKTIC Manifeste -->
+                    <tr class="category-row">
+                        <td colspan="4">🛡️ INTERMEDIALGALAKTIC (Manifeste & Ethik)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🌌</span></td>
+                        <td><span class="doc-title">Constellation (6000+ Zeilen)</span></td>
+                        <td>Vollständiges Kompendium zu Menschenrechten, Völkerrecht, Bildung & Spiritualität.</td>
+                        <td><a href="/philosophy/constellation.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">✨</span></td>
+                        <td><span class="doc-title">Zusammenfassung: Spirituelle Freiheit</span></td>
+                        <td>Synthese von Spiritueller Freiheit, Ortsfreiheit, Traumresonanz und Bildungsregulierung.</td>
+                        <td><a href="/philosophy/zusammenfassung-spirituelle-freiheit.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🌠</span></td>
+                        <td><span class="doc-title">Essay: Freiheit, Resonanz, Traum & Sein</span></td>
+                        <td>Spirituelle Freiheit, Geistiges Reisen & Gedankenschutz. Astralreisen legal erklärt.</td>
+                        <td><a href="/philosophy/essay-freiheit-resonanz.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🎓</span></td>
+                        <td><span class="doc-title">Essayfrage: Bildung & Regelungen</span></td>
+                        <td>Leitfragen zur Bearbeitung: Wer definiert Bildung? Sind Träume regulierbar?</td>
+                        <td><a href="/philosophy/essayfrage-bildung.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🕊️</span></td>
+                        <td><span class="doc-title">Manifest: Frieden beginnt in jedem selbst</span></td>
+                        <td>Abrüstung der Waffen, Aufrüstung der Herzen. Frieden als innere Arbeit.</td>
+                        <td><a href="/philosophy/manifest-frieden.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">☮️</span></td>
+                        <td><span class="doc-title">Manifest: Frieden durch Resonanz</span></td>
+                        <td>Abrüstung, Aufrüstung der Herzen, Gemeinschaft und Einzelweg. Frieden beginnt im Inneren.</td>
+                        <td><a href="/philosophy/manifest-frieden-resonanz.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🌍</span></td>
+                        <td><span class="doc-title">Manifest: Über den Tellerrand</span></td>
+                        <td>Grenzüberschreitung, Besitz & Erfahrung. Die Illusion des Eigentums.</td>
+                        <td><a href="/philosophy/manifest-grenzueberschreitung.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">⚓</span></td>
+                        <td><span class="doc-title">Manifest: Frieden im Chaos der Arche</span></td>
+                        <td>Selbst, Unantastbarkeit, Frieden im Chaos. Versöhnung statt Vergeltung.</td>
+                        <td><a href="/philosophy/manifest-arche-frieden.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🛡️</span></td>
+                        <td><span class="doc-title">Shield of Dreams (Original)</span></td>
+                        <td>Policy Brief für Schutz der inneren Welt, Kreativität und Gedankenfreiheit.</td>
+                        <td><a href="/philosophy/shield-of-dreams.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">📋</span></td>
+                        <td><span class="doc-title">Policy Brief: Shield of Dreams</span></td>
+                        <td>5 Empfehlungen für EU/UN/NATO zum Schutz innerer Souveränität und Kreativitätsfreiheit.</td>
+                        <td><a href="/philosophy/policy-brief-shield-dreams.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🚪</span></td>
+                        <td><span class="doc-title">Portal Gatekeeper Prinzip</span></td>
+                        <td>Regelwerk zum Schutz der Träume – Shield, Portal und Gatekeeper.</td>
+                        <td><a href="/philosophy/portal-gatekeeper.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">📿</span></td>
+                        <td><span class="doc-title">Code of Ethic Life Cycle</span></td>
+                        <td>Intergalaktischer ethischer Lebenszyklus-Kodex.</td>
+                        <td><a href="/philosophy/code-of-ethic.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">⚙️</span></td>
+                        <td><span class="doc-title">Code of Regulatoren</span></td>
+                        <td>8 Leitlinien (§1-§8) für Recht, Bildung & Gemeinschaft. Freiheit, Resonanz, Transparenz.</td>
+                        <td><a href="/philosophy/code-regulatoren.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🦅</span></td>
+                        <td><span class="doc-title">Freiheitsabkommen (Original)</span></td>
+                        <td>Recht auf Resonanz, Selbstentfaltung und angstbefreite Gemeinschaft.</td>
+                        <td><a href="/philosophy/freiheitsabkommen.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🕊️</span></td>
+                        <td><span class="doc-title">Freiheitsabkommen: Resonanz & Bildung</span></td>
+                        <td>6 Artikel über Freiheit des Geistes, Resonanz, Bildung, Innere Räume, Erde & Gemeinschaft.</td>
+                        <td><a href="/philosophy/freiheitsabkommen-resonanz.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">💎</span></td>
+                        <td><span class="doc-title">11 Poenten des Freiheitsabkommens</span></td>
+                        <td>Kernprinzipien kondensiert: Freiheit, Bildung, Resonanz, Partizipation & Innovation.</td>
+                        <td><a href="/philosophy/poenten-freiheitsabkommen.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">⚖️</span></td>
+                        <td><span class="doc-title">Streitschlichtung der Gegebenen (Original)</span></td>
+                        <td>Resonanzbasierte Konfliktlösung – nicht Sieg/Niederlage, sondern Heilung.</td>
+                        <td><a href="/philosophy/streitschlichtung.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">⚗️</span></td>
+                        <td><span class="doc-title">Streitschlichtung: Resonanz-Methode</span></td>
+                        <td>10 Paragraphen (§1-§10): Würde, Verständigung, Zuhören, Resonanz & Nachhaltigkeit.</td>
+                        <td><a href="/philosophy/streitschlichtung-resonanz.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🔮</span></td>
+                        <td><span class="doc-title">Zyklus der 12 Göttlichen Prinzipien</span></td>
+                        <td>Kosmische Archetypen: Ursprung, Wandlung, Ordnung, Liebe, Geist, Kraft, Heilung, Vielfalt, Gerechtigkeit, Weisheit, Freiheit, Einheit.</td>
+                        <td><a href="/philosophy/zyklus-gottes-12.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+
+                    <!-- Verträge & Rechtsdokumente -->
+                    <tr class="category-row">
+                        <td colspan="4">📜 Verträge & Rechtsdokumente</td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">⚖️</span></td>
+                        <td><span class="doc-title">Rechtsprechung: Humanitätismus</span></td>
+                        <td>7 Prinzipien (§1-§7): Menschenwürde, Globale Resonanz, Innere Freiheit, Transformation statt Repression.</td>
+                        <td><a href="/philosophy/rechtsprechung-humanitaetismus.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">⚖️</span></td>
+                        <td><span class="doc-title">Rechtsprechung: Humanitäismus</span></td>
+                        <td>7 Prinzipien (§1-§7): Menschenwürde, Globale Resonanz, Innere Freiheit, Transformation.</td>
+                        <td><a href="/philosophy/rechtsprechung-humanitaeismus.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">🌱</span></td>
+                        <td><span class="doc-title">Rechtsprechung: Transformierende Selbstförderung</span></td>
+                        <td>7 Paragraphen über Recht auf persönliche Entfaltung, Freiwilligkeit & Schutz vor Manipulation.</td>
+                        <td><a href="/philosophy/rechtsprechung-transformierende-selbstfoerderung.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">📜</span></td>
+                        <td><span class="doc-title">Regulatoren Freiheitsabkommen</span></td>
+                        <td>Rechtliche Regulatoren für Resonanz, Freiheit und Bildung.</td>
+                        <td><a href="/philosophy/regulatoren-freiheit.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">📋</span></td>
+                        <td><span class="doc-title">Grundverordnung Ethik & Essay</span></td>
+                        <td>Grundgesetz für ethische Praxis und rechtliche Rahmenbedingungen.</td>
+                        <td><a href="/philosophy/grundverordnung-ethik.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                    <tr>
+                        <td><span class="doc-icon">✍️</span></td>
+                        <td><span class="doc-title">Unterzeichner: Daniel Pohl</span></td>
+                        <td>Signaturseite des Autors aller INTERMEDIALGALAKTIC-Dokumente.</td>
+                        <td><a href="/philosophy/unterzeichner-daniel-pohl.html" class="doc-url" target="_blank">Öffnen →</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
+
