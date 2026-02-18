@@ -1,0 +1,35 @@
+/* LCL Powerd by Daniel Pohl a Vision from CEO - CO-CEO and the Team of WorldWideWeb */
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unterzeichner | StarLightMovemenTz Foundation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;300;400;600;700&display=swap');
+        :root{--gold:#bf953f;--gold-light:#fcf6ba;--gold-mid:#b38728;--deep-dark:rgba(0,8,20,0.98);--border-gold:linear-gradient(to right,#bf953f,#fcf6ba,#b38728,#fcf6ba,#bf953f)}body,html{margin:0;padding:0;width:100%;min-height:100vh;background-color:#000;color:#f0f0f0;font-family:'Montserrat',sans-serif;overflow-x:hidden;overflow-y:auto;scroll-behavior:smooth;display:flex;align-items:center;justify-content:center}#starfield{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}.content-wrapper{position:relative;z-index:1000;max-width:900px;margin:0 auto;padding:80px 40px}.back-btn{position:fixed;top:30px;left:30px;padding:12px 30px;background:linear-gradient(135deg,rgba(191,149,63,0.25)0%,rgba(191,149,63,0.35)100%);border:2px solid rgba(191,149,63,0.6);color:#fcf6ba;font-family:'Cinzel',serif;text-decoration:none;text-transform:uppercase;letter-spacing:3px;font-size:0.8rem;font-weight:600;backdrop-filter:blur(25px)saturate(150%);-webkit-backdrop-filter:blur(25px)saturate(150%);transition:all 0.4s ease;z-index:10000;cursor:pointer;border-radius:8px;box-shadow:0 4px 16px 0 rgba(0,0,0,0.3)}.back-btn:hover{background:linear-gradient(135deg,rgba(191,149,63,0.9)0%,rgba(252,246,186,0.9)100%);color:#000;box-shadow:0 8px 32px 0 rgba(191,149,63,0.5),0 0 40px rgba(191,149,63,0.6);transform:translateX(-5px)}.glass-card{background:linear-gradient(135deg,rgba(0,8,20,0.75)0%,rgba(0,8,20,0.85)100%);border:2px solid rgba(191,149,63,0.6);padding:80px 50px;backdrop-filter:blur(60px)saturate(180%);-webkit-backdrop-filter:blur(60px)saturate(180%);box-shadow:0 8px 32px 0 rgba(0,0,0,0.37),0 0 100px rgba(191,149,63,0.15);border-radius:12px;text-align:center}h1{font-family:'Cinzel',serif;font-size:2.5rem;background:var(--border-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:0 0 50px 0;letter-spacing:6px;text-transform:uppercase}p{color:rgba(255,255,255,0.8);line-height:1.8;margin:30px 0;font-size:1.1rem}.signature{font-family:'Cinzel',serif;font-size:2.8rem;color:var(--gold);margin:60px 0 20px 0;letter-spacing:4px;font-weight:700;text-shadow:0 0 20px rgba(191,149,63,0.4)}.subtitle{font-family:'Montserrat',sans-serif;font-size:1rem;color:var(--gold-light);letter-spacing:2px;text-transform:uppercase;margin-top:10px}.divider{width:200px;height:2px;background:var(--border-gold);margin:40px auto;border-radius:2px}
+    </style>
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    <a href="index.html" class="back-btn">← Back to Philosophy</a>
+    <div class="content-wrapper">
+        <div class="glass-card">
+            <h1>Unterzeichner</h1>
+            <p>
+                Dieses Dokument wurde verfasst, unterzeichnet und der Weltgemeinschaft übergeben von:
+            </p>
+            <div class="divider"></div>
+            <div class="signature">D. Pohl</div>
+            <div class="subtitle">Daniel Pohl</div>
+            <p style="margin-top:50px;font-size:0.95rem;color:rgba(255,255,255,0.6);">
+                Als Ausdruck der Überzeugung, dass <strong>Freiheit, Resonanz und Menschenwürde</strong> 
+                die Grundlagen einer lebenswerten Zukunft sind.
+            </p>
+        </div>
+    </div>
+    <script>
+        const canvas=document.getElementById('starfield');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;const stars=[];for(let i=0;i<200;i++){stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*1.5,speed:Math.random()*0.5})}function draw(){ctx.fillStyle='rgba(0,0,0,0.1)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#fcf6ba';stars.forEach(star=>{ctx.beginPath();ctx.arc(star.x,star.y,star.radius,0,Math.PI*2);ctx.fill();star.y+=star.speed;if(star.y>canvas.height)star.y=0});requestAnimationFrame(draw)}draw();window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});
+    </script>
+</body>
+</html>
