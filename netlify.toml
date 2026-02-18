@@ -23,13 +23,13 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "no-referrer"
+    Referrer-Policy = "no-referrer-when-downgrade"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cal.com https://*.cal.com https://embed.cal.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cal.com https://*.cal.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cal.com https://*.cal.com https://api.cal.com wss://*.cal.com; frame-src https://cal.com https://*.cal.com https://embed.cal.com; child-src https://cal.com https://*.cal.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://cal.com https://*.cal.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cal.com https://*.cal.com https://embed.cal.com https://app.cal.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cal.com https://*.cal.com; font-src 'self' https://fonts.gstatic.com https://cal.com https://*.cal.com; img-src 'self' data: https: blob:; media-src 'self' https: blob:; connect-src 'self' https://cal.com https://*.cal.com https://api.cal.com wss://*.cal.com https://*.stripe.com; frame-src https://cal.com https://*.cal.com https://embed.cal.com https://js.stripe.com https://hooks.stripe.com; child-src https://cal.com https://*.cal.com blob:; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://cal.com https://*.cal.com;"
 
 [[headers]]
   for = "/*.html"
