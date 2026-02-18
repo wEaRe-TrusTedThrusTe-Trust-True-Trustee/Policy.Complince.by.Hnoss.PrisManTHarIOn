@@ -29,7 +29,7 @@
     Referrer-Policy = "no-referrer"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cal.com https://*.cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cal.com https://*.cal.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cal.com https://*.cal.com; frame-src https://cal.com https://*.cal.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cal.com https://*.cal.com https://embed.cal.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cal.com https://*.cal.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cal.com https://*.cal.com https://api.cal.com wss://*.cal.com; frame-src https://cal.com https://*.cal.com https://embed.cal.com; child-src https://cal.com https://*.cal.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://cal.com https://*.cal.com;"
 
 [[headers]]
   for = "/*.html"
