@@ -2,8 +2,8 @@
 // scripts/ghost-buster.js
 // 🚨 Ghost Detection & Clean Code Enforcement System
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 // 🚫 FORBIDDEN PATTERNS (Ghost Detection Rules)
 const FORBIDDEN_PATTERNS = [

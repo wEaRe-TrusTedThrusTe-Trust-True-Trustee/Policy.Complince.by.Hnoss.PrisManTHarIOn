@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "type-check": "tsc --noEmit",
     "dev": "next dev",
-    "build": "npm run ghost-buster && next build",
+    "build": "next build",
     "start": "next start",
     "test": "jest",
     "db:types": "supabase gen types typescript --local > src/types/supabase.ts",
