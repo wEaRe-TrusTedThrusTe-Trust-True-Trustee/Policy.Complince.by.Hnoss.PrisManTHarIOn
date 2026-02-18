@@ -1,0 +1,478 @@
+/* LCL Powerd by Daniel Pohl a Vision from CEO - CO-CEO and the Team of WorldWideWeb */
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy & Ethics | StarLightMovemenTz Foundation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;300;400;600;700&display=swap');
+
+        :root {
+            --gold: #bf953f;
+            --gold-light: #fcf6ba;
+            --gold-mid: #b38728;
+            --deep-dark: rgba(0, 8, 20, 0.98);
+            --border-gold: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #000;
+            color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1000;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px 100px;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.25) 0%, rgba(191, 149, 63, 0.35) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            color: #fcf6ba;
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            backdrop-filter: blur(25px) saturate(150%);
+            -webkit-backdrop-filter: blur(25px) saturate(150%);
+            transition: all 0.4s ease;
+            z-index: 10000;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.9) 0%, rgba(252, 246, 186, 0.9) 100%);
+            color: #000;
+            box-shadow: 0 8px 32px 0 rgba(191, 149, 63, 0.5), 0 0 40px rgba(191, 149, 63, 0.6);
+            transform: translateX(-5px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+            background: var(--border-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 20px 0;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.75) 0%, rgba(0, 8, 20, 0.85) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.6);
+            padding: 50px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(60px) saturate(180%);
+            -webkit-backdrop-filter: blur(60px) saturate(180%);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 100px rgba(191, 149, 63, 0.15);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::after {
+            content: "";
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(45deg, transparent 45%, rgba(252, 246, 186, 0.03) 48%, rgba(252, 246, 186, 0.06) 50%, rgba(252, 246, 186, 0.03) 52%, transparent 55%);
+            animation: shine 8s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: translate(-20%, -20%); }
+            100% { transform: translate(20%, 20%); }
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 0 0 30px 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            border-bottom: 2px solid rgba(191, 149, 63, 0.3);
+            padding-bottom: 20px;
+        }
+
+        .dropdown-container {
+            margin: 40px 0;
+        }
+
+        .dropdown-label {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        select {
+            width: 100%;
+            padding: 15px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--gold-light);
+            background: linear-gradient(135deg, rgba(0, 8, 20, 0.9) 0%, rgba(0, 8, 20, 0.95) 100%);
+            border: 2px solid rgba(191, 149, 63, 0.5);
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            transition: all 0.3s ease;
+        }
+
+        select:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(191, 149, 63, 0.3);
+        }
+
+        select option {
+            background: #000a1f;
+            color: var(--gold-light);
+            padding: 10px;
+        }
+
+        #philosophyContent {
+            margin-top: 50px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .philosophy-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--gold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .philosophy-card:hover {
+            background: rgba(191, 149, 63, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(191, 149, 63, 0.3);
+        }
+
+        .philosophy-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .philosophy-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.3) 0%, rgba(191, 149, 63, 0.5) 100%);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-link:hover {
+            background: linear-gradient(135deg, rgba(191, 149, 63, 0.8) 0%, rgba(252, 246, 186, 0.8) 100%);
+            color: #000;
+            transform: translateX(5px);
+        }
+
+        .category-header {
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin: 40px 0 20px 0;
+            padding-left: 15px;
+            border-left: 4px solid var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+
+    <a href="../TrustedTrustThrust.html" class="back-btn">← Back to Home</a>
+
+    <div class="content-wrapper">
+        <div class="header">
+            <h1>Philosophy & Ethics</h1>
+            <p>CaZaR • DACHS-FEES • INTERMEDIALGALAKTIC Constellation</p>
+        </div>
+
+        <div class="glass-card">
+            <h2>🌌 Dokumenten-Archiv</h2>
+            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin: 20px 0;">
+                Willkommen im philosophischen Herzen der StarLightMovemenTz Foundation. Hier finden Sie die drei kosmischen Universen, 
+                die unser ethisches Framework bilden: Das <strong>CaZaR Trust System</strong> (WeAre TrusTed ThrusT), 
+                das <strong>Himmelszelt der Wünsche</strong> (DACHS-FEES Magic), und die 
+                <strong>INTERMEDIALGALAKTIC Constellation</strong> mit 35+ Manifesten für Freiheit, Resonanz und Bildung.
+            </p>
+
+            <div class="dropdown-container">
+                <div class="dropdown-label">📂 Kategorien durchsuchen:</div>
+                <select id="philosophyFilter">
+                    <option value="all">🌍 Alle Dokumente anzeigen</option>
+                    <option value="cazar">🌌 CaZaR Trust System (WeAre TrusTed ThrusT)</option>
+                    <option value="dachs">🦡 DACHS-FEES (Himmelszelt der Wünsche)</option>
+                    <option value="inter">🛡️ INTERMEDIALGALAKTIC (Manifeste & Ethik)</option>
+                    <option value="treaties">📜 Verträge & Rechtsdokumente</option>
+                </select>
+            </div>
+
+            <div id="philosophyContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Starfield Animation
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const stars = [];
+        for (let i = 0; i < 200; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 1.5,
+                speed: Math.random() * 0.5
+            });
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#fcf6ba';
+            stars.forEach(star => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fill();
+                star.y += star.speed;
+                if (star.y > canvas.height) star.y = 0;
+            });
+            
+            requestAnimationFrame(draw);
+        }
+        draw();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Philosophy Documents Data
+        const documents = {
+            cazar: [
+                {
+                    title: 'CaZaR Trust System',
+                    desc: 'WeAre TrusTed ThrusT (x4T2xRu2s2) – Karma ist systemisch. Heaven is Home.',
+                    url: 'cazar-trust-system.html',
+                    icon: '🌌'
+                },
+                {
+                    title: 'The Fixpoint Game',
+                    desc: 'TipTipTip – Das Spiel von Verlässlichkeit und kosmischem Vertrauen.',
+                    url: 'fixpoint-game.html',
+                    icon: '🎯'
+                }
+            ],
+            dachs: [
+                {
+                    title: 'Himmelszelt der Wünsche',
+                    desc: 'DAX FEE → DACHS FEES – Von kalten Zahlen zu purer Magie. Biber, Elfen, Kobolde und Zwerge.',
+                    url: 'himmelszelt-wuensche.html',
+                    icon: '🦡'
+                }
+            ],
+            inter: [
+                {
+                    title: 'Manifest: Frieden beginnt in jedem selbst',
+                    desc: 'Abrüstung der Waffen, Aufrüstung der Herzen. Frieden als innere Arbeit.',
+                    url: 'manifest-frieden.html',
+                    icon: '🕊️'
+                },
+                {
+                    title: 'Shield of Dreams (EU/UN/NATO)',
+                    desc: 'Policy Brief für Schutz der inneren Welt, Kreativität und Gedankenfreiheit.',
+                    url: 'shield-of-dreams.html',
+                    icon: '🛡️'
+                },
+                {
+                    title: 'Freiheitsabkommen',
+                    desc: 'Recht auf Resonanz, Selbstentfaltung und angstbefreite Gemeinschaft.',
+                    url: 'freiheitsabkommen.html',
+                    icon: '🦅'
+                },
+                {
+                    title: 'Streitschlichtung der Gegebenen',
+                    desc: 'Resonanzbasierte Konfliktlösung – nicht Sieg/Niederlage, sondern Heilung.',
+                    url: 'streitschlichtung.html',
+                    icon: '⚖️'
+                },
+                {
+                    title: 'Code of Ethic Life Cycle',
+                    desc: 'Intergalaktischer ethischer Lebenszyklus-Kodex.',
+                    url: 'code-of-ethic.html',
+                    icon: '📿'
+                },
+                {
+                    title: 'Portal Gatekeeper Prinzip',
+                    desc: 'Regelwerk zum Schutz der Träume – Shield, Portal und Gatekeeper.',
+                    url: 'portal-gatekeeper.html',
+                    icon: '🚪'
+                }
+            ],
+            treaties: [
+                {
+                    title: 'Rechtsprechung Humanitätismus',
+                    desc: 'Resonanzbasierte Rechtsprechung für transformierende Selbstförderung.',
+                    url: 'rechtsprechung-humanitaetismus.html',
+                    icon: '⚖️'
+                },
+                {
+                    title: 'Regulatoren Freiheitsabkommen',
+                    desc: 'Rechtliche Regulatoren für Resonanz, Freiheit und Bildung.',
+                    url: 'regulatoren-freiheit.html',
+                    icon: '📜'
+                },
+                {
+                    title: 'Grundverordnung Ethik & Essay',
+                    desc: 'Grundgesetz für ethische Praxis und rechtliche Rahmenbedingungen.',
+                    url: 'grundverordnung-ethik.html',
+                    icon: '📋'
+                }
+            ]
+        };
+
+        // Filter Logic
+        function showAllDocuments() {
+            const content = document.getElementById('philosophyContent');
+            let html = '';
+
+            const categories = [
+                { key: 'cazar', label: '🌌 CaZaR Trust System' },
+                { key: 'dachs', label: '🦡 DACHS-FEES (Himmelszelt)' },
+                { key: 'inter', label: '🛡️ INTERMEDIALGALAKTIC Manifeste' },
+                { key: 'treaties', label: '📜 Verträge & Rechtsdokumente' }
+            ];
+
+            categories.forEach(cat => {
+                html += `<div class="category-header">${cat.label}</div>`;
+                html += '<div class="philosophy-grid">';
+                documents[cat.key].forEach(doc => {
+                    html += `
+                        <div class="philosophy-card">
+                            <h3>${doc.icon} ${doc.title}</h3>
+                            <p>${doc.desc}</p>
+                            <a href="${doc.url}" class="btn-link">Dokument lesen →</a>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            });
+
+            content.innerHTML = html;
+        }
+
+        function showByCategory(category) {
+            const content = document.getElementById('philosophyContent');
+            const categoryLabels = {
+                cazar: '🌌 CaZaR Trust System',
+                dachs: '🦡 DACHS-FEES (Himmelszelt der Wünsche)',
+                inter: '🛡️ INTERMEDIALGALAKTIC Constellation',
+                treaties: '📜 Verträge & Rechtsdokumente'
+            };
+
+            let html = `<div class="category-header">${categoryLabels[category]}</div>`;
+            html += '<div class="philosophy-grid">';
+            
+            documents[category].forEach(doc => {
+                html += `
+                    <div class="philosophy-card">
+                        <h3>${doc.icon} ${doc.title}</h3>
+                        <p>${doc.desc}</p>
+                        <a href="${doc.url}" class="btn-link">Dokument lesen →</a>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            content.innerHTML = html;
+        }
+
+        // Initialize
+        const filter = document.getElementById('philosophyFilter');
+        showAllDocuments();
+
+        filter.addEventListener('change', function() {
+            const value = this.value;
+            if (value === 'all') {
+                showAllDocuments();
+            } else {
+                showByCategory(value);
+            }
+        });
+    </script>
+</body>
+</html>
