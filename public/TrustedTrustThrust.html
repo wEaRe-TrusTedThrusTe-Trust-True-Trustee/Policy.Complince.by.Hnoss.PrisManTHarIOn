@@ -1761,15 +1761,25 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
         });
 
         // Booking Overlay Functions
-        function openBookingOverlay() {
-            document.getElementById('bookingOverlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
+        window.openBookingOverlay = function() {
+            const overlay = document.getElementById('bookingOverlay');
+            if (overlay) {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                console.log('Booking overlay opened');
+            } else {
+                console.error('Booking overlay element not found');
+            }
         }
 
-        function closeBookingOverlay(event) {
+        window.closeBookingOverlay = function(event) {
             if (!event || event.target.id === 'bookingOverlay') {
-                document.getElementById('bookingOverlay').classList.remove('active');
-                document.body.style.overflow = 'auto';
+                const overlay = document.getElementById('bookingOverlay');
+                if (overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    console.log('Booking overlay closed');
+                }
             }
         }
 
@@ -1777,7 +1787,7 @@ INTEGRITY: Atomic Clock Synchronized & Self-Healing Protocol
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeLightbox();
-                closeBookingOverlay();
+                window.closeBookingOverlay();
                 closeRepoOverlay();
             }
         });
